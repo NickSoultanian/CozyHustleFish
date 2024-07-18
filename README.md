@@ -6,23 +6,23 @@ created: 2024-07-15
 
 - **Creative director:** Ash
 - **Creative input**: 
-    - Joycie 
-    - Bickle 
-    - Cait 
+	- Joycie 
+	- Bickle 
+	- Cait 
 
 - **Art**: 
-    - Nunu
-    - Joy
-    - Joycie 
+	- Nunu
+	- Joy
+	- Joycie 
 - **Coding:** 
-    - Nick (lead) 
-    - Jason 
-    - Rayen 
-    - Dun 
-    - Tom
+	- Nick (lead) 
+	- Jason 
+	- Rayen 
+	- Dun 
+	- Tom
 - **Music:**
-    - Dun 
-    - Nunu
-    - Tom
+	- Dun 
+	- Nunu
+	- Tom
 
 
