@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dcxjjhkb6o7ur"]
+[gd_scene load_steps=10 format=3 uid="uid://c4x421uqlucuk"]
 
 [ext_resource type="Texture2D" uid="uid://cmifiuor8brei" path="res://Art Assets/placeholder/characters/player.png" id="1_12ona"]
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_qpm7x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0npnk"]
 atlas = ExtResource("1_12ona")
@@ -53,13 +52,18 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lph1"]
+size = Vector2(20, 32)
+
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_qpm7x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_wadp2")
 animation = &"idle"
-frame_progress = 0.202073
+frame = 1
+frame_progress = 0.807544
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_5lph1")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://btlyk1rfgfyd4"]
+
+[ext_resource type="Script" path="res://Scripts/hook.gd" id="1_djs7e"]
+[ext_resource type="Texture2D" uid="uid://bv15vdfdfqd7n" path="res://Art Assets/pngtree-fishing-tool-hook-png-image_2811160.jpg" id="2_gt3d3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lph1"]
+size = Vector2(36, 36)
+
+[node name="Hook" type="CharacterBody2D"]
+script = ExtResource("1_djs7e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+shape = SubResource("RectangleShape2D_5lph1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_gt3d3")
