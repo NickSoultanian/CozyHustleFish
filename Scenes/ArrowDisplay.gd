@@ -16,6 +16,7 @@ var upFilled = load("res://Art Assets/arrows/up_filled.png")
 
 var arrowDisplayStack = []
 var arrowList
+var currArrowIndex = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,7 +30,7 @@ func _process(delta):
 
 func spawnArrows(arrowArray):
 	arrowList.max_columns = arrowArray.size()
-	arrowList.size.x = arrowArray.size() * 179
+	arrowList.size.x = arrowArray.size() * 180
 	arrowList.position.x = (get_viewport().size.x - arrowList.size.x)/2
 	
 	for arrow in arrowArray:
@@ -44,3 +45,19 @@ func spawnArrows(arrowArray):
 			arr_instance = right
 		arrowList.add_icon_item(arr_instance)
 
+func changeNextArrow():
+	var arrow = arrowList.get_item_icon(currArrowIndex)
+	print(arrow)
+	if (arrow == up):
+		arrowList.set_item_icon(currArrowIndex, upFilled)
+	if (arrow == down):
+		arrowList.set_item_icon(currArrowIndex, downFilled)
+	if (arrow == left):
+		arrowList.set_item_icon(currArrowIndex, leftFilled)
+	if (arrow == right):
+		arrowList.set_item_icon(currArrowIndex, rightFilled)
+	currArrowIndex += 1
+	
+func destroyArrows():
+	arrowList.clear()
+	currArrowIndex = 0;

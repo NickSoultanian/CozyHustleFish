@@ -1,12 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bcqsrvi23s6te"]
+[gd_scene load_steps=9 format=3 uid="uid://bcqsrvi23s6te"]
 
 [ext_resource type="Script" path="res://Scripts/comboManager.gd" id="1_eusby"]
 [ext_resource type="Texture2D" uid="uid://cr71k6xtsc4lq" path="res://icon.svg" id="2_c560m"]
 [ext_resource type="Shader" path="res://Shaders/blurShader.gdshader" id="2_gbkgw"]
 [ext_resource type="Script" path="res://Scripts/comboTimer.gd" id="4_s81gk"]
 [ext_resource type="Script" path="res://Scenes/ArrowDisplay.gd" id="5_xtm0g"]
-[ext_resource type="Texture2D" uid="uid://cafkkvup21tix" path="res://Art Assets/arrows/red x.png" id="6_00pg2"]
-[ext_resource type="Texture2D" uid="uid://756kmjp2buti" path="res://Art Assets/arrows/checkmark.png" id="7_eee2v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t4mqn"]
 shader = ExtResource("2_gbkgw")
@@ -82,10 +80,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -576.0
-offset_top = -107.0
-offset_right = 575.0
-offset_bottom = 93.0
+offset_left = -573.0
+offset_top = -99.0
+offset_right = 578.0
+offset_bottom = 101.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_stretch_ratio = 0.0
@@ -98,15 +96,3 @@ text_overrun_behavior = 0
 max_columns = 0
 same_column_width = true
 icon_mode = 0
-
-[node name="RedX" type="Sprite2D" parent="CanvasLayer/CanvasModulate/Panel/ColorRect/ArrowDisplay"]
-visible = false
-position = Vector2(583, 340)
-scale = Vector2(0.3025, 0.3025)
-texture = ExtResource("6_00pg2")
-
-[node name="GreenCheck" type="Sprite2D" parent="CanvasLayer/CanvasModulate/Panel/ColorRect/ArrowDisplay"]
-visible = false
-position = Vector2(583, 340)
-scale = Vector2(0.3025, 0.3025)
-texture = ExtResource("7_eee2v")

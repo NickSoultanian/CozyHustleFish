@@ -8,10 +8,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	pass 
 	
 
 func _input(event):
 	if event.is_action_pressed("comboStart"):
 		print("nice")
+		set_process_input(false)
 		await $comboView.startCombo(["up", "down", "left", "right"])
+		set_process_input(true)
