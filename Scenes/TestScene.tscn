@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://djdjvdd54rkdm"]
+
+[ext_resource type="Texture2D" uid="uid://dgba3rrkyqf52" path="res://Art Assets/placeholder/tilesets/grass.png" id="1_7x3fj"]
+[ext_resource type="Script" path="res://Scripts/gameManager.gd" id="1_tj8aq"]
+[ext_resource type="PackedScene" uid="uid://bcqsrvi23s6te" path="res://Scenes/combowindow.tscn" id="2_2gj1l"]
+[ext_resource type="Texture2D" uid="uid://cr71k6xtsc4lq" path="res://icon.svg" id="3_q3bkh"]
+
+[node name="TestScene" type="Node2D"]
+script = ExtResource("1_tj8aq")
+
+[node name="Grass" type="Sprite2D" parent="."]
+position = Vector2(599.542, 346)
+scale = Vector2(74.9322, 43.25)
+texture = ExtResource("1_7x3fj")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(83, 557)
+texture = ExtResource("3_q3bkh")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(81, 87)
+texture = ExtResource("3_q3bkh")
+
+[node name="Icon3" type="Sprite2D" parent="."]
+position = Vector2(1074, 74)
+texture = ExtResource("3_q3bkh")
+
+[node name="Icon4" type="Sprite2D" parent="."]
+position = Vector2(1082, 554)
+texture = ExtResource("3_q3bkh")
+
+[node name="comboView" parent="." instance=ExtResource("2_2gj1l")]
+z_index = 1

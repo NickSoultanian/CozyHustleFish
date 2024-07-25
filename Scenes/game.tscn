@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1gf8av4u60gm"]
+[gd_scene load_steps=7 format=3 uid="uid://c87ymn4vioel6"]
 
-[ext_resource type="PackedScene" uid="uid://c4x421uqlucuk" path="res://Scenes/player.tscn" id="1_of1aw"]
+[ext_resource type="PackedScene" path="res://Scenes/player.tscn" id="1_of1aw"]
 [ext_resource type="Texture2D" uid="uid://42mingjs6bmq" path="res://Art Assets/underwater-background-oepaymjqd9zy7i7v.jpg" id="2_rknki"]
-[ext_resource type="PackedScene" uid="uid://btlyk1rfgfyd4" path="res://Scenes/hook.tscn" id="3_4ieyl"]
-[ext_resource type="PackedScene" uid="uid://dcnulawsx36m4" path="res://Scenes/fish.tscn" id="4_sq2mn"]
+[ext_resource type="PackedScene" uid="uid://bcfu27cslcm3x" path="res://Scenes/hook.tscn" id="3_4ieyl"]
+[ext_resource type="PackedScene" uid="uid://cpbuolcuxxv7g" path="res://Scenes/fish.tscn" id="4_sq2mn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ydtk"]
 

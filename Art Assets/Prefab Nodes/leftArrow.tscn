@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnsi8mxlrk64v"]
+
+[ext_resource type="Texture2D" uid="uid://bpf8lv4yl26rc" path="res://Art Assets/arrows/left.png" id="1_yip3d"]
+
+[node name="LeftArrow" type="Node2D"]
+
+[node name="LEFT" type="Sprite2D" parent="."]
+texture = ExtResource("1_yip3d")

@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcqsrvi23s6te"]
+
+[ext_resource type="Script" path="res://Scripts/comboManager.gd" id="1_eusby"]
+[ext_resource type="Texture2D" uid="uid://cr71k6xtsc4lq" path="res://icon.svg" id="2_c560m"]
+[ext_resource type="Shader" path="res://Shaders/blurShader.gdshader" id="2_gbkgw"]
+[ext_resource type="Script" path="res://Scripts/comboTimer.gd" id="4_s81gk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t4mqn"]
+shader = ExtResource("2_gbkgw")
+shader_parameter/blur_amount = 0.0
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_eusby")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
+position = Vector2(1, 0)
+
+[node name="Panel" type="Panel" parent="CanvasLayer/CanvasModulate"]
+self_modulate = Color(1, 1, 1, 0)
+top_level = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 3.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/CanvasModulate/Panel"]
+material = SubResource("ShaderMaterial_t4mqn")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.960784, 0, 0.501961, 0.180392)
+metadata/ArrowArray = []
+
+[node name="Icon" type="Sprite2D" parent="CanvasLayer/CanvasModulate/Panel/ColorRect"]
+position = Vector2(628, 334)
+texture = ExtResource("2_c560m")
+
+[node name="Clock" type="TextureProgressBar" parent="CanvasLayer/CanvasModulate/Panel/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.188
+anchor_top = 0.087
+anchor_right = 0.328
+anchor_bottom = 0.284
+offset_left = 0.0479889
+offset_top = 0.275997
+offset_right = 0.487976
+offset_bottom = -0.167999
+step = 0.0
+fill_mode = 4
+texture_under = ExtResource("2_c560m")
+texture_over = ExtResource("2_c560m")
+texture_progress = ExtResource("2_c560m")
+tint_under = Color(0, 0, 0, 1)
+tint_over = Color(0.741176, 0, 0.141176, 0)
+script = ExtResource("4_s81gk")
