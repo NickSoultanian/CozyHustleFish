@@ -22,7 +22,7 @@ func _ready():
 	opacityLayer = $CanvasLayer/CanvasModulate/Panel/ColorRect
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Called every frame. 'delta' is the elapsed time since the  previous frame.
 func _process(delta): 
 	pass
 	
@@ -35,15 +35,17 @@ func startCombo(inputArray):
 	inputAllowed = true
 	Clock.startClock(TIME_LIMIT)
 	timer.start(TIME_LIMIT)
+	waitForTimer()
 	await endGameWait()
 	await endCombo(winBool) # lost
 	
 func endGameWait():
 	return await gameEnd
+	
+func waitForTimer():
 	await timer.timeout
 	gameEnd.emit()
 	
-
 func endCombo(winBool):
 	inputAllowed = false
 	if (!winBool):
