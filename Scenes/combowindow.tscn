@@ -21,27 +21,10 @@ shader_parameter/blur_amount = 0.0
 script = ExtResource("1_eusby")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
 
-[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
-position = Vector2(1, 0)
-
-[node name="Panel" type="Panel" parent="CanvasLayer/CanvasModulate"]
-self_modulate = Color(1, 1, 1, 0)
-top_level = true
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_right = 3.0
-offset_bottom = 4.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/CanvasModulate/Panel"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_t4mqn")
-layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -49,11 +32,12 @@ grow_vertical = 2
 color = Color(0.960784, 0, 0.501961, 0.180392)
 metadata/ArrowArray = []
 
-[node name="Clock" type="TextureProgressBar" parent="CanvasLayer/CanvasModulate/Panel/ColorRect"]
+[node name="Clock" type="TextureProgressBar" parent="CanvasLayer/ColorRect"]
+clip_contents = true
 layout_mode = 1
 offset_right = 1626.0
 offset_bottom = 1623.0
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.1, 0.1)
 step = 0.0
 fill_mode = 4
 texture_under = ExtResource("4_5un8p")
@@ -62,13 +46,13 @@ texture_progress = ExtResource("3_s0b0f")
 tint_over = Color(0.741176, 0, 0.141176, 0)
 script = ExtResource("4_s81gk")
 
-[node name="Timer" type="Timer" parent="CanvasLayer/CanvasModulate/Panel/ColorRect"]
+[node name="Timer" type="Timer" parent="CanvasLayer/ColorRect"]
 one_shot = true
 
-[node name="ArrowDisplay" type="CanvasLayer" parent="CanvasLayer/CanvasModulate/Panel/ColorRect"]
+[node name="ArrowDisplay" type="CanvasLayer" parent="CanvasLayer/ColorRect"]
 script = ExtResource("5_xtm0g")
 
-[node name="ItemList" type="ItemList" parent="CanvasLayer/CanvasModulate/Panel/ColorRect/ArrowDisplay"]
+[node name="ItemList" type="ItemList" parent="CanvasLayer/ColorRect/ArrowDisplay"]
 top_level = true
 layout_direction = 1
 anchors_preset = 8
@@ -92,13 +76,13 @@ allow_search = false
 auto_height = true
 text_overrun_behavior = 0
 
-[node name="RedX" type="Sprite2D" parent="CanvasLayer/CanvasModulate/Panel/ColorRect/ArrowDisplay"]
+[node name="RedX" type="Sprite2D" parent="CanvasLayer/ColorRect/ArrowDisplay"]
 visible = false
 position = Vector2(583, 340)
 scale = Vector2(0.3025, 0.3025)
 texture = ExtResource("6_00pg2")
 
-[node name="GreenCheck" type="Sprite2D" parent="CanvasLayer/CanvasModulate/Panel/ColorRect/ArrowDisplay"]
+[node name="GreenCheck" type="Sprite2D" parent="CanvasLayer/ColorRect/ArrowDisplay"]
 visible = false
 position = Vector2(583, 340)
 scale = Vector2(0.3025, 0.3025)

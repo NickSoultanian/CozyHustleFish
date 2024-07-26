@@ -10,10 +10,10 @@ func _ready():
 func _process(delta):
 	pass 
 	
-
+ 
 func _input(event):
 	if event.is_action_pressed("comboStart"):
 		print("nice")
 		set_process_input(false)
-		await $comboView.startCombo(["up", "down", "left", "right", "up", "down", "left", "right"])
+		await $Hook/Camera2D/comboView.startCombo(["up", "down", "left", "right", "up", "down", "left", "right"])
 		set_process_input(true)

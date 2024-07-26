@@ -16,11 +16,12 @@ signal gameEnd
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Clock = $CanvasLayer/CanvasModulate/Panel/ColorRect/Clock
+	Clock = $CanvasLayer/ColorRect/Clock
 	Clock.set_visible(false)
-	timer = $CanvasLayer/CanvasModulate/Panel/ColorRect/Timer
-	arrowDisplay = $CanvasLayer/CanvasModulate/Panel/ColorRect/ArrowDisplay
-	opacityLayer = $CanvasLayer/CanvasModulate/Panel/ColorRect
+	timer = $CanvasLayer/ColorRect/Timer
+	arrowDisplay = $CanvasLayer/ColorRect/ArrowDisplay
+	opacityLayer = $CanvasLayer/ColorRect
+	
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the  previous frame.
@@ -52,13 +53,13 @@ func waitForTimer():
 func endCombo(winBool):
 	inputAllowed = false
 	if (!winBool):
-		$CanvasLayer/CanvasModulate/Panel/ColorRect/ArrowDisplay/RedX.set_visible(true)
+		$CanvasLayer/ColorRect/ArrowDisplay/RedX.set_visible(true)
 		await get_tree().create_timer(1.0).timeout
-		$CanvasLayer/CanvasModulate/Panel/ColorRect/ArrowDisplay/RedX.set_visible(false)
+		$CanvasLayer/ColorRect/ArrowDisplay/RedX.set_visible(false)
 	else:
-		$CanvasLayer/CanvasModulate/Panel/ColorRect/ArrowDisplay/GreenCheck.set_visible(true)
+		$CanvasLayer/ColorRect/ArrowDisplay/GreenCheck.set_visible(true)
 		await get_tree().create_timer(1.0).timeout
-		$CanvasLayer/CanvasModulate/Panel/ColorRect/ArrowDisplay/GreenCheck.set_visible(false)
+		$CanvasLayer/ColorRect/ArrowDisplay/GreenCheck.set_visible(false)
 	hideOpacityLayer()
 	print ("done")
 	timer.stop()

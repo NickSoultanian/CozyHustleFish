@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dq60h7ydeipiy"]
-
-[ext_resource type="Texture2D" uid="uid://dqevgq0wnrhm1" path="res://Art Assets/arrows/up.png" id="1_bnlh7"]
-
-[node name="UpArrow" type="Node2D"]
-
-[node name="UP" type="Sprite2D" parent="."]
-texture = ExtResource("1_bnlh7")

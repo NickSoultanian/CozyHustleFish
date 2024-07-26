@@ -1,10 +1,5 @@
 extends CanvasLayer
 
-var upScene = preload("res://Art Assets/Prefab Nodes/downArrow.tscn")
-var downScene = preload("res://Art Assets/Prefab Nodes/downArrow.tscn")
-var leftScene = preload("res://Art Assets/Prefab Nodes/leftArrow.tscn")
-var rightScene = preload("res://Art Assets/Prefab Nodes/rightArrow.tscn")
-
 var down = load("res://Art Assets/arrows/down.png")
 var downFilled = load("res://Art Assets/arrows/down_filled.png")
 var left = load("res://Art Assets/arrows/left.png")
