@@ -44,6 +44,7 @@ func endGameWait():
 	
 func waitForTimer():
 	await timer.timeout
+	winBool = false
 	gameEnd.emit()
 	
 func endCombo(winBool):

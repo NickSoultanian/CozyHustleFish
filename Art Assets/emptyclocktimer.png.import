@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djexedsana5ci"
-path="res://.godot/imported/sprite (4).png-9da18e1cdf76d3cfcc5a4709e8c5ad09.ctex"
+uid="uid://fk1p8f47w53"
+path="res://.godot/imported/emptyclocktimer.png-0db4e48324018e363a9ea460b0c2ee80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/sprite (4).png"
-dest_files=["res://.godot/imported/sprite (4).png-9da18e1cdf76d3cfcc5a4709e8c5ad09.ctex"]
+source_file="res://Art Assets/emptyclocktimer.png"
+dest_files=["res://.godot/imported/emptyclocktimer.png-0db4e48324018e363a9ea460b0c2ee80.ctex"]
 
 [params]
 
