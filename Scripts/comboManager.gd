@@ -17,6 +17,7 @@ signal gameEnd
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Clock = $CanvasLayer/CanvasModulate/Panel/ColorRect/Clock
+	Clock.set_visible(false)
 	timer = $CanvasLayer/CanvasModulate/Panel/ColorRect/Timer
 	arrowDisplay = $CanvasLayer/CanvasModulate/Panel/ColorRect/ArrowDisplay
 	opacityLayer = $CanvasLayer/CanvasModulate/Panel/ColorRect
@@ -28,6 +29,7 @@ func _process(delta):
 	
 func startCombo(inputArray):
 	timerEnded = false
+	Clock.set_visible(true)
 	print("started")
 	showOpacityLayer()
 	arrowDisplay.spawnArrows(inputArray)
@@ -61,6 +63,7 @@ func endCombo(winBool):
 	print ("done")
 	timer.stop()
 	Clock.endClock()
+	Clock.set_visible(false)
 	arrowDisplay.destroyArrows()
 
 func _input(event):
