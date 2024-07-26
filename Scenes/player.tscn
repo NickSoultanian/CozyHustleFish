@@ -1,69 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbkr8bp5ip7rq"]
+[gd_scene load_steps=3 format=3 uid="uid://c4x421uqlucuk"]
 
-[ext_resource type="Texture2D" uid="uid://cmifiuor8brei" path="res://Art Assets/placeholder/characters/player.png" id="1_12ona"]
+[ext_resource type="Texture2D" uid="uid://bgtajthc1e85a" path="res://Art Assets/WIP/bean background and assets-04.png" id="1_eiew8"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0npnk"]
-atlas = ExtResource("1_12ona")
-region = Rect2(0, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fdu3v"]
-atlas = ExtResource("1_12ona")
-region = Rect2(48, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_80huj"]
-atlas = ExtResource("1_12ona")
-region = Rect2(96, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tbhcy"]
-atlas = ExtResource("1_12ona")
-region = Rect2(144, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sr1ji"]
-atlas = ExtResource("1_12ona")
-region = Rect2(192, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5okyy"]
-atlas = ExtResource("1_12ona")
-region = Rect2(240, 0, 48, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_wadp2"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0npnk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fdu3v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_80huj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tbhcy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sr1ji")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5okyy")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 10.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lph1"]
-size = Vector2(20, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kq6ne"]
 
 [node name="Player" type="CharacterBody2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_wadp2")
-animation = &"idle"
-frame = 1
-frame_progress = 0.807544
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_eiew8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
-shape = SubResource("RectangleShape2D_5lph1")
+shape = SubResource("RectangleShape2D_kq6ne")

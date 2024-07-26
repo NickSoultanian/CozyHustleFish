@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/gameManager.gd" id="1_0qg6c"]
 [ext_resource type="Texture2D" uid="uid://42mingjs6bmq" path="res://Art Assets/underwater-background-oepaymjqd9zy7i7v.jpg" id="1_1g4o3"]
-[ext_resource type="PackedScene" uid="uid://bbkr8bp5ip7rq" path="res://Scenes/player.tscn" id="2_6503x"]
+[ext_resource type="PackedScene" uid="uid://c4x421uqlucuk" path="res://Scenes/player.tscn" id="2_6503x"]
 [ext_resource type="PackedScene" uid="uid://bcfu27cslcm3x" path="res://Scenes/hook.tscn" id="3_kr6n1"]
 [ext_resource type="PackedScene" uid="uid://cpbuolcuxxv7g" path="res://Scenes/fish.tscn" id="4_fms5l"]
 [ext_resource type="PackedScene" uid="uid://bcqsrvi23s6te" path="res://Scenes/combowindow.tscn" id="5_m3bb6"]

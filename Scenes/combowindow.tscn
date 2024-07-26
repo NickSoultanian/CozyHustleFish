@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://Scripts/comboManager.gd" id="1_eusby"]
 [ext_resource type="Shader" path="res://Shaders/blurShader.gdshader" id="2_gbkgw"]
-[ext_resource type="Texture2D" uid="uid://fk1p8f47w53" path="res://Art Assets/emptyclocktimer.png" id="3_s0b0f"]
-[ext_resource type="Texture2D" uid="uid://daw8n4xeajns8" path="res://Art Assets/clocktimer.png" id="4_5un8p"]
+[ext_resource type="Texture2D" uid="uid://daw8n4xeajns8" path="res://Art Assets/Finished Art/clock/clocktimer.png" id="3_s0b0f"]
+[ext_resource type="Texture2D" uid="uid://fk1p8f47w53" path="res://Art Assets/Finished Art/clock/emptyclocktimer.png" id="4_5un8p"]
 [ext_resource type="Script" path="res://Scripts/comboTimer.gd" id="4_s81gk"]
-[ext_resource type="Script" path="res://Scenes/ArrowDisplay.gd" id="5_xtm0g"]
-[ext_resource type="Texture2D" uid="uid://cafkkvup21tix" path="res://Art Assets/arrows/red x.png" id="6_00pg2"]
-[ext_resource type="Texture2D" uid="uid://756kmjp2buti" path="res://Art Assets/arrows/checkmark.png" id="7_eee2v"]
+[ext_resource type="Script" path="res://Scripts/ArrowDisplay.gd" id="5_xtm0g"]
+[ext_resource type="Texture2D" uid="uid://cafkkvup21tix" path="res://Art Assets/Finished Art/arrows/red x.png" id="6_00pg2"]
+[ext_resource type="Texture2D" uid="uid://756kmjp2buti" path="res://Art Assets/Finished Art/arrows/checkmark.png" id="7_eee2v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t4mqn"]
 shader = ExtResource("2_gbkgw")
@@ -24,7 +24,7 @@ script = ExtResource("1_eusby")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_t4mqn")
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2

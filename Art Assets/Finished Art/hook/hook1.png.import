@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fk1p8f47w53"
-path="res://.godot/imported/emptyclocktimer.png-0db4e48324018e363a9ea460b0c2ee80.ctex"
+uid="uid://l1bfqs5fo2fx"
+path="res://.godot/imported/hook1.png-0c179f9365490fdb94ebe892d7ec5d4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/emptyclocktimer.png"
-dest_files=["res://.godot/imported/emptyclocktimer.png-0db4e48324018e363a9ea460b0c2ee80.ctex"]
+source_file="res://Art Assets/Finished Art/hook/hook1.png"
+dest_files=["res://.godot/imported/hook1.png-0c179f9365490fdb94ebe892d7ec5d4d.ctex"]
 
 [params]
 

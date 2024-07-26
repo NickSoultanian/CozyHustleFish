@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnpaffl571dka"
-path="res://.godot/imported/left_filled.png-5763da9877dea71bf640f700afddeb12.ctex"
+uid="uid://cafkkvup21tix"
+path="res://.godot/imported/red x.png-38e5ef88982da2dddecef8a33a17ab39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/arrows/left_filled.png"
-dest_files=["res://.godot/imported/left_filled.png-5763da9877dea71bf640f700afddeb12.ctex"]
+source_file="res://Art Assets/Finished Art/arrows/red x.png"
+dest_files=["res://.godot/imported/red x.png-38e5ef88982da2dddecef8a33a17ab39.ctex"]
 
 [params]
 

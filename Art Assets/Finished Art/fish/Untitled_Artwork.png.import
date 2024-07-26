@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnsqh51lqunut"
-path="res://.godot/imported/right.png-2a4fbce9f8b70b8d0f7604d04c3bad53.ctex"
+uid="uid://budutvu4ohsem"
+path="res://.godot/imported/Untitled_Artwork.png-8b9e62d7966cb6ba2e5ecd35f0b50ad6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/arrows/right.png"
-dest_files=["res://.godot/imported/right.png-2a4fbce9f8b70b8d0f7604d04c3bad53.ctex"]
+source_file="res://Art Assets/Finished Art/fish/Untitled_Artwork.png"
+dest_files=["res://.godot/imported/Untitled_Artwork.png-8b9e62d7966cb6ba2e5ecd35f0b50ad6.ctex"]
 
 [params]
 

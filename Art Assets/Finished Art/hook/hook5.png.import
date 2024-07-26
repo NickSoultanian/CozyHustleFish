@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cafkkvup21tix"
-path="res://.godot/imported/red x.png-154feb1e3c74d498ac4c35fbd47e5b15.ctex"
+uid="uid://v67pqecpfwra"
+path="res://.godot/imported/hook5.png-94335a83275966424a84262f8c1eadf5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/arrows/red x.png"
-dest_files=["res://.godot/imported/red x.png-154feb1e3c74d498ac4c35fbd47e5b15.ctex"]
+source_file="res://Art Assets/Finished Art/hook/hook5.png"
+dest_files=["res://.godot/imported/hook5.png-94335a83275966424a84262f8c1eadf5.ctex"]
 
 [params]
 

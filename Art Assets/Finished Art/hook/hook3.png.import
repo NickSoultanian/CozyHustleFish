@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8r5p1rycpyhx"
-path="res://.godot/imported/down.png-67965efd6dfef26098c8b48b87689974.ctex"
+uid="uid://lcv3soro52a7"
+path="res://.godot/imported/hook3.png-51b8d72a231f189b3d294635355c2b70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/arrows/down.png"
-dest_files=["res://.godot/imported/down.png-67965efd6dfef26098c8b48b87689974.ctex"]
+source_file="res://Art Assets/Finished Art/hook/hook3.png"
+dest_files=["res://.godot/imported/hook3.png-51b8d72a231f189b3d294635355c2b70.ctex"]
 
 [params]
 

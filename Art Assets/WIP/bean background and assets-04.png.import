@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpf8lv4yl26rc"
-path="res://.godot/imported/left.png-bc005f60640e40b134e190ad44b6035e.ctex"
+uid="uid://bgtajthc1e85a"
+path="res://.godot/imported/bean background and assets-04.png-3c1af35fc57007977ff513f9714a46b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/arrows/left.png"
-dest_files=["res://.godot/imported/left.png-bc005f60640e40b134e190ad44b6035e.ctex"]
+source_file="res://Art Assets/WIP/bean background and assets-04.png"
+dest_files=["res://.godot/imported/bean background and assets-04.png-3c1af35fc57007977ff513f9714a46b1.ctex"]
 
 [params]
 

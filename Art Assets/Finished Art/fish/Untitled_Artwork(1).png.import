@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://756kmjp2buti"
-path="res://.godot/imported/checkmark.png-e2a6e2bf0b1180ca098ddfd19056830a.ctex"
+uid="uid://dqsmcvbhgnojd"
+path="res://.godot/imported/Untitled_Artwork(1).png-f30a70bea7dd379e747a21375a5343c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/arrows/checkmark.png"
-dest_files=["res://.godot/imported/checkmark.png-e2a6e2bf0b1180ca098ddfd19056830a.ctex"]
+source_file="res://Art Assets/Finished Art/fish/Untitled_Artwork(1).png"
+dest_files=["res://.godot/imported/Untitled_Artwork(1).png-f30a70bea7dd379e747a21375a5343c7.ctex"]
 
 [params]
 

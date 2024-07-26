@@ -1,13 +1,13 @@
 extends CanvasLayer
 
-var down = load("res://Art Assets/arrows/down.png")
-var downFilled = load("res://Art Assets/arrows/down_filled.png")
-var left = load("res://Art Assets/arrows/left.png")
-var leftFilled = load("res://Art Assets/arrows/left_filled.png")
-var right = load("res://Art Assets/arrows/right.png")
-var rightFilled = load("res://Art Assets/arrows/right_filled.png")
-var up = load("res://Art Assets/arrows/up.png")
-var upFilled = load("res://Art Assets/arrows/up_filled.png")
+var down = load("res://Art Assets/Finished Art/arrows/down.png")
+var downFilled = load("res://Art Assets/Finished Art/arrows/down_filled.png")
+var left = load("res://Art Assets/Finished Art/arrows/left.png")
+var leftFilled = load("res://Art Assets/Finished Art/arrows/left_filled.png")
+var right = load("res://Art Assets/Finished Art/arrows/right.png")
+var rightFilled = load("res://Art Assets/Finished Art/arrows/right_filled.png")
+var up = load("res://Art Assets/Finished Art//arrows/up.png")
+var upFilled = load("res://Art Assets/Finished Art/arrows/up_filled.png")
 
 var arrowDisplayStack = []
 var arrowList

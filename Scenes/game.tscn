@@ -1,62 +1,50 @@
-[gd_scene load_steps=7 format=3 uid="uid://c87ymn4vioel6"]
+[gd_scene load_steps=8 format=3 uid="uid://cq4qckqpgonbt"]
 
-[ext_resource type="PackedScene" uid="uid://bbkr8bp5ip7rq" path="res://Scenes/player.tscn" id="1_of1aw"]
-[ext_resource type="Texture2D" uid="uid://42mingjs6bmq" path="res://Art Assets/underwater-background-oepaymjqd9zy7i7v.jpg" id="2_rknki"]
-[ext_resource type="PackedScene" uid="uid://bcfu27cslcm3x" path="res://Scenes/hook.tscn" id="3_4ieyl"]
-[ext_resource type="PackedScene" uid="uid://cpbuolcuxxv7g" path="res://Scenes/fish.tscn" id="4_sq2mn"]
+[ext_resource type="Texture2D" uid="uid://d0ab3i7glo2tr" path="res://Art Assets/Finished Art/background/bg-daytime.png" id="1_14yf6"]
+[ext_resource type="Script" path="res://Scripts/gameManager.gd" id="1_x7opw"]
+[ext_resource type="PackedScene" uid="uid://c4x421uqlucuk" path="res://Scenes/player.tscn" id="2_5d77e"]
+[ext_resource type="PackedScene" uid="uid://bcqsrvi23s6te" path="res://Scenes/combowindow.tscn" id="3_m6vby"]
+[ext_resource type="PackedScene" uid="uid://bcfu27cslcm3x" path="res://Scenes/hook.tscn" id="3_vc8wl"]
+[ext_resource type="PackedScene" uid="uid://cpbuolcuxxv7g" path="res://Scenes/fish.tscn" id="4_jepng"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ydtk"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w743c"]
-size = Vector2(256, 442)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2r1b"]
+size = Vector2(976, 10201)
 
 [node name="Game" type="Node2D"]
-scale = Vector2(0.5, 0.5)
+script = ExtResource("1_x7opw")
 
-[node name="Underwater-background-oepaymjqd9Zy7i7v" type="Sprite2D" parent="."]
-position = Vector2(0, 1126)
-scale = Vector2(0.260937, 1.87458)
-texture = ExtResource("2_rknki")
+[node name="Bg-daytime" type="Sprite2D" parent="."]
+position = Vector2(-35, 10532)
+texture = ExtResource("1_14yf6")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Underwater-background-oepaymjqd9Zy7i7v"]
-z_index = 1
+[node name="Player" parent="." instance=ExtResource("2_5d77e")]
+position = Vector2(631, 250)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Underwater-background-oepaymjqd9Zy7i7v/RigidBody2D"]
-z_index = 1
-shape = SubResource("RectangleShape2D_5ydtk")
-
-[node name="Player" parent="." instance=ExtResource("1_of1aw")]
-position = Vector2(80, -20)
-
-[node name="Hook" parent="." instance=ExtResource("3_4ieyl")]
-position = Vector2(-2, 2)
+[node name="Hook" parent="." instance=ExtResource("3_vc8wl")]
+position = Vector2(-32, -643)
 
 [node name="Camera2D" type="Camera2D" parent="Hook"]
-zoom = Vector2(4, 4)
+position = Vector2(46, 1283)
+zoom = Vector2(0.5, 0.5)
 
-[node name="fish" parent="." instance=ExtResource("4_sq2mn")]
-position = Vector2(-202, 124)
+[node name="ComboWindow" parent="Hook/Camera2D" instance=ExtResource("3_m6vby")]
+position = Vector2(-1604, 2235)
+
+[node name="fish" parent="." instance=ExtResource("4_jepng")]
+position = Vector2(965, 1059)
+
+[node name="fish2" parent="." instance=ExtResource("4_jepng")]
+position = Vector2(-825, 1034)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(378, 220)
-shape = SubResource("RectangleShape2D_w743c")
+position = Vector2(2435, 4919)
+shape = SubResource("RectangleShape2D_i2r1b")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-4368, -22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-378, 220)
-shape = SubResource("RectangleShape2D_w743c")
-
-[node name="fish2" parent="." instance=ExtResource("4_sq2mn")]
-position = Vector2(-100, 238)
-
-[node name="fish3" parent="." instance=ExtResource("4_sq2mn")]
-position = Vector2(-158, 338)
-
-[node name="fish4" parent="." instance=ExtResource("4_sq2mn")]
-position = Vector2(166, 426)
-
-[node name="fish5" parent="." instance=ExtResource("4_sq2mn")]
-position = Vector2(132, 176)
+position = Vector2(1933, 4876)
+shape = SubResource("RectangleShape2D_i2r1b")
