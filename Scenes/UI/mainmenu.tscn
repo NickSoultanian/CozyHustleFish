@@ -1,0 +1,115 @@
+[gd_scene load_steps=10 format=3 uid="uid://ckdgrnubw3yr8"]
+
+[ext_resource type="Script" path="res://Scripts/UI/menu.gd" id="1_q8ceu"]
+[ext_resource type="Texture2D" uid="uid://1vmj0obal35a" path="res://Art Assets/Finished Art/main menu/new game button.png" id="2_x2dm6"]
+[ext_resource type="Texture2D" uid="uid://4owvjsub8by8" path="res://Art Assets/Finished Art/main menu/options button.png" id="3_5tod8"]
+[ext_resource type="Texture2D" uid="uid://dqncxfm1ginik" path="res://Art Assets/Finished Art/main menu/menu bucket background.png" id="3_cfy3q"]
+[ext_resource type="Texture2D" uid="uid://c86x0dpgummv6" path="res://Art Assets/Finished Art/main menu/quit button.png" id="4_3ocyr"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hu1dh"]
+size = Vector2(200, 75)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_w0ata"]
+width = 200
+height = 75
+seamless = true
+
+[sub_resource type="Gradient" id="Gradient_iu1rf"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_muwq7"]
+width = 20
+height = 75
+color_ramp = SubResource("Gradient_iu1rf")
+
+[node name="Mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q8ceu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MenuBucketBackground" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(576, 324)
+scale = Vector2(0.52, 0.512)
+texture = ExtResource("3_cfy3q")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.113725, 1, 0.972549, 1)
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = 64.0
+offset_right = 70.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = -180.0
+offset_right = 106.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="NewGameButton" type="Sprite2D" parent="CanvasLayer/Control/VBoxContainer"]
+z_index = 1
+position = Vector2(64, 91)
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("2_x2dm6")
+
+[node name="OptionsButton2" type="Sprite2D" parent="CanvasLayer/Control/VBoxContainer"]
+z_index = 1
+position = Vector2(59, 98)
+scale = Vector2(0.44, 0.468)
+texture = ExtResource("3_5tod8")
+
+[node name="QuitButton2" type="Sprite2D" parent="CanvasLayer/Control/VBoxContainer"]
+z_index = 1
+position = Vector2(63, 115)
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("4_3ocyr")
+
+[node name="StartButton" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+text = "
+"
+icon = SubResource("PlaceholderTexture2D_hu1dh")
+text_overrun_behavior = 4
+
+[node name="OptionsButton" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+icon = SubResource("NoiseTexture2D_w0ata")
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../StartButton")
+icon = SubResource("NoiseTexture2D_muwq7")
+
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

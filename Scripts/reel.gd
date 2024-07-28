@@ -22,7 +22,7 @@ func _on_Hook_area_entered(area):
 		
 func _physics_process(delta):
 	var hook = get_parent()
-	print(hook.position.y," : ", starting_position.y)
+	# print(hook.position.y," : ", starting_position.y)
 	while returning:
 		var direction = (starting_position - hook.position).normalized()
 		hook.position += direction * speed * delta

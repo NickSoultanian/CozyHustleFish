@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://budutvu4ohsem"
-path="res://.godot/imported/Untitled_Artwork.png-8b9e62d7966cb6ba2e5ecd35f0b50ad6.ctex"
+path="res://.godot/imported/shark.png-dff7884f0b2bd1750f90dc511262bc78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Finished Art/fish/Untitled_Artwork.png"
-dest_files=["res://.godot/imported/Untitled_Artwork.png-8b9e62d7966cb6ba2e5ecd35f0b50ad6.ctex"]
+source_file="res://Art Assets/Finished Art/fish/shark.png"
+dest_files=["res://.godot/imported/shark.png-dff7884f0b2bd1750f90dc511262bc78.ctex"]
 
 [params]
 

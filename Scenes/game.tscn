@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bcqsrvi23s6te" path="res://Scenes/combowindow.tscn" id="3_m6vby"]
 [ext_resource type="PackedScene" uid="uid://bcfu27cslcm3x" path="res://Scenes/hook.tscn" id="3_vc8wl"]
 [ext_resource type="PackedScene" uid="uid://cpbuolcuxxv7g" path="res://Scenes/fish.tscn" id="4_jepng"]
-[ext_resource type="PackedScene" uid="uid://cwjfqtys6npre" path="res://Scenes/UI_for_time_and_Score.tscn" id="6_l840t"]
+[ext_resource type="PackedScene" uid="uid://cwjfqtys6npre" path="res://Scenes/UI/UI_for_time_and_Score.tscn" id="6_l840t"]
 [ext_resource type="PackedScene" uid="uid://calscmn6geru0" path="res://Scenes/boot.tscn" id="7_3pkff"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2r1b"]
