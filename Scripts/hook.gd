@@ -1,22 +1,24 @@
-# basic movement for player (hook) in 2D plane 
-# working on making smooth 2D movement 
-# https://www.youtube.com/watch?v=pBoXqW4RykE 
-
 extends CharacterBody2D
 
 # adjust player spped 
-const speed = 100 
+
+const speed = 5000
+const reelbackspeed = 15000
+const isHook = true 
+
+@onready var hook_animation = $AnimatedSprite2D
+
+var starting_position = Vector2()
+
+func _ready():
+	starting_position = position
+	print("from hook", starting_position.y)
 
 func _physics_process(delta):
 	player_movement(delta)
+	hook_animation.play("idle")
 	
 func player_movement(_delta): 
-	# if Input.is_action_pressed("ui_right"):
-		# velocity.x = speed 
-		# velocity.y = 0 
-	# elif Input.is_action_pressed("ui_left"):
-		# velocity.x = -speed 
-		# velocity.y = 0 
 	if Input.is_action_pressed("ui_down"):
 		velocity.x = 0 
 		velocity.y = speed
