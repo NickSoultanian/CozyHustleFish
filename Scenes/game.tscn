@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cq4qckqpgonbt"]
+[gd_scene load_steps=10 format=3 uid="uid://cq4qckqpgonbt"]
 
 [ext_resource type="Texture2D" uid="uid://d0ab3i7glo2tr" path="res://Art Assets/Finished Art/background/bg-daytime.png" id="1_14yf6"]
 [ext_resource type="Script" path="res://Scripts/gameManager.gd" id="1_x7opw"]
@@ -9,7 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://calscmn6geru0" path="res://Scenes/boot.tscn" id="7_3pkff"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2r1b"]
-size = Vector2(976, 10201)
+size = Vector2(976, 22884)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkuh5"]
+size = Vector2(4298, 107)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_x7opw")
@@ -19,7 +22,7 @@ position = Vector2(-35, 10532)
 texture = ExtResource("1_14yf6")
 
 [node name="Player" parent="." instance=ExtResource("2_5d77e")]
-position = Vector2(631, 250)
+position = Vector2(564, 243)
 
 [node name="Hook" parent="." instance=ExtResource("3_vc8wl")]
 position = Vector2(0, -625)
@@ -32,23 +35,34 @@ zoom = Vector2(0.5, 0.5)
 position = Vector2(-1604, 2235)
 
 [node name="fish" parent="." instance=ExtResource("4_jepng")]
-position = Vector2(965, 1059)
+position = Vector2(1393, 1618)
 
 [node name="fish2" parent="." instance=ExtResource("4_jepng")]
-position = Vector2(-825, 1034)
+position = Vector2(-1190, 2350)
+
+[node name="boot" parent="." instance=ExtResource("7_3pkff")]
+position = Vector2(-1158, 3200)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2435, 4919)
+position = Vector2(2500, 11715)
 shape = SubResource("RectangleShape2D_i2r1b")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(-4368, -22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(1933, 4876)
+position = Vector2(-2500, 11715)
 shape = SubResource("RectangleShape2D_i2r1b")
 
-[node name="boot" parent="." instance=ExtResource("7_3pkff")]
-position = Vector2(-795, 1562)
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(0, 320)
+shape = SubResource("RectangleShape2D_wkuh5")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(0, 23100)
+shape = SubResource("RectangleShape2D_wkuh5")
