@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var velo = Vector2(100,0)
+const isFish = true
 
 func _physics_process(delta):
 	fish_movement(delta)
