@@ -3,15 +3,16 @@ extends Control
  
 # allow control on keyboard 
 func _ready():
-	$VBoxContainer/StartButton.grab_focus()
-	pass
+	$CanvasLayer/Control/VBoxContainer/StartButton.grab_focus()
 
 # starts the game when pressed 
 # replace with the game node via drag and drop 
 func _on_start_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/game.tscn")
 
-
+func _on_options_button_pressed():
+	pass
+	
 # quit button 
 func _on_quit_button_pressed():
 	get_tree().quit()

@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://by37nwypfdc3j" path="res://Art Assets/Finished Art/timer/Timer_bg.png" id="1_2bsbw"]
 [ext_resource type="FontFile" uid="uid://d2brvb388g613" path="res://Art Assets/Fonts/din-condensed/DIN-Bold.ttf" id="2_2d0x8"]
-[ext_resource type="Script" path="res://Scripts/timer.gd" id="3_y0fh6"]
-[ext_resource type="Script" path="res://Scripts/score.gd" id="4_8m1t5"]
+[ext_resource type="Script" path="res://Scripts/UI/timer.gd" id="3_y0fh6"]
+[ext_resource type="Script" path="res://Scripts/UI/score.gd" id="4_8m1t5"]
 
 [node name="UiForTimeAndScore" type="Control"]
 layout_mode = 3
