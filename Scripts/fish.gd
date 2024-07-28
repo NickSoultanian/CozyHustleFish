@@ -14,5 +14,6 @@ func fish_movement(delta):
 		if collision_info.get_collider().get("isHook") == true:
 			#queue_free()
 			# Stuff that happens once fish hits hook AKA start combo game here
+			FishGlobal.emit_fish_caught()
 			print("Fish hit hook")
 		velo = -velo

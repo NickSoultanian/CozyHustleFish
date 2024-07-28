@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwjfqtys6npre"]
+
+[ext_resource type="Texture2D" uid="uid://by37nwypfdc3j" path="res://Art Assets/Finished Art/timer/Timer_bg.png" id="1_2bsbw"]
+[ext_resource type="FontFile" uid="uid://d2brvb388g613" path="res://Art Assets/Fonts/din-condensed/DIN-Bold.ttf" id="2_2d0x8"]
+[ext_resource type="Script" path="res://Scripts/timer.gd" id="3_y0fh6"]
+[ext_resource type="Script" path="res://Scripts/score.gd" id="4_8m1t5"]
+
+[node name="UiForTimeAndScore" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="timer" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -137.0
+offset_top = 22.0
+offset_right = -59.0
+offset_bottom = 71.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.972549, 0.831373, 0.380392, 1)
+theme_override_fonts/font = ExtResource("2_2d0x8")
+theme_override_font_sizes/font_size = 40
+text = "0:00"
+script = ExtResource("3_y0fh6")
+
+[node name="TimerBg" type="Sprite2D" parent="CanvasLayer/timer"]
+z_index = -1
+position = Vector2(45, 27)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_2bsbw")
+
+[node name="score" type="Label" parent="CanvasLayer"]
+offset_left = 200.0
+offset_top = 20.0
+offset_right = 250.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0.972549, 0.831373, 0.380392, 1)
+theme_override_fonts/font = ExtResource("2_2d0x8")
+theme_override_font_sizes/font_size = 40
+text = "0"
+script = ExtResource("4_8m1t5")
+
+[node name="TimerBg" type="Sprite2D" parent="CanvasLayer/score"]
+z_index = -1
+position = Vector2(-20, 27)
+scale = Vector2(0.25, 0.1)
+texture = ExtResource("1_2bsbw")
+
+[node name="scoreTitle" type="Label" parent="CanvasLayer"]
+offset_left = 40.0
+offset_top = 20.0
+offset_right = 177.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0.972549, 0.831373, 0.380392, 1)
+theme_override_fonts/font = ExtResource("2_2d0x8")
+theme_override_font_sizes/font_size = 40
+text = "SCORE:"
