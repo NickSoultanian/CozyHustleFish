@@ -28,4 +28,15 @@ func player_movement(delta):
 		velocity.x = 0 
 		velocity.y = 0 
 		
-	move_and_collide(velocity * delta)
+	var collision_info = move_and_collide(velocity * delta, false, 0.08, true)
+	
+	if collision_info:
+		print(collision_info.get_collider().get("isFish"))
+		if collision_info.get_collider().get("isFish") == true:
+			#queue_free()
+			# Stuff that happens once fish hits hook AKA start combo game here
+			print("Fish hit hook")
+			#collision_info.get_collider().queue_free()
+			set_process_input(false)
+			await $Camera2D/ComboWindow.startCombo(["up", "down", "left", "right", "up", "down", "left", "right"])
+			set_process_input(true)
