@@ -11,7 +11,7 @@ var starting_position = Vector2()
 
 func _ready():
 	starting_position = position
-	print("from hook", starting_position.y)
+	# print("from hook", starting_position.y)
 	
 func _physics_process(delta):
 	player_movement(delta)
