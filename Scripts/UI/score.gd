@@ -9,7 +9,7 @@ func _process(delta):
 
 func _ready():
 	FishGlobal.connect("fish_caught", Callable(self, "game_event"))
-
+	FishGlobal.connect("boot_caught", Callable(self, "boot_hit"))
 func increase_score(amount):
 	score += amount
 	# print("Score: ", score)
@@ -18,7 +18,8 @@ func increase_score(amount):
 func increase_money(amount):
 	money += amount
 	# print("Money: ", money)
-
+func boot_hit():
+	increase_score(-10)
 func game_event():
 	increase_score(10)
 	increase_money(100)

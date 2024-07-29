@@ -1,30 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://calscmn6geru0"]
+[gd_scene load_steps=4 format=3 uid="uid://calscmn6geru0"]
 
 [ext_resource type="Script" path="res://Scripts/boot.gd" id="1_fbssj"]
 [ext_resource type="Texture2D" uid="uid://bgrpq14obd8pa" path="res://Art Assets/Finished Art/boot/Boot.png" id="2_o6mv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y78ml"]
-size = Vector2(243.75, 136.75)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixap7"]
-size = Vector2(277.125, 175.375)
+size = Vector2(315, 136.75)
 
 [node name="boot" type="CharacterBody2D"]
 script = ExtResource("1_fbssj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(-74, 33)
+position = Vector2(-71.5, 33)
 shape = SubResource("RectangleShape2D_y78ml")
 
 [node name="Boot" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_o6mv2")
-
-[node name="boot" type="Area2D" parent="."]
-position = Vector2(23, 1275)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boot"]
-z_index = 1
-position = Vector2(-98, -1243)
-shape = SubResource("RectangleShape2D_ixap7")
