@@ -29,6 +29,7 @@ func _process(delta):
 	pass
 	
 func startCombo(inputArray):
+	get_tree().paused = true
 	timerEnded = false
 	Clock.set_visible(true)
 	print("started")
@@ -67,6 +68,7 @@ func endCombo(winBool):
 	Clock.endClock()
 	Clock.set_visible(false)
 	arrowDisplay.destroyArrows()
+	get_tree().paused = false
 
 func _input(event):
 	if isArrowInput(event) && inputAllowed:
