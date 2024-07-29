@@ -58,7 +58,7 @@ func check_collision(delta):
 			$Camera2D/UiForTimeAndScore.game_event(80)
 			# Stuff that happens once fish hits hook AKA start combo game here
 			print("Fish hit hook")
-			#collision_info.get_collider().queue_free()
+			collision_info.get_collider().queue_free()
 
 		
 			# we need to find out if the this ddr was succesfull or not. Ask dunstan.
@@ -71,7 +71,7 @@ func check_collision(delta):
 		elif collision_info.get_collider().get("isBoot") == true:
 			# Stuff that happens once fish hits hook AKA start combo game here
 			print("Boot hit hook")
-			#collision_info.get_collider().queue_free()
+			collision_info.get_collider().queue_free()
 			# we need to find out if the this ddr was succesfull or not. Ask dunstan.
 			can_move = false
 			isComboRight = await $Camera2D/ComboWindow.startCombo(["up", "down", "left", "right", "up", "down", "left", "right"])

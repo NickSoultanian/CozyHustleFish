@@ -1,17 +1,18 @@
-[gd_scene load_steps=15 format=3 uid="uid://cq4qckqpgonbt"]
+[gd_scene load_steps=16 format=3 uid="uid://cq4qckqpgonbt"]
 
 [ext_resource type="Texture2D" uid="uid://d0ab3i7glo2tr" path="res://Art Assets/Finished Art/background/bg-daytime.png" id="1_14yf6"]
 [ext_resource type="Script" path="res://Scripts/gameManager.gd" id="1_x7opw"]
 [ext_resource type="PackedScene" uid="uid://c4x421uqlucuk" path="res://Scenes/player.tscn" id="2_5d77e"]
 [ext_resource type="PackedScene" uid="uid://bcqsrvi23s6te" path="res://Scenes/combowindow.tscn" id="3_m6vby"]
 [ext_resource type="PackedScene" uid="uid://bcfu27cslcm3x" path="res://Scenes/hook.tscn" id="3_vc8wl"]
-[ext_resource type="PackedScene" uid="uid://cpbuolcuxxv7g" path="res://Scenes/fish.tscn" id="4_jepng"]
+[ext_resource type="PackedScene" uid="uid://cpbuolcuxxv7g" path="res://Scenes/HookableObjects (Fish)/fishOne.tscn" id="4_jepng"]
 [ext_resource type="PackedScene" uid="uid://cwjfqtys6npre" path="res://Scenes/UI/UI_for_time_and_Score.tscn" id="6_l840t"]
-[ext_resource type="PackedScene" uid="uid://calscmn6geru0" path="res://Scenes/boot.tscn" id="7_3pkff"]
-[ext_resource type="PackedScene" uid="uid://besj2pcam101o" path="res://Scenes/shark.tscn" id="9_537jm"]
-[ext_resource type="PackedScene" uid="uid://c65dqfuccbahl" path="res://Scenes/loaffish.tscn" id="10_m8a2h"]
-[ext_resource type="PackedScene" uid="uid://cloipdvxl62uf" path="res://Scenes/ratfish.tscn" id="11_ldd8n"]
-[ext_resource type="PackedScene" uid="uid://ci0kuihdp45bs" path="res://Scenes/sillyguy.tscn" id="12_dd3r8"]
+[ext_resource type="PackedScene" uid="uid://calscmn6geru0" path="res://Scenes/HookableObjects (Fish)/boot.tscn" id="7_3pkff"]
+[ext_resource type="PackedScene" uid="uid://besj2pcam101o" path="res://Scenes/HookableObjects (Fish)/shark.tscn" id="9_537jm"]
+[ext_resource type="PackedScene" uid="uid://c65dqfuccbahl" path="res://Scenes/HookableObjects (Fish)/fishFour.tscn" id="10_m8a2h"]
+[ext_resource type="PackedScene" uid="uid://cloipdvxl62uf" path="res://Scenes/HookableObjects (Fish)/fishTwo.tscn" id="11_ldd8n"]
+[ext_resource type="PackedScene" uid="uid://ci0kuihdp45bs" path="res://Scenes/HookableObjects (Fish)/fishFive.tscn" id="12_dd3r8"]
+[ext_resource type="Script" path="res://Scripts/Fish Scripts/fish.gd" id="13_qdi16"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2r1b"]
 size = Vector2(976, 22884)
@@ -80,6 +81,7 @@ position = Vector2(-1270, 7470)
 
 [node name="sillyguy" parent="." instance=ExtResource("12_dd3r8")]
 position = Vector2(-1216, 8708)
+script = ExtResource("13_qdi16")
 
 [node name="loaffish2" parent="." instance=ExtResource("10_m8a2h")]
 position = Vector2(1253, 10407)
