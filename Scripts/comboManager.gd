@@ -41,6 +41,7 @@ func startCombo(inputArray):
 	waitForTimer()
 	await endGameWait()
 	await endCombo(winBool) # lost
+	return winBool
 	
 func endGameWait():
 	return await gameEnd
@@ -73,24 +74,17 @@ func _input(event):
 		print("reached")
 		var currArrow = currArrowArray.pop_front()
 		if (currArrowEvent.is_action_pressed(currArrow)):
-			correctKey()
+			#correct key was pressed
+			arrowDisplay.changeNextArrow()
 			if (currArrowArray.is_empty()):
 				winBool = true # won
 				gameEnd.emit()
 		else:
-			wrongKey()
-			winBool = false # lost
+			#incorrect key was pressed
+			winBool = false
 			gameEnd.emit()
 		pass
 
-func correctKey():
-	arrowDisplay.changeNextArrow()
-	print ("correct")
-	pass
-	
-func wrongKey():
-	print ("wrong")
-	pass
 
 ## Helpers
 

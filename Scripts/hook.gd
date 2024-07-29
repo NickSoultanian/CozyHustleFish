@@ -6,6 +6,7 @@ const reelbackspeed = 15000
 const isHook = true 
 var returning = false
 var can_move = true
+var isComboRight = false
 
 @onready var hook_animation = $AnimatedSprite2D
 
@@ -59,7 +60,8 @@ func check_collision(delta):
 		
 			# we need to find out if the this ddr was succesfull or not. Ask dunstan.
 			can_move = false
-			await $Camera2D/ComboWindow.startCombo(["up", "down", "left", "right", "up", "down", "left", "right"])
+			isComboRight = await $Camera2D/ComboWindow.startCombo(["up", "down", "left", "right", "up", "down", "left", "right"])
+			print(isComboRight)
 			can_move = true
 			
 		#if the hook gets hit by bad things.
@@ -73,7 +75,8 @@ func check_collision(delta):
 			#collision_info.get_collider().queue_free()
 			# we need to find out if the this ddr was succesfull or not. Ask dunstan.
 			can_move = false
-			await $Camera2D/ComboWindow.startCombo(["up", "down", "left", "right", "up", "down", "left", "right"])
+			isComboRight = await $Camera2D/ComboWindow.startCombo(["up", "down", "left", "right", "up", "down", "left", "right"])
+			print(isComboRight)
 			can_move = true
 			
 			# LOGIC TBD
