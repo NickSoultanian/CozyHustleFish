@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cq4qckqpgonbt"]
+[gd_scene load_steps=15 format=3 uid="uid://cq4qckqpgonbt"]
 
 [ext_resource type="Texture2D" uid="uid://d0ab3i7glo2tr" path="res://Art Assets/Finished Art/background/bg-daytime.png" id="1_14yf6"]
 [ext_resource type="Script" path="res://Scripts/gameManager.gd" id="1_x7opw"]
@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://cpbuolcuxxv7g" path="res://Scenes/fish.tscn" id="4_jepng"]
 [ext_resource type="PackedScene" uid="uid://cwjfqtys6npre" path="res://Scenes/UI/UI_for_time_and_Score.tscn" id="6_l840t"]
 [ext_resource type="PackedScene" uid="uid://calscmn6geru0" path="res://Scenes/boot.tscn" id="7_3pkff"]
+[ext_resource type="PackedScene" uid="uid://besj2pcam101o" path="res://Scenes/shark.tscn" id="9_537jm"]
+[ext_resource type="PackedScene" uid="uid://c65dqfuccbahl" path="res://Scenes/loaffish.tscn" id="10_m8a2h"]
+[ext_resource type="PackedScene" uid="uid://cloipdvxl62uf" path="res://Scenes/ratfish.tscn" id="11_ldd8n"]
+[ext_resource type="PackedScene" uid="uid://ci0kuihdp45bs" path="res://Scenes/sillyguy.tscn" id="12_dd3r8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2r1b"]
 size = Vector2(976, 22884)
@@ -69,3 +73,24 @@ shape = SubResource("RectangleShape2D_wkuh5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2(0, 23100)
 shape = SubResource("RectangleShape2D_wkuh5")
+
+[node name="shark" parent="." instance=ExtResource("9_537jm")]
+position = Vector2(447, 4270)
+
+[node name="loaffish" parent="." instance=ExtResource("10_m8a2h")]
+position = Vector2(-1233, 5668)
+
+[node name="ratfish" parent="." instance=ExtResource("11_ldd8n")]
+position = Vector2(-1270, 7470)
+
+[node name="sillyguy" parent="." instance=ExtResource("12_dd3r8")]
+position = Vector2(-1216, 8708)
+
+[node name="loaffish2" parent="." instance=ExtResource("10_m8a2h")]
+position = Vector2(1253, 10407)
+
+[node name="fish3" parent="." instance=ExtResource("4_jepng")]
+position = Vector2(-1055, 9580)
+
+[node name="boot2" parent="." instance=ExtResource("7_3pkff")]
+position = Vector2(876, 6319)
