@@ -51,6 +51,7 @@ func check_collision(delta):
 	if collision_info:
 		
 		if collision_info.get_collider().get("isFish") == true:
+
 			velocity = Vector2.ZERO
 			position.y -= 10
 			
@@ -58,6 +59,7 @@ func check_collision(delta):
 			# Stuff that happens once fish hits hook AKA start combo game here
 			print("Fish hit hook")
 			#collision_info.get_collider().queue_free()
+
 		
 			# we need to find out if the this ddr was succesfull or not. Ask dunstan.
 			can_move = false
@@ -67,9 +69,6 @@ func check_collision(delta):
 			
 		#if the hook gets hit by bad things.
 		elif collision_info.get_collider().get("isBoot") == true:
-			velocity = Vector2.ZERO
-			position.y -= 10
-			#queue_free()
 			# Stuff that happens once fish hits hook AKA start combo game here
 			print("Boot hit hook")
 			#collision_info.get_collider().queue_free()
@@ -84,8 +83,6 @@ func check_collision(delta):
 			
 		#if the hook gets hit by even worse things AKA shark
 		elif collision_info.get_collider().get("isShark") == true:
-			velocity = Vector2.ZERO
-			position.y -= 10
 			# Stuff that happens once fish hits hook AKA start combo game here
 			print("Shark hit hook")
 			#collision_info.get_collider().queue_free()
