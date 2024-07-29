@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://calscmn6geru0"]
 
-[ext_resource type="Script" path="res://Scripts/boot.gd" id="1_fbssj"]
+[ext_resource type="Script" path="res://Scripts/Fish Scripts/boot.gd" id="1_fbssj"]
 [ext_resource type="Texture2D" uid="uid://bgrpq14obd8pa" path="res://Art Assets/Finished Art/boot/Boot.png" id="2_o6mv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y78ml"]

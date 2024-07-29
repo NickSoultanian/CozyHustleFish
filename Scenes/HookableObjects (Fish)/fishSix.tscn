@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwsbl4na32hlg"]
+
+[ext_resource type="Script" path="res://Scripts/Fish Scripts/fishSix.gd" id="1_w8sxp"]
+[ext_resource type="Texture2D" uid="uid://bm3tkdpn3hurw" path="res://Art Assets/Finished Art/fish/surgeon.png" id="2_08l32"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y78ml"]
+size = Vector2(710, 304)
+
+[node name="fishSix" type="CharacterBody2D"]
+script = ExtResource("1_w8sxp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(17, -4)
+shape = SubResource("RectangleShape2D_y78ml")
+
+[node name="Fish" type="Sprite2D" parent="."]
+position = Vector2(57, -7)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_08l32")
