@@ -17,3 +17,9 @@ func _input(event):
 		set_process_input(false)
 		await $Hook/Camera2D/ComboWindow.startCombo(["up", "down", "left", "right", "up", "down", "left", "right"])
 		set_process_input(true)
+		
+func pause():
+	get_tree().paused = true
+
+func resume():
+	get_tree().paused = false

@@ -34,6 +34,7 @@ position = Vector2(564, 243)
 position = Vector2(0, -625)
 
 [node name="Camera2D" type="Camera2D" parent="Hook"]
+process_mode = 3
 position = Vector2(46, 1283)
 zoom = Vector2(0.5, 0.5)
 
@@ -41,12 +42,6 @@ zoom = Vector2(0.5, 0.5)
 position = Vector2(-1604, 2235)
 
 [node name="UiForTimeAndScore" parent="Hook/Camera2D" instance=ExtResource("6_l840t")]
-
-[node name="fish" parent="." instance=ExtResource("4_jepng")]
-position = Vector2(1393, 1618)
-
-[node name="fish2" parent="." instance=ExtResource("4_jepng")]
-position = Vector2(-1190, 2350)
 
 [node name="boot" parent="." instance=ExtResource("7_3pkff")]
 position = Vector2(-1158, 3200)
@@ -96,3 +91,9 @@ position = Vector2(-1055, 9580)
 
 [node name="boot2" parent="." instance=ExtResource("7_3pkff")]
 position = Vector2(876, 6319)
+
+[node name="fish" parent="." instance=ExtResource("4_jepng")]
+position = Vector2(1393, 1618)
+
+[node name="fish2" parent="." instance=ExtResource("4_jepng")]
+position = Vector2(-1190, 2350)
