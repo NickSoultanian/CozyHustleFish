@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cloipdvxl62uf"]
 
-[ext_resource type="Script" path="res://Scripts/fish.gd" id="1_fiu5i"]
+[ext_resource type="Script" path="res://Scenes/ratfish.gd" id="1_v12tf"]
 [ext_resource type="Texture2D" uid="uid://dqeqnawnphjuv" path="res://Art Assets/Finished Art/fish/nightfish_ratfish.png" id="2_okkb5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y78ml"]
@@ -8,7 +8,7 @@ size = Vector2(710, 304)
 
 [node name="ratfish" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_fiu5i")
+script = ExtResource("1_v12tf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
