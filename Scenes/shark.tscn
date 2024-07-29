@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://besj2pcam101o"]
+
+[ext_resource type="Script" path="res://shark.gd" id="1_ir222"]
+[ext_resource type="Texture2D" uid="uid://budutvu4ohsem" path="res://Art Assets/Finished Art/fish/shark.png" id="2_frxsf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_skwvg"]
+size = Vector2(1232, 460)
+
+[node name="shark" type="CharacterBody2D"]
+script = ExtResource("1_ir222")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, 81)
+shape = SubResource("RectangleShape2D_skwvg")
+
+[node name="Shark" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_frxsf")
