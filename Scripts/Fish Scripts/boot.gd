@@ -12,3 +12,4 @@ func _init():
 		["right", "down"],
 	]
 	pointValue = 0
+	animation = "boot"

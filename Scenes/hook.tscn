@@ -276,4 +276,3 @@ shape = SubResource("RectangleShape2D_ea65q")
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_if7jv")
 animation = &"boot"
-frame_progress = 0.339171

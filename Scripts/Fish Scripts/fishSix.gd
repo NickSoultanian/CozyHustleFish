@@ -12,3 +12,4 @@ func _init():
 		["left", "up", "right", "down", "left", "up", "left", "right"]
 	]
 	pointValue = 1000
+	animation = "fishSix"

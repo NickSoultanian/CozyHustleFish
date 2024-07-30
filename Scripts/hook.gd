@@ -7,6 +7,7 @@ const isHook = true
 var returning = false
 var can_move = true
 var isComboRight = false
+var catching = false
 
 @onready var hook_animation = $AnimatedSprite2D
 
@@ -21,9 +22,10 @@ func _physics_process(delta):
 		player_movement(delta)
 		
 	check_collision(delta)
-	hook_animation.play("idle")
 	# print(hook.position.y," : ", starting_position.y)
 	
+	if position.y < 480:
+		play_animation("idle")
 	
 	while returning:
 		var direction = (starting_position - position).normalized()
@@ -43,16 +45,25 @@ func player_movement(delta):
 	else: 
 		velocity.x = 0 
 		velocity.y = 0 
+		
+func play_animation(animation_name):
+	hook_animation.stop()
+	hook_animation.play(animation_name)
+	#await get_tree().create_timer(1.0).timeout
 	
 func check_collision(delta):	
 	var collision_info = move_and_collide(velocity * delta, false, 0.08, true)
 	var success = false
+	var temp =  ""
+	var currentScore
+	
 	if collision_info:
 		var currentCaught = collision_info.get_collider()
 		if currentCaught.get("isFish") == true:
 			
-			$Camera2D/UiForTimeAndScore.game_event(currentCaught.getPointValue())
+			currentScore = currentCaught.getPointValue()
 			# Stuff that happens once fish hits hook AKA start combo game here
+			temp = currentCaught.getAnimationValue()
 			currentCaught.caught()
 
 		
@@ -60,19 +71,27 @@ func check_collision(delta):
 			can_move = false
 			isComboRight = await $Camera2D/ComboWindow.startCombo(currentCaught.getRandomCombo())
 			print(isComboRight)
+			if isComboRight:
+				$Camera2D/UiForTimeAndScore.game_event(currentScore)
+				play_animation(temp)
 			can_move = true
 			
 		#if the hook gets hit by bad things.
 		elif collision_info.get_collider().get("isBoot") == true:
 
-			$Camera2D/UiForTimeAndScore.game_event(currentCaught.getPointValue())
-
+			currentScore = currentCaught.getPointValue()
+			# Stuff that happens once fish hits hook AKA start combo game here
+			temp = currentCaught.getAnimationValue()
+			
 			currentCaught.caught()
 
 		
 			can_move = false
 			isComboRight = await $Camera2D/ComboWindow.startCombo(currentCaught.getRandomCombo())
 			print(isComboRight)
+			if isComboRight:
+				$Camera2D/UiForTimeAndScore.game_event(currentScore)
+				play_animation(temp)
 			can_move = true
 			
 		#if the hook gets hit by even worse things AKA shark

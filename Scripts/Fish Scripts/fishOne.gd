@@ -1,7 +1,6 @@
 extends "res://Scripts/Fish Scripts/fish.gd"
 
 const isFish = true
-@onready var player_animation = $AnimatedSprite2D
 
 #constructor
 func _init():
@@ -13,3 +12,4 @@ func _init():
 		["right", "right", "down"],
 	]
 	pointValue = 80
+	animation = "fishOne"
