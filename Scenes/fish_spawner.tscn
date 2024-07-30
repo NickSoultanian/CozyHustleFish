@@ -21,10 +21,6 @@ position = Vector2(3250, 957)
 script = ExtResource("1_5fghb")
 possibleSpawns = Array[PackedScene]([ExtResource("2_2ou7c"), ExtResource("3_fe64c"), ExtResource("3_klftk")])
 
-[node name="Level1Spawner2" type="Marker2D" parent="StaticBody2D"]
-position = Vector2(3247, 1794)
-script = ExtResource("1_5fghb")
-
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]

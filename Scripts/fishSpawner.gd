@@ -8,7 +8,7 @@ var rng = RandomNumberGenerator.new()
 var MIN_SPAWN_TIME = 8.0
 var MAX_SPAWN_TIME = 3.0
 var passedTime = 0;
-var currSpawnTime
+var currSpawnTime = rng.randf_range(MIN_SPAWN_TIME, MAX_SPAWN_TIME)
 
 @export var possibleSpawns: Array[PackedScene]
 @export var isLeftSide: bool
@@ -16,7 +16,7 @@ var currSpawnTime
 func _process(delta):
 
 	if (passedTime > currSpawnTime):
-		spawn_scene = rng.randi_range(0, 2)
+		spawn_scene = possibleSpawns[rng.randi_range(0, 2)]
 		spawn(spawn_scene)
 		passedTime = 0
 		currSpawnTime = rng.randf_range(MIN_SPAWN_TIME, MAX_SPAWN_TIME)

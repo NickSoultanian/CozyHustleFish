@@ -1,6 +1,7 @@
 extends "res://Scripts/Fish Scripts/fish.gd"
 
 const isFish = true
+@onready var player_animation = $AnimatedSprite2D
 
 #constructor
 func _init():

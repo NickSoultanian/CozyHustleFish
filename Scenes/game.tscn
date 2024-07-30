@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cq4qckqpgonbt"]
+[gd_scene load_steps=18 format=3 uid="uid://cq4qckqpgonbt"]
 
 [ext_resource type="Texture2D" uid="uid://d0ab3i7glo2tr" path="res://Art Assets/Finished Art/background/bg-daytime.png" id="1_14yf6"]
 [ext_resource type="Script" path="res://Scripts/gameManager.gd" id="1_x7opw"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bcfu27cslcm3x" path="res://Scenes/hook.tscn" id="3_vc8wl"]
 [ext_resource type="PackedScene" uid="uid://jflapvqh3tq5" path="res://Scenes/fish_spawner.tscn" id="4_cu2is"]
 [ext_resource type="PackedScene" uid="uid://cpbuolcuxxv7g" path="res://Scenes/HookableObjects (Fish)/fishOne.tscn" id="4_jepng"]
+[ext_resource type="Script" path="res://Scripts/UI/camera.gd" id="5_75cdm"]
 [ext_resource type="PackedScene" uid="uid://cwjfqtys6npre" path="res://Scenes/UI/UI_for_time_and_Score.tscn" id="6_l840t"]
 [ext_resource type="PackedScene" uid="uid://calscmn6geru0" path="res://Scenes/HookableObjects (Fish)/boot.tscn" id="7_3pkff"]
 [ext_resource type="PackedScene" uid="uid://besj2pcam101o" path="res://Scenes/HookableObjects (Fish)/shark.tscn" id="9_537jm"]
@@ -27,15 +28,16 @@ position = Vector2(-35, 10532)
 texture = ExtResource("1_14yf6")
 
 [node name="Player" parent="." instance=ExtResource("2_5d77e")]
-position = Vector2(564, 243)
+position = Vector2(144, 298)
 
 [node name="Hook" parent="." instance=ExtResource("3_vc8wl")]
-position = Vector2(0, -625)
+position = Vector2(0, 475)
 
 [node name="Camera2D" type="Camera2D" parent="Hook"]
 process_mode = 3
-position = Vector2(46, 1283)
-zoom = Vector2(0.25, 0.25)
+position = Vector2(0, -1237)
+zoom = Vector2(0.5, 0.5)
+script = ExtResource("5_75cdm")
 
 [node name="ComboWindow" parent="Hook/Camera2D" instance=ExtResource("3_m6vby")]
 position = Vector2(-1604, 2235)
