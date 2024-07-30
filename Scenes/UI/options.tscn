@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dx1vxw6jq5s2w"]
+[gd_scene load_steps=6 format=3 uid="uid://dx1vxw6jq5s2w"]
 
 [ext_resource type="Script" path="res://Scripts/UI/options.gd" id="1_1be0a"]
 [ext_resource type="PackedScene" uid="uid://begr35bad812j" path="res://Scenes/UI/option buttons/Volume.tscn" id="1_k4odb"]
 [ext_resource type="Texture2D" uid="uid://dqncxfm1ginik" path="res://Art Assets/Finished Art/main menu/menu bucket background.png" id="2_fx6ne"]
 [ext_resource type="PackedScene" uid="uid://b0hom2sbnav7i" path="res://Scenes/UI/option buttons/Resolution.tscn" id="2_s7tuu"]
+[ext_resource type="Texture2D" uid="uid://dgdrr13oo3xxg" path="res://Art Assets/Finished Art/main menu/MainmenuBG.png" id="4_pnu8q"]
 
 [node name="options" type="Control"]
 layout_mode = 3
@@ -58,6 +59,11 @@ text = "Back"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_pnu8q")
+
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 8
@@ -66,25 +72,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 31.0
-offset_top = 38.0
+offset_top = 64.0
 offset_right = 71.0
-offset_bottom = 78.0
+offset_bottom = 104.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MenuBucketBackground" type="Sprite2D" parent="CanvasLayer/Control"]
-position = Vector2(-337, -355)
+position = Vector2(-330, -390)
 scale = Vector2(0.52, 0.512)
 texture = ExtResource("2_fx6ne")
 centered = false
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-z_index = -1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.113725, 1, 0.972549, 1)
 
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]

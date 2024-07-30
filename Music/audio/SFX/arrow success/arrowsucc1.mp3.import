@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bka876fja4vr2"
+path="res://.godot/imported/arrowsucc1.mp3-81fb6df4a5c0e84f866636187739be9c.mp3str"
+
+[deps]
+
+source_file="res://Music/audio/SFX/arrow success/arrowsucc1.mp3"
+dest_files=["res://.godot/imported/arrowsucc1.mp3-81fb6df4a5c0e84f866636187739be9c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

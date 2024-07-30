@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckdgrnubw3yr8"]
+[gd_scene load_steps=11 format=3 uid="uid://ckdgrnubw3yr8"]
 
 [ext_resource type="Script" path="res://Scripts/UI/menu.gd" id="1_q8ceu"]
+[ext_resource type="Texture2D" uid="uid://dgdrr13oo3xxg" path="res://Art Assets/Finished Art/main menu/MainmenuBG.png" id="2_aqo2i"]
 [ext_resource type="Texture2D" uid="uid://1vmj0obal35a" path="res://Art Assets/Finished Art/main menu/new game button.png" id="2_x2dm6"]
 [ext_resource type="Texture2D" uid="uid://4owvjsub8by8" path="res://Art Assets/Finished Art/main menu/options button.png" id="3_5tod8"]
 [ext_resource type="Texture2D" uid="uid://dqncxfm1ginik" path="res://Art Assets/Finished Art/main menu/menu bucket background.png" id="3_cfy3q"]
@@ -34,14 +35,10 @@ script = ExtResource("1_q8ceu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-z_index = -1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.113725, 1, 0.972549, 1)
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_aqo2i")
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -58,7 +55,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MenuBucketBackground" type="Sprite2D" parent="CanvasLayer/Control"]
-position = Vector2(-331, -389)
+position = Vector2(-330, -390)
 scale = Vector2(0.52, 0.512)
 texture = ExtResource("3_cfy3q")
 centered = false
