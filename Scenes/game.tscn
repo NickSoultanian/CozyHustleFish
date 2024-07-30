@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cq4qckqpgonbt"]
+[gd_scene load_steps=23 format=3 uid="uid://cq4qckqpgonbt"]
 
-[ext_resource type="Texture2D" uid="uid://d0ab3i7glo2tr" path="res://Art Assets/Finished Art/background/bg-daytime.png" id="1_14yf6"]
 [ext_resource type="Script" path="res://Scripts/gameManager.gd" id="1_x7opw"]
 [ext_resource type="PackedScene" uid="uid://c4x421uqlucuk" path="res://Scenes/player.tscn" id="2_5d77e"]
+[ext_resource type="Texture2D" uid="uid://o5o0v5apcv77" path="res://Art Assets/Finished Art/background/bg-daytime THIS TIME FOR REAL.png" id="2_rr6ek"]
 [ext_resource type="PackedScene" uid="uid://bcqsrvi23s6te" path="res://Scenes/combowindow.tscn" id="3_m6vby"]
 [ext_resource type="PackedScene" uid="uid://bcfu27cslcm3x" path="res://Scenes/hook.tscn" id="3_vc8wl"]
 [ext_resource type="PackedScene" uid="uid://jflapvqh3tq5" path="res://Scenes/fish_spawner.tscn" id="4_cu2is"]
@@ -13,17 +13,66 @@
 [ext_resource type="PackedScene" uid="uid://besj2pcam101o" path="res://Scenes/HookableObjects (Fish)/shark.tscn" id="9_537jm"]
 [ext_resource type="PackedScene" uid="uid://c65dqfuccbahl" path="res://Scenes/HookableObjects (Fish)/fishFour.tscn" id="10_m8a2h"]
 [ext_resource type="PackedScene" uid="uid://cloipdvxl62uf" path="res://Scenes/HookableObjects (Fish)/fishTwo.tscn" id="11_ldd8n"]
+[ext_resource type="Texture2D" uid="uid://b7efk633lyxhq" path="res://Art Assets/Finished Art/background/foreground right/fgR1.png" id="15_i03bx"]
 [ext_resource type="PackedScene" uid="uid://bjdmkb8nf75gi" path="res://Scenes/HookableObjects (Fish)/squid.tscn" id="15_n46ex"]
+[ext_resource type="Texture2D" uid="uid://cusmih6elqvwa" path="res://Art Assets/Finished Art/background/foreground left/fgL1.png" id="16_w22v8"]
+[ext_resource type="Texture2D" uid="uid://dn0waqlodirkc" path="res://Art Assets/Finished Art/background/foreground left/fgL2.png" id="17_g5f80"]
+[ext_resource type="Texture2D" uid="uid://ccwpwsgilcnaj" path="res://Art Assets/Finished Art/background/foreground left/fgL3.png" id="18_t4jap"]
+[ext_resource type="Texture2D" uid="uid://dtyfyymfdfymf" path="res://Art Assets/Finished Art/background/foreground left/fgL4.png" id="19_sh6n5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wkuh5"]
 size = Vector2(5522, 107)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lf56k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_i03bx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_w22v8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_g5f80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_t4jap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_sh6n5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oy4k6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_w22v8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_g5f80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_t4jap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_sh6n5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_x7opw")
 
 [node name="Bg-daytime" type="Sprite2D" parent="."]
-position = Vector2(-35, 10532)
-texture = ExtResource("1_14yf6")
+position = Vector2(0, 10532)
+scale = Vector2(4, 4)
+texture = ExtResource("2_rr6ek")
 
 [node name="Player" parent="." instance=ExtResource("2_5d77e")]
 position = Vector2(144, 298)
@@ -35,7 +84,7 @@ collision_layer = 2
 [node name="Camera2D" type="Camera2D" parent="Hook"]
 process_mode = 3
 position = Vector2(0, -1237)
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.25, 0.25)
 script = ExtResource("5_75cdm")
 
 [node name="ComboWindow" parent="Hook/Camera2D" instance=ExtResource("3_m6vby")]
@@ -83,3 +132,15 @@ position = Vector2(-1055, 9580)
 
 [node name="squid" parent="." instance=ExtResource("15_n46ex")]
 position = Vector2(-1103, 1088)
+
+[node name="rightsideWall" type="AnimatedSprite2D" parent="."]
+z_index = 2
+position = Vector2(1750, 10700)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_lf56k")
+
+[node name="leftsideWall" type="AnimatedSprite2D" parent="."]
+z_index = 2
+position = Vector2(-1750, 10700)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_oy4k6")
