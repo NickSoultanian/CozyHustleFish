@@ -1,13 +1,78 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4x421uqlucuk"]
+[gd_scene load_steps=16 format=3 uid="uid://c4x421uqlucuk"]
 
-[ext_resource type="Texture2D" uid="uid://bgtajthc1e85a" path="res://Art Assets/WIP/bean background and assets-04.png" id="1_eiew8"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_cctab"]
+[ext_resource type="Texture2D" uid="uid://oxdl0a80g4q6" path="res://Art Assets/Finished Art/dea sprites/dea_idle1.png" id="1_xog8n"]
+[ext_resource type="Texture2D" uid="uid://ba6kepslxtosh" path="res://Art Assets/Finished Art/dea sprites/dea_cast1.png" id="2_0bb2q"]
+[ext_resource type="Texture2D" uid="uid://716mv2vy11kn" path="res://Art Assets/Finished Art/dea sprites/dea_idle2.png" id="2_3v6nw"]
+[ext_resource type="Texture2D" uid="uid://dvcueq5aux0cb" path="res://Art Assets/Finished Art/dea sprites/dea_idle3.png" id="3_ookjd"]
+[ext_resource type="Texture2D" uid="uid://cvn4yglksv2ek" path="res://Art Assets/Finished Art/dea sprites/dea_cast2.png" id="3_ryf5f"]
+[ext_resource type="Texture2D" uid="uid://bq5ts6b6fg2uk" path="res://Art Assets/Finished Art/dea sprites/dea_idle4.png" id="4_3lsqt"]
+[ext_resource type="Texture2D" uid="uid://c3vkjcuedeth" path="res://Art Assets/Finished Art/dea sprites/dea_cast3.png" id="4_w1yhj"]
+[ext_resource type="Texture2D" uid="uid://5fevvjk8n2ca" path="res://Art Assets/Finished Art/dea sprites/dea_idle5.png" id="5_dbhi5"]
+[ext_resource type="Texture2D" uid="uid://cjsgw4pl0hwcb" path="res://Art Assets/Finished Art/dea sprites/dea_cast4 ATTACH USABLE HOOK.png" id="5_m37k5"]
+[ext_resource type="Texture2D" uid="uid://dt1b5t8acaqt4" path="res://Art Assets/Finished Art/dea sprites/dea_idle6.png" id="6_nrx31"]
+[ext_resource type="Texture2D" uid="uid://bbc0yytoqk1pt" path="res://Art Assets/Finished Art/dea sprites/dea_idle7.png" id="7_o2ohw"]
+[ext_resource type="Texture2D" uid="uid://cmjnorso3y7i" path="res://Art Assets/Finished Art/dea sprites/dea_idle8.png" id="8_swn06"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kq6ne"]
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_poffa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0bb2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ryf5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_w1yhj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m37k5")
+}],
+"loop": true,
+"name": &"cast",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xog8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3v6nw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ookjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3lsqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dbhi5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nrx31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_o2ohw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_swn06")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_eiew8")
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_cctab")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kq6ne")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_poffa")
+animation = &"idle"
+frame_progress = 0.665708
