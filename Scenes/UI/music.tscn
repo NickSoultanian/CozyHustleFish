@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://blw66x1lm841y"]
+
+[ext_resource type="AudioStream" uid="uid://4tx0l7k2o5bj" path="res://Music/audio/FISH MAIN MENU.wav" id="1_fxkrc"]
+
+[node name="Music" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_fxkrc")
+autoplay = true
