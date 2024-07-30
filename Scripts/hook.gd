@@ -24,7 +24,7 @@ func _physics_process(delta):
 	check_collision(delta)
 	# print(hook.position.y," : ", starting_position.y)
 	
-	if position.y < 500:
+	if position.y < 480:
 		play_animation("idle")
 	
 	while returning:
@@ -74,13 +74,14 @@ func check_collision(delta):
 			if isComboRight:
 				$Camera2D/UiForTimeAndScore.game_event(currentScore)
 				play_animation(temp)
-				catching = true
 			can_move = true
 			
 		#if the hook gets hit by bad things.
 		elif collision_info.get_collider().get("isBoot") == true:
 
-			$Camera2D/UiForTimeAndScore.game_event(currentCaught.getPointValue())
+			currentScore = currentCaught.getPointValue()
+			# Stuff that happens once fish hits hook AKA start combo game here
+			temp = currentCaught.getAnimationValue()
 			
 			currentCaught.caught()
 
@@ -88,6 +89,9 @@ func check_collision(delta):
 			can_move = false
 			isComboRight = await $Camera2D/ComboWindow.startCombo(currentCaught.getRandomCombo())
 			print(isComboRight)
+			if isComboRight:
+				$Camera2D/UiForTimeAndScore.game_event(currentScore)
+				play_animation(temp)
 			can_move = true
 			
 		#if the hook gets hit by even worse things AKA shark
