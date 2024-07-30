@@ -15,6 +15,6 @@ z_index = 1
 position = Vector2(-71.5, 33)
 shape = SubResource("RectangleShape2D_y78ml")
 
-[node name="Boot" type="Sprite2D" parent="."]
+[node name="Fish" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_o6mv2")
