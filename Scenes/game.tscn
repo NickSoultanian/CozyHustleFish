@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cq4qckqpgonbt"]
+[gd_scene load_steps=19 format=3 uid="uid://cq4qckqpgonbt"]
 
 [ext_resource type="Texture2D" uid="uid://d0ab3i7glo2tr" path="res://Art Assets/Finished Art/background/bg-daytime.png" id="1_14yf6"]
 [ext_resource type="Script" path="res://Scripts/gameManager.gd" id="1_x7opw"]
@@ -8,12 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://cpbuolcuxxv7g" path="res://Scenes/HookableObjects (Fish)/fishOne.tscn" id="4_jepng"]
 [ext_resource type="PackedScene" uid="uid://cwjfqtys6npre" path="res://Scenes/UI/UI_for_time_and_Score.tscn" id="6_l840t"]
 [ext_resource type="PackedScene" uid="uid://calscmn6geru0" path="res://Scenes/HookableObjects (Fish)/boot.tscn" id="7_3pkff"]
+[ext_resource type="PackedScene" uid="uid://07rhfrxsw0ds" path="res://Scenes/inkblot.tscn" id="7_mdra0"]
 [ext_resource type="PackedScene" uid="uid://besj2pcam101o" path="res://Scenes/HookableObjects (Fish)/shark.tscn" id="9_537jm"]
 [ext_resource type="PackedScene" uid="uid://c65dqfuccbahl" path="res://Scenes/HookableObjects (Fish)/fishFour.tscn" id="10_m8a2h"]
 [ext_resource type="PackedScene" uid="uid://cloipdvxl62uf" path="res://Scenes/HookableObjects (Fish)/fishTwo.tscn" id="11_ldd8n"]
 [ext_resource type="PackedScene" uid="uid://ci0kuihdp45bs" path="res://Scenes/HookableObjects (Fish)/fishFive.tscn" id="12_dd3r8"]
 [ext_resource type="PackedScene" uid="uid://drcbvj807ntyw" path="res://Scenes/HookableObjects (Fish)/fishThree.tscn" id="13_hj5jo"]
 [ext_resource type="PackedScene" uid="uid://bwsbl4na32hlg" path="res://Scenes/HookableObjects (Fish)/fishSix.tscn" id="14_on7vr"]
+[ext_resource type="PackedScene" uid="uid://bjdmkb8nf75gi" path="res://Scenes/HookableObjects (Fish)/squid.tscn" id="15_n46ex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2r1b"]
 size = Vector2(976, 22884)
@@ -43,6 +45,10 @@ zoom = Vector2(0.5, 0.5)
 position = Vector2(-1604, 2235)
 
 [node name="UiForTimeAndScore" parent="Hook/Camera2D" instance=ExtResource("6_l840t")]
+
+[node name="Inkblot" parent="Hook/Camera2D" instance=ExtResource("7_mdra0")]
+offset_right = 0.0
+offset_bottom = 0.0
 
 [node name="boot" parent="." instance=ExtResource("7_3pkff")]
 position = Vector2(-1158, 3200)
@@ -112,3 +118,6 @@ position = Vector2(414, 2769)
 
 [node name="fishSix" parent="." instance=ExtResource("14_on7vr")]
 position = Vector2(33, 3146)
+
+[node name="squid" parent="." instance=ExtResource("15_n46ex")]
+position = Vector2(-1103, 1088)
