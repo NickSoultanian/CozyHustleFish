@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx1vxw6jq5s2w"]
+
+[ext_resource type="Script" path="res://Scripts/UI/options.gd" id="1_1be0a"]
+[ext_resource type="PackedScene" uid="uid://begr35bad812j" path="res://Scenes/UI/option buttons/Volume.tscn" id="1_k4odb"]
+[ext_resource type="Texture2D" uid="uid://dqncxfm1ginik" path="res://Art Assets/Finished Art/main menu/menu bucket background.png" id="2_fx6ne"]
+[ext_resource type="PackedScene" uid="uid://b0hom2sbnav7i" path="res://Scenes/UI/option buttons/Resolution.tscn" id="2_s7tuu"]
+
+[node name="options" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1be0a")
+
+[node name="Volume" parent="." instance=ExtResource("1_k4odb")]
+light_mask = 3
+visibility_layer = 31
+z_index = 1
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -51.0
+offset_top = -75.0
+offset_right = 199.0
+offset_bottom = -55.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Resolution" parent="." instance=ExtResource("2_s7tuu")]
+layout_mode = 1
+offset_left = -34.0
+offset_top = 43.0
+offset_right = 166.0
+offset_bottom = 63.0
+
+[node name="back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 185.0
+offset_right = 61.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 31.0
+offset_top = 38.0
+offset_right = 71.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBucketBackground" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(-337, -355)
+scale = Vector2(0.52, 0.512)
+texture = ExtResource("2_fx6ne")
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.113725, 1, 0.972549, 1)
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
