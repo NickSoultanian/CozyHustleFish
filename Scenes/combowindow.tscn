@@ -87,6 +87,7 @@ text_overrun_behavior = 0
 
 [node name="RedX" type="Sprite2D" parent="CanvasLayer/ColorRect/ArrowDisplay"]
 visible = false
+self_modulate = Color(1, 1, 1, 0.815686)
 position = Vector2(583, 340)
 scale = Vector2(0.3025, 0.3025)
 texture = ExtResource("6_00pg2")

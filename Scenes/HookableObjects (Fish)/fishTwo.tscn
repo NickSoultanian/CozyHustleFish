@@ -8,6 +8,7 @@ size = Vector2(710, 304)
 
 [node name="fishTwo" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
+collision_mask = 2
 script = ExtResource("1_l1lmn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

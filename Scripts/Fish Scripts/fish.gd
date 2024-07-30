@@ -13,8 +13,7 @@ func _physics_process(delta):
 func movement(delta):
 	var collision_info = move_and_collide(velo * delta)
 	if collision_info:
-		velo = -velo
-		$Fish.flip_h = !$Fish.flip_h
+		changeDirection()
 		
 func caught():
 	queue_free()
@@ -25,7 +24,9 @@ func getRandomCombo():
 func getPointValue():
 	return pointValue
 
+func changeDirection():
+	velo = -velo
+	$Fish.flip_h = !$Fish.flip_h
 #constructor
 func _init():
-	print("Constructed base fish with no override")
 	velo = Vector2(-100,0)
