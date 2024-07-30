@@ -22,6 +22,7 @@ func add_resoloutions():
 		add_item(r)
 	remove_item(0)
 func _on_item_selected(index):
+	Music.play_buttonclick()
 	var id = get_item_text(index)
 	get_window().set_size(Resolutions[id])
 	center_window()
@@ -34,7 +35,9 @@ func center_window():
 
 func _on_check_box_toggled(toggled_on):
 	if toggled_on:
+		Music.play_buttonclick()
 		get_window().set_mode(Window.MODE_FULLSCREEN)
 	else:
+		Music.play_buttonclick()
 		get_window().set_mode(Window.MODE_WINDOWED)
 		center_window()

@@ -83,4 +83,3 @@ position = Vector2(-1055, 9580)
 
 [node name="squid" parent="." instance=ExtResource("15_n46ex")]
 position = Vector2(-1103, 1088)
-collision_mask = 2

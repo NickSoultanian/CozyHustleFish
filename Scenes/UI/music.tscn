@@ -1,19 +1,92 @@
-[gd_scene load_steps=5 format=3 uid="uid://blw66x1lm841y"]
+[gd_scene load_steps=19 format=3 uid="uid://blw66x1lm841y"]
 
 [ext_resource type="AudioStream" uid="uid://4tx0l7k2o5bj" path="res://Music/audio/FISH MAIN MENU.wav" id="1_fxkrc"]
 [ext_resource type="AudioStream" uid="uid://b4lhsuafrnq4x" path="res://Music/audio/SFX/buttonclick.mp3" id="2_5lrd7"]
 [ext_resource type="Script" path="res://Scripts/UI/music.gd" id="2_osw14"]
 [ext_resource type="AudioStream" uid="uid://bt5qv6ks04u5i" path="res://Music/audio/SFX/combosuccess.mp3" id="3_f0ahe"]
+[ext_resource type="AudioStream" uid="uid://m07fsyieb8eb" path="res://Music/audio/SFX/fishcaught.mp3" id="5_d7swp"]
+[ext_resource type="AudioStream" uid="uid://4buaa0gy71pm" path="res://Music/audio/SFX/hookcastandsplash.mp3" id="6_gfina"]
+[ext_resource type="AudioStream" uid="uid://b3wlygoxrhjfe" path="res://Music/audio/SFX/REELING.mp3" id="7_ixlj2"]
+[ext_resource type="AudioStream" uid="uid://cm58qbpb2om6f" path="res://Music/audio/SFX/sharkcaughtbite.mp3" id="8_8p4kk"]
+[ext_resource type="AudioStream" uid="uid://6ptxp41108ot" path="res://Music/audio/SFX/squidinked.mp3" id="9_agydj"]
+[ext_resource type="AudioStream" uid="uid://dsy4nical4wjh" path="res://Music/audio/SFX/wrong combo.mp3" id="10_7ym2f"]
+[ext_resource type="AudioStream" uid="uid://bka876fja4vr2" path="res://Music/audio/SFX/arrow success/arrowsucc1.mp3" id="10_eetqh"]
+[ext_resource type="AudioStream" uid="uid://nmv63656ookh" path="res://Music/audio/SFX/arrow success/arrowsucc2.mp3" id="11_4dmif"]
+[ext_resource type="AudioStream" uid="uid://by8klp88ci7mm" path="res://Music/audio/SFX/arrow success/arrowsucc3.mp3" id="12_jjlqq"]
+[ext_resource type="AudioStream" uid="uid://phefneng0hfs" path="res://Music/audio/SFX/arrow success/arrowsucc4.mp3" id="13_8ta5u"]
+[ext_resource type="AudioStream" uid="uid://mf81k74nl6q3" path="res://Music/audio/SFX/arrow success/arrowsucc5.mp3" id="14_n4d87"]
+[ext_resource type="AudioStream" uid="uid://d1f8i8bo0ijqa" path="res://Music/audio/SFX/arrow success/arrowsucc6.mp3" id="15_erp3l"]
+[ext_resource type="AudioStream" uid="uid://blgh5ngjlkb2s" path="res://Music/audio/SFX/arrow success/arrowsucc7.mp3" id="16_wfscp"]
+[ext_resource type="AudioStream" uid="uid://lo1u0mka8cfl" path="res://Music/audio/SFX/arrow success/arrowsucc8.mp3" id="17_j3fp4"]
 
 [node name="Music" type="AudioStreamPlayer"]
 process_mode = 3
 stream = ExtResource("1_fxkrc")
-pitch_scale = 1.72
 autoplay = true
 script = ExtResource("2_osw14")
 
 [node name="buttonclick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_5lrd7")
+bus = &"SoundEffects"
 
 [node name="combosuccess" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_f0ahe")
+bus = &"SoundEffects"
+
+[node name="fishcaught" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_d7swp")
+bus = &"SoundEffects"
+
+[node name="hookcastandsplash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_gfina")
+bus = &"SoundEffects"
+
+[node name="reeling" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ixlj2")
+bus = &"SoundEffects"
+
+[node name="sharkcaughtbite" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_8p4kk")
+bus = &"SoundEffects"
+
+[node name="squidinked" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_agydj")
+bus = &"SoundEffects"
+
+[node name="wrongcombo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_7ym2f")
+bus = &"SoundEffects"
+
+[node name="arrow" type="Node" parent="."]
+
+[node name="arrowsucc1" type="AudioStreamPlayer" parent="arrow"]
+stream = ExtResource("10_eetqh")
+bus = &"SoundEffects"
+
+[node name="arrowsucc2" type="AudioStreamPlayer" parent="arrow"]
+stream = ExtResource("11_4dmif")
+bus = &"SoundEffects"
+
+[node name="arrowsucc3" type="AudioStreamPlayer" parent="arrow"]
+stream = ExtResource("12_jjlqq")
+bus = &"SoundEffects"
+
+[node name="arrowsucc4" type="AudioStreamPlayer" parent="arrow"]
+stream = ExtResource("13_8ta5u")
+bus = &"SoundEffects"
+
+[node name="arrowsucc5" type="AudioStreamPlayer" parent="arrow"]
+stream = ExtResource("14_n4d87")
+bus = &"SoundEffects"
+
+[node name="arrowsucc6" type="AudioStreamPlayer" parent="arrow"]
+stream = ExtResource("15_erp3l")
+bus = &"SoundEffects"
+
+[node name="arrowsucc7" type="AudioStreamPlayer" parent="arrow"]
+stream = ExtResource("16_wfscp")
+bus = &"SoundEffects"
+
+[node name="arrowsucc8" type="AudioStreamPlayer" parent="arrow"]
+stream = ExtResource("17_j3fp4")
+bus = &"SoundEffects"
