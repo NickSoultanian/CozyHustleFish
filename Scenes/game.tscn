@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cq4qckqpgonbt"]
+[gd_scene load_steps=16 format=3 uid="uid://cq4qckqpgonbt"]
 
 [ext_resource type="Texture2D" uid="uid://d0ab3i7glo2tr" path="res://Art Assets/Finished Art/background/bg-daytime.png" id="1_14yf6"]
 [ext_resource type="Script" path="res://Scripts/gameManager.gd" id="1_x7opw"]
@@ -9,14 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://cpbuolcuxxv7g" path="res://Scenes/HookableObjects (Fish)/fishOne.tscn" id="4_jepng"]
 [ext_resource type="Script" path="res://Scripts/UI/camera.gd" id="5_75cdm"]
 [ext_resource type="PackedScene" uid="uid://dn4vqskbuvrrs" path="res://Scenes/UI/UI_for_time_and_Score.tscn" id="6_l840t"]
-[ext_resource type="PackedScene" uid="uid://calscmn6geru0" path="res://Scenes/HookableObjects (Fish)/boot.tscn" id="7_3pkff"]
 [ext_resource type="PackedScene" uid="uid://07rhfrxsw0ds" path="res://Scenes/inkblot.tscn" id="7_mdra0"]
 [ext_resource type="PackedScene" uid="uid://besj2pcam101o" path="res://Scenes/HookableObjects (Fish)/shark.tscn" id="9_537jm"]
 [ext_resource type="PackedScene" uid="uid://c65dqfuccbahl" path="res://Scenes/HookableObjects (Fish)/fishFour.tscn" id="10_m8a2h"]
 [ext_resource type="PackedScene" uid="uid://cloipdvxl62uf" path="res://Scenes/HookableObjects (Fish)/fishTwo.tscn" id="11_ldd8n"]
-[ext_resource type="PackedScene" uid="uid://ci0kuihdp45bs" path="res://Scenes/HookableObjects (Fish)/fishFive.tscn" id="12_dd3r8"]
-[ext_resource type="PackedScene" uid="uid://drcbvj807ntyw" path="res://Scenes/HookableObjects (Fish)/fishThree.tscn" id="13_hj5jo"]
-[ext_resource type="PackedScene" uid="uid://bwsbl4na32hlg" path="res://Scenes/HookableObjects (Fish)/fishSix.tscn" id="14_on7vr"]
 [ext_resource type="PackedScene" uid="uid://bjdmkb8nf75gi" path="res://Scenes/HookableObjects (Fish)/squid.tscn" id="15_n46ex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wkuh5"]
@@ -34,6 +30,8 @@ position = Vector2(144, 298)
 
 [node name="Hook" parent="." instance=ExtResource("3_vc8wl")]
 position = Vector2(0, 475)
+collision_layer = 2
+collision_mask = 5
 
 [node name="Camera2D" type="Camera2D" parent="Hook"]
 process_mode = 3
@@ -50,19 +48,20 @@ position = Vector2(-1604, 2235)
 offset_right = 0.0
 offset_bottom = 0.0
 
-[node name="boot" parent="." instance=ExtResource("7_3pkff")]
-position = Vector2(-1158, 3200)
-
 [node name="FishSpawner" parent="." instance=ExtResource("4_cu2is")]
 z_index = 1
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(2, 320)
 shape = SubResource("RectangleShape2D_wkuh5")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2(0, 23100)
@@ -82,33 +81,6 @@ position = Vector2(1253, 10407)
 
 [node name="fish3" parent="." instance=ExtResource("4_jepng")]
 position = Vector2(-1055, 9580)
-
-[node name="boot2" parent="." instance=ExtResource("7_3pkff")]
-position = Vector2(876, 6319)
-
-[node name="fish" parent="." instance=ExtResource("4_jepng")]
-position = Vector2(1574, 1556)
-
-[node name="fish2" parent="." instance=ExtResource("4_jepng")]
-position = Vector2(-1190, 2350)
-
-[node name="fishFive" parent="." instance=ExtResource("12_dd3r8")]
-position = Vector2(-1212, 8341)
-
-[node name="fishTwo" parent="." instance=ExtResource("11_ldd8n")]
-position = Vector2(1095, 1889)
-
-[node name="fishThree" parent="." instance=ExtResource("13_hj5jo")]
-position = Vector2(765, 2111)
-
-[node name="fishFour" parent="." instance=ExtResource("10_m8a2h")]
-position = Vector2(604, 2400)
-
-[node name="fishFive2" parent="." instance=ExtResource("12_dd3r8")]
-position = Vector2(414, 2769)
-
-[node name="fishSix" parent="." instance=ExtResource("14_on7vr")]
-position = Vector2(33, 3146)
 
 [node name="squid" parent="." instance=ExtResource("15_n46ex")]
 position = Vector2(-1103, 1088)
