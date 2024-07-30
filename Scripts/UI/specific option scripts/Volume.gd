@@ -33,7 +33,7 @@ func _process(delta):
 	pass
 	
 func _on_value_changed(value: float) -> void:
-	
+	Music.play_buttonclick()
 	AudioServer.set_bus_volume_db(
 			bus_index,
 			linear_to_db(value)
