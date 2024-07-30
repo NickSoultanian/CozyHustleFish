@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c4x421uqlucuk" path="res://Scenes/player.tscn" id="2_5d77e"]
 [ext_resource type="PackedScene" uid="uid://bcqsrvi23s6te" path="res://Scenes/combowindow.tscn" id="3_m6vby"]
 [ext_resource type="PackedScene" uid="uid://bcfu27cslcm3x" path="res://Scenes/hook.tscn" id="3_vc8wl"]
-[ext_resource type="PackedScene" uid="uid://jflapvqh3tq5" path="res://Scenes/fish_spawner.tscn" id="4_cu2is"]
+[ext_resource type="PackedScene" path="res://Scenes/fish_spawner.tscn" id="4_cu2is"]
 [ext_resource type="PackedScene" uid="uid://cpbuolcuxxv7g" path="res://Scenes/HookableObjects (Fish)/fishOne.tscn" id="4_jepng"]
 [ext_resource type="Script" path="res://Scripts/UI/camera.gd" id="5_75cdm"]
 [ext_resource type="PackedScene" uid="uid://dn4vqskbuvrrs" path="res://Scenes/UI/UI_for_time_and_Score.tscn" id="6_l840t"]

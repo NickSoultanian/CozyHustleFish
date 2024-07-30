@@ -8,8 +8,7 @@ func _physics_process(delta):
 	if isIdle:
 		play_animation("idle")
 
-func play_animation(animation_name):
-	
+func play_animation(animation_name):	
 	if animation_name == "cast":
 		player_animation.stop()
 		player_animation.play("cast")

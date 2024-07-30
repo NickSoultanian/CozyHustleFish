@@ -275,5 +275,4 @@ shape = SubResource("RectangleShape2D_ea65q")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_if7jv")
-animation = &"boot"
-frame_progress = 0.339171
+animation = &"idle"

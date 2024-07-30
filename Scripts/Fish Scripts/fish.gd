@@ -6,6 +6,7 @@ var velo
 var possibleCombos
 var rng = RandomNumberGenerator.new()
 var pointValue
+var animation = ""
 
 func _physics_process(delta):
 	movement(delta)
@@ -27,6 +28,10 @@ func getPointValue():
 func changeDirection():
 	velo = -velo
 	$Fish.flip_h = !$Fish.flip_h
+	
+func getAnimationValue():
+	return animation
+	
 #constructor
 func _init():
 	velo = Vector2(-100,0)

@@ -12,3 +12,4 @@ func _init():
 		["up", "right", "left", "left"],
 	]
 	pointValue = 150
+	animation = "fishTwo"
