@@ -27,13 +27,19 @@ func _physics_process(delta):
 	if position.y < 480:
 		play_animation("idle")
 	
-	while returning:
-		var direction = (starting_position - position).normalized()
-		position += direction * speed * delta
-		
-		if position.y <= starting_position.y:
-			position.y = starting_position.y
-			returning = false  # Stop moving when close to target
+	if returning:
+		#var direction = (starting_position - position).normalized()
+		#position += direction * 0.001
+		reelUp()
+			
+func reelUp():
+	# Reel fish back up, disable controls and hitbox temporarily
+	velocity.y = -speed
+	$hookBox.disabled = true
+	if position.y <= starting_position.y:
+		$hookBox.disabled = false
+		can_move = true
+		returning = false  # Stop moving when close to target
 
 func player_movement(delta): 
 	if Input.is_action_pressed("ui_down"):
@@ -74,7 +80,7 @@ func check_collision(delta):
 			if isComboRight:
 				$Camera2D/UiForTimeAndScore.game_event(currentScore)
 				play_animation(temp)
-			can_move = true
+			returning = true
 			
 		#if the hook gets hit by bad things.
 		elif collision_info.get_collider().get("isBoot") == true:
@@ -92,7 +98,7 @@ func check_collision(delta):
 			if isComboRight:
 				$Camera2D/UiForTimeAndScore.game_event(currentScore)
 				play_animation(temp)
-			can_move = true
+			returning = true
 			
 		#if the hook gets hit by even worse things AKA shark
 		elif collision_info.get_collider().get("isShark") == true:
@@ -104,7 +110,7 @@ func check_collision(delta):
 			#await $Camera2D/ComboWindow.startCombo(["up", "down", "left", "right", "up", "down", "left", "right"])
 			#can_move = true
 			
-			returning = true
+			#returning = true
 		
 		#now here's the squid code
 		elif collision_info.get_collider().get("isSquid") == true:
