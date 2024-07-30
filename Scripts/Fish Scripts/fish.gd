@@ -3,7 +3,9 @@
 extends CharacterBody2D
 
 var velo
-const isFish = true
+var possibleCombos
+var rng = RandomNumberGenerator.new()
+var pointValue
 
 func _physics_process(delta):
 	movement(delta)
@@ -13,6 +15,15 @@ func movement(delta):
 	if collision_info:
 		velo = -velo
 		$Fish.flip_h = !$Fish.flip_h
+		
+func caught():
+	queue_free()
+		
+func getRandomCombo():
+	return possibleCombos[rng.randi_range(0, 3)]
+
+func getPointValue():
+	return pointValue
 
 #constructor
 func _init():

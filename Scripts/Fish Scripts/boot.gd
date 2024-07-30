@@ -11,3 +11,10 @@ func movement(delta):
 func _init():
 	print("boot constructed override success")
 	velo = Vector2(500,0)
+	possibleCombos = [
+		["up", "down"],
+		["right", "up"],
+		["down", "up"],
+		["right", "down"],
+	]
+	pointValue = 0
