@@ -18,6 +18,9 @@ func movement(delta):
 		
 func caught():
 	queue_free()
+	
+func destroy():
+	queue_free()
 		
 func getRandomCombo():
 	return possibleCombos[rng.randi_range(0, 3)]

@@ -7,6 +7,7 @@
 size = Vector2(806, 287.375)
 
 [node name="squid" type="CharacterBody2D"]
+collision_mask = 2
 script = ExtResource("1_2v78j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

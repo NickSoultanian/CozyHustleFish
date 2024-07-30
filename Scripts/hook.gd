@@ -14,7 +14,7 @@ var catching = false
 var starting_position = Vector2()
 
 func _ready():
-	starting_position = position # Vector2(0, -425)
+	starting_position = position # Vector2(0, -625)
 	# print("from hook", starting_position.y)
 	
 func _physics_process(delta):
@@ -109,3 +109,4 @@ func check_collision(delta):
 		#now here's the squid code
 		elif collision_info.get_collider().get("isSquid") == true:
 			$Camera2D/Inkblot.sprayInk()
+			currentCaught.caught()
