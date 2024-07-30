@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://blw66x1lm841y"]
+[gd_scene load_steps=5 format=3 uid="uid://blw66x1lm841y"]
 
 [ext_resource type="AudioStream" uid="uid://4tx0l7k2o5bj" path="res://Music/audio/FISH MAIN MENU.wav" id="1_fxkrc"]
+[ext_resource type="AudioStream" uid="uid://b4lhsuafrnq4x" path="res://Music/audio/SFX/buttonclick.mp3" id="2_5lrd7"]
+[ext_resource type="Script" path="res://Scripts/UI/music.gd" id="2_osw14"]
+[ext_resource type="AudioStream" uid="uid://bt5qv6ks04u5i" path="res://Music/audio/SFX/combosuccess.mp3" id="3_f0ahe"]
 
 [node name="Music" type="AudioStreamPlayer"]
 process_mode = 3
 stream = ExtResource("1_fxkrc")
+pitch_scale = 1.72
 autoplay = true
+script = ExtResource("2_osw14")
+
+[node name="buttonclick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_5lrd7")
+
+[node name="combosuccess" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_f0ahe")
