@@ -49,37 +49,34 @@ func check_collision(delta):
 	var collision_info = move_and_collide(velocity * delta, false, 0.08, true)
 	var success = false
 	if collision_info:
-		
-		if collision_info.get_collider().get("isFish") == true:
-
-			velocity = Vector2.ZERO
-			position.y -= 10
+		var currentCaught = collision_info.get_collider()
+		if currentCaught.get("isFish") == true:
 			
-			$Camera2D/UiForTimeAndScore.game_event(80)
+			$Camera2D/UiForTimeAndScore.game_event(currentCaught.getPointValue())
 			# Stuff that happens once fish hits hook AKA start combo game here
 			print("Fish hit hook")
-			collision_info.get_collider().queue_free()
+			currentCaught.caught()
 
 		
-			# we need to find out if the this ddr was succesfull or not. Ask dunstan.
+			# we need to find out if the this ddr was succesful or not. Ask dunstan.
 			can_move = false
-			isComboRight = await $Camera2D/ComboWindow.startCombo(["up", "down", "left", "right", "up", "down", "left", "right"])
+			isComboRight = await $Camera2D/ComboWindow.startCombo(currentCaught.getRandomCombo())
 			print(isComboRight)
 			can_move = true
 			
 		#if the hook gets hit by bad things.
 		elif collision_info.get_collider().get("isBoot") == true:
-			# Stuff that happens once fish hits hook AKA start combo game here
-			print("Boot hit hook")
-			collision_info.get_collider().queue_free()
-			# we need to find out if the this ddr was succesfull or not. Ask dunstan.
+
+			$Camera2D/UiForTimeAndScore.game_event(currentCaught.getPointValue())
+
+			print("Fish hit hook")
+			currentCaught.caught()
+
+		
 			can_move = false
-			isComboRight = await $Camera2D/ComboWindow.startCombo(["up", "down", "left", "right", "up", "down", "left", "right"])
+			isComboRight = await $Camera2D/ComboWindow.startCombo(currentCaught.getRandomCombo())
 			print(isComboRight)
 			can_move = true
-			
-			# LOGIC TBD
-			returning = true
 			
 		#if the hook gets hit by even worse things AKA shark
 		elif collision_info.get_collider().get("isShark") == true:
