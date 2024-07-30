@@ -86,3 +86,7 @@ func check_collision(delta):
 			#can_move = true
 			
 			returning = true
+		
+		#now here's the squid code
+		elif collision_info.get_collider().get("isSquid") == true:
+			$Camera2D/Inkblot.sprayInk()
