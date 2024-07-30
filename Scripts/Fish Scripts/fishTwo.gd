@@ -4,7 +4,6 @@ const isFish = true
 
 #constructor
 func _init():
-	print("Constructed base fish with no override")
 	velo = Vector2(-100,0)
 	possibleCombos = [
 		["down", "right", "right", "down"],

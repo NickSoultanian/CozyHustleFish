@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c4x421uqlucuk" path="res://Scenes/player.tscn" id="2_5d77e"]
 [ext_resource type="PackedScene" uid="uid://bcqsrvi23s6te" path="res://Scenes/combowindow.tscn" id="3_m6vby"]
 [ext_resource type="PackedScene" uid="uid://bcfu27cslcm3x" path="res://Scenes/hook.tscn" id="3_vc8wl"]
+[ext_resource type="PackedScene" uid="uid://jflapvqh3tq5" path="res://Scenes/fish_spawner.tscn" id="4_cu2is"]
 [ext_resource type="PackedScene" uid="uid://cpbuolcuxxv7g" path="res://Scenes/HookableObjects (Fish)/fishOne.tscn" id="4_jepng"]
 [ext_resource type="PackedScene" uid="uid://cwjfqtys6npre" path="res://Scenes/UI/UI_for_time_and_Score.tscn" id="6_l840t"]
 [ext_resource type="PackedScene" uid="uid://calscmn6geru0" path="res://Scenes/HookableObjects (Fish)/boot.tscn" id="7_3pkff"]
@@ -15,11 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://drcbvj807ntyw" path="res://Scenes/HookableObjects (Fish)/fishThree.tscn" id="13_hj5jo"]
 [ext_resource type="PackedScene" uid="uid://bwsbl4na32hlg" path="res://Scenes/HookableObjects (Fish)/fishSix.tscn" id="14_on7vr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2r1b"]
-size = Vector2(976, 22884)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wkuh5"]
-size = Vector2(4298, 107)
+size = Vector2(5522, 107)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_x7opw")
@@ -37,7 +35,7 @@ position = Vector2(0, -625)
 [node name="Camera2D" type="Camera2D" parent="Hook"]
 process_mode = 3
 position = Vector2(46, 1283)
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.25, 0.25)
 
 [node name="ComboWindow" parent="Hook/Camera2D" instance=ExtResource("3_m6vby")]
 position = Vector2(-1604, 2235)
@@ -47,22 +45,13 @@ position = Vector2(-1604, 2235)
 [node name="boot" parent="." instance=ExtResource("7_3pkff")]
 position = Vector2(-1158, 3200)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2500, 11715)
-shape = SubResource("RectangleShape2D_i2r1b")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-2500, 11715)
-shape = SubResource("RectangleShape2D_i2r1b")
+[node name="FishSpawner" parent="." instance=ExtResource("4_cu2is")]
+z_index = 1
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(0, 320)
+position = Vector2(2, 320)
 shape = SubResource("RectangleShape2D_wkuh5")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]

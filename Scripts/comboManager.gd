@@ -32,7 +32,6 @@ func startCombo(inputArray):
 	get_tree().paused = true
 	timerEnded = false
 	Clock.set_visible(true)
-	print("started")
 	showOpacityLayer()
 	arrowDisplay.spawnArrows(inputArray)
 	currArrowArray = inputArray
@@ -63,7 +62,6 @@ func endCombo(winBool):
 		await get_tree().create_timer(1.0).timeout
 		$CanvasLayer/ColorRect/ArrowDisplay/GreenCheck.set_visible(false)
 	hideOpacityLayer()
-	print ("done")
 	timer.stop()
 	Clock.endClock()
 	Clock.set_visible(false)
@@ -73,7 +71,6 @@ func endCombo(winBool):
 func _input(event):
 	if isArrowInput(event) && inputAllowed:
 		currArrowEvent = event
-		print("reached")
 		var currArrow = currArrowArray.pop_front()
 		if (currArrowEvent.is_action_pressed(currArrow)):
 			#correct key was pressed
