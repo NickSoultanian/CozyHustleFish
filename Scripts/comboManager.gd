@@ -40,8 +40,9 @@ func startCombo(inputArray):
 	timer.start(TIME_LIMIT)
 	waitForTimer()
 	await endGameWait()
-	await endCombo(winBool) # lost
-	return winBool
+	var tempTrack = winBool
+	await endCombo(tempTrack) # lost
+	return tempTrack
 	
 func endGameWait():
 	return await gameEnd
@@ -67,6 +68,7 @@ func endCombo(winBool):
 	Clock.set_visible(false)
 	arrowDisplay.destroyArrows()
 	get_tree().paused = false
+	
 
 func _input(event):
 	if isArrowInput(event) && inputAllowed:

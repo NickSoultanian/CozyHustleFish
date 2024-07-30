@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://ckdgrnubw3yr8"]
 
 [ext_resource type="Script" path="res://Scripts/UI/menu.gd" id="1_q8ceu"]
-[ext_resource type="Texture2D" path="res://Art Assets/Finished Art/main menu/MainmenuBG.png" id="2_aqo2i"]
+[ext_resource type="Texture2D" uid="uid://dgdrr13oo3xxg" path="res://Art Assets/Finished Art/main menu/MainmenuBG.png" id="2_aqo2i"]
 [ext_resource type="Texture2D" uid="uid://1vmj0obal35a" path="res://Art Assets/Finished Art/main menu/new game button.png" id="2_x2dm6"]
 [ext_resource type="Texture2D" uid="uid://4owvjsub8by8" path="res://Art Assets/Finished Art/main menu/options button.png" id="3_5tod8"]
 [ext_resource type="Texture2D" uid="uid://dqncxfm1ginik" path="res://Art Assets/Finished Art/main menu/menu bucket background.png" id="3_cfy3q"]
