@@ -80,6 +80,7 @@ func check_collision(delta):
 			if isComboRight:
 				$Camera2D/UiForTimeAndScore.game_event(currentScore)
 				play_animation(temp)
+				print(temp)
 			returning = true
 			
 		#if the hook gets hit by bad things.
@@ -98,6 +99,7 @@ func check_collision(delta):
 			if isComboRight:
 				$Camera2D/UiForTimeAndScore.game_event(currentScore)
 				play_animation(temp)
+				print(temp)
 			returning = true
 			
 		#if the hook gets hit by even worse things AKA shark
