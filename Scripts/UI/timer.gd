@@ -7,7 +7,6 @@ var fakeminutes = 0
 var seconds = 0
 func _process(delta):
 	game_time += (delta)
-	print(delta)
 	var minutes = int(game_time) / 60
 	temp_var = seconds
 	seconds = int(game_time) % 60
