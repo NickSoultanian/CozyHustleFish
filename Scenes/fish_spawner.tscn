@@ -1,58 +1,162 @@
-[gd_scene load_steps=6 format=3 uid="uid://jflapvqh3tq5"]
+[gd_scene load_steps=13 format=3 uid="uid://jflapvqh3tq5"]
 
 [ext_resource type="Script" path="res://Scripts/fishSpawner.gd" id="1_5fghb"]
+[ext_resource type="Script" path="res://Scripts/deleteFish.gd" id="1_v25g6"]
 [ext_resource type="PackedScene" uid="uid://cpbuolcuxxv7g" path="res://Scenes/HookableObjects (Fish)/fishOne.tscn" id="2_2ou7c"]
 [ext_resource type="PackedScene" uid="uid://calscmn6geru0" path="res://Scenes/HookableObjects (Fish)/boot.tscn" id="3_fe64c"]
 [ext_resource type="PackedScene" uid="uid://cloipdvxl62uf" path="res://Scenes/HookableObjects (Fish)/fishTwo.tscn" id="3_klftk"]
+[ext_resource type="PackedScene" uid="uid://drcbvj807ntyw" path="res://Scenes/HookableObjects (Fish)/fishThree.tscn" id="6_3ys17"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2r1b"]
 size = Vector2(976, 22884)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3ju1"]
+size = Vector2(355, 3750.8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80q08"]
+size = Vector2(355, 4681.2)
+
+[sub_resource type="GDScript" id="GDScript_3btw6"]
+script/source = "extends CollisionShape2D
+
+var spawn_scene
+
+
+var rng = RandomNumberGenerator.new()
+
+var MIN_SPAWN_TIME = 8.0
+var MAX_SPAWN_TIME = 3.0
+var passedTime = 0;
+var currSpawnTime = rng.randf_range(MIN_SPAWN_TIME, MAX_SPAWN_TIME)
+
+@export var possibleSpawns: Array[PackedScene]
+@export var isLeftSide: bool
+
+func _process(delta):
+
+	if (passedTime > currSpawnTime):
+		spawn_scene = possibleSpawns[rng.randi_range(0, 2)]
+		spawn(spawn_scene, rng.randf_range(0, shape.get_rect().size.y))
+		passedTime = 0
+		currSpawnTime = rng.randf_range(MIN_SPAWN_TIME, MAX_SPAWN_TIME)
+		
+	passedTime += delta
+	pass
+
+func spawn(spawn_scene, yPos):
+	var spawn := spawn_scene.instantiate() as Node2D
+
+	add_child(spawn)
+
+	spawn.set_as_top_level(true)
+	
+	if(isLeftSide):
+		spawn.changeDirection()
+
+	spawn.global_position = Vector2(global_position.x, yPos + (global_position.y - shape.get_rect().size.y/2))
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adr34"]
+size = Vector2(355, 4681.2)
+
+[sub_resource type="GDScript" id="GDScript_aj3vk"]
+script/source = "extends CollisionShape2D
+
+var spawn_scene
+
+
+var rng = RandomNumberGenerator.new()
+
+var MIN_SPAWN_TIME = 8.0
+var MAX_SPAWN_TIME = 3.0
+var passedTime = 0;
+var currSpawnTime = rng.randf_range(MIN_SPAWN_TIME, MAX_SPAWN_TIME)
+
+@export var possibleSpawns: Array[PackedScene]
+@export var isLeftSide: bool
+
+func _process(delta):
+
+	if (passedTime > currSpawnTime):
+		spawn_scene = possibleSpawns[rng.randi_range(0, 2)]
+		spawn(spawn_scene, rng.randf_range(0, shape.get_rect().size.y))
+		passedTime = 0
+		currSpawnTime = rng.randf_range(MIN_SPAWN_TIME, MAX_SPAWN_TIME)
+		
+	passedTime += delta
+	pass
+
+func spawn(spawn_scene, yPos):
+	var spawn := spawn_scene.instantiate() as Node2D
+
+	add_child(spawn)
+
+	spawn.set_as_top_level(true)
+	
+	if(isLeftSide):
+		spawn.changeDirection()
+
+	spawn.global_position = Vector2(global_position.x, yPos + (global_position.y - shape.get_rect().size.y/2))
+"
+
 [node name="FishSpawner" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+script = ExtResource("1_v25g6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(3250, 11703)
 shape = SubResource("RectangleShape2D_i2r1b")
 
-[node name="Level1Spawner" type="Marker2D" parent="StaticBody2D"]
-position = Vector2(3250, 957)
-script = ExtResource("1_5fghb")
-possibleSpawns = Array[PackedScene]([ExtResource("2_2ou7c"), ExtResource("3_fe64c"), ExtResource("3_klftk")])
-
-[node name="Level1Spawner2" type="Marker2D" parent="StaticBody2D"]
-position = Vector2(3250, 2249)
-script = ExtResource("1_5fghb")
-possibleSpawns = Array[PackedScene]([ExtResource("2_2ou7c"), ExtResource("3_fe64c"), ExtResource("3_klftk")])
-
-[node name="Level1Spawner3" type="Marker2D" parent="StaticBody2D"]
-position = Vector2(3290, 3581)
-script = ExtResource("1_5fghb")
-possibleSpawns = Array[PackedScene]([ExtResource("2_2ou7c"), ExtResource("3_fe64c"), ExtResource("3_klftk")])
-
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_layer = 4
+script = ExtResource("1_v25g6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-3250, 11715)
 shape = SubResource("RectangleShape2D_i2r1b")
 
-[node name="Level1Spawner" type="Marker2D" parent="StaticBody2D2"]
-position = Vector2(-3248, 1509)
+[node name="LEVEL1SPAWNRIGHT" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LEVEL1SPAWNRIGHT"]
+position = Vector2(2525, 2548.8)
+shape = SubResource("RectangleShape2D_i3ju1")
+script = ExtResource("1_5fghb")
+possibleSpawns = Array[PackedScene]([ExtResource("2_2ou7c"), ExtResource("3_fe64c"), ExtResource("3_klftk")])
+
+[node name="LEVEL1SPAWNLEFT" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LEVEL1SPAWNLEFT"]
+position = Vector2(-2525, 2548.8)
+shape = SubResource("RectangleShape2D_i3ju1")
 script = ExtResource("1_5fghb")
 possibleSpawns = Array[PackedScene]([ExtResource("2_2ou7c"), ExtResource("3_fe64c"), ExtResource("3_klftk")])
 isLeftSide = true
 
-[node name="Level1Spawner2" type="Marker2D" parent="StaticBody2D2"]
-position = Vector2(-3248, 2801)
-script = ExtResource("1_5fghb")
-possibleSpawns = Array[PackedScene]([ExtResource("2_2ou7c"), ExtResource("3_fe64c"), ExtResource("3_klftk")])
-isLeftSide = true
+[node name="LEVEL2SPAWNRIGHT" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
 
-[node name="Level1Spawner3" type="Marker2D" parent="StaticBody2D2"]
-position = Vector2(-3208, 4133)
-script = ExtResource("1_5fghb")
-possibleSpawns = Array[PackedScene]([ExtResource("2_2ou7c"), ExtResource("3_fe64c"), ExtResource("3_klftk")])
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LEVEL2SPAWNRIGHT"]
+position = Vector2(2525, 6798)
+shape = SubResource("RectangleShape2D_80q08")
+script = SubResource("GDScript_3btw6")
+possibleSpawns = Array[PackedScene]([ExtResource("3_klftk"), ExtResource("3_fe64c"), ExtResource("6_3ys17")])
+
+[node name="LEVEL2SPAWNLEFT" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LEVEL2SPAWNLEFT"]
+position = Vector2(-2525, 6798)
+shape = SubResource("RectangleShape2D_adr34")
+script = SubResource("GDScript_aj3vk")
+possibleSpawns = Array[PackedScene]([ExtResource("3_klftk"), ExtResource("3_fe64c"), ExtResource("6_3ys17")])
 isLeftSide = true
 
 [node name="Line2D" type="Line2D" parent="."]
