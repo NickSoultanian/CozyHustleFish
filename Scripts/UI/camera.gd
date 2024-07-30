@@ -22,10 +22,10 @@ func _process(delta):
 	if speed != 0:
 		position += direction * speed * delta
 	else:
-		look_at(hook.position)
+		look_at(hook.position + Vector2(0, 900))
 func _on_Timer_timeout():
 	speed = 0  # Stop the camera
-	position = hook.position
+	position = hook.position + Vector2(0, 900)
 	direction = Vector2(0,0)
 	hook.visibility_layer = 1
 	

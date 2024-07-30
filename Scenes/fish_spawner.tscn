@@ -312,29 +312,3 @@ shape = SubResource("RectangleShape2D_g5phi")
 script = SubResource("GDScript_4scwh")
 possibleSpawns = Array[PackedScene]([ExtResource("10_xf7kw"), ExtResource("11_1btsb"), ExtResource("9_kiady")])
 isLeftSide = true
-
-[node name="Line2D" type="Line2D" parent="."]
-position = Vector2(-1285, -1677)
-points = PackedVector2Array(-5941, 6116, 8033, 6083)
-width = 20.0
-
-[node name="Line2D2" type="Line2D" parent="."]
-position = Vector2(-1441, 3113)
-points = PackedVector2Array(-5941, 6116, 8088, 6130)
-width = 20.0
-
-[node name="Line2D3" type="Line2D" parent="."]
-position = Vector2(-1094, 7720)
-points = PackedVector2Array(-5941, 6116, 7577, 6119, -6897, 6119)
-width = 20.0
-
-[node name="Line2D4" type="Line2D" parent="."]
-position = Vector2(-1457, 12411)
-points = PackedVector2Array(-5941, 6116, 2668.14, 6145.32, 7273, 6161)
-width = 20.0
-
-[node name="Line2D5" type="Line2D" parent="."]
-position = Vector2(-1831, 17070)
-points = PackedVector2Array(-5941, 6116, 9608, 6129)
-closed = true
-width = 30.0
