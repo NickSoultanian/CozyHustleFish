@@ -1,0 +1,11 @@
+[gd_scene load_steps=5 format=3 uid="uid://baugndwiggehr"]
+
+[ext_resource type="Script" path="res://Scripts/fishSpawner.gd" id="1_1pmt2"]
+[ext_resource type="PackedScene" uid="uid://cpbuolcuxxv7g" path="res://Scenes/HookableObjects (Fish)/fishOne.tscn" id="2_wt0ch"]
+[ext_resource type="PackedScene" uid="uid://calscmn6geru0" path="res://Scenes/HookableObjects (Fish)/boot.tscn" id="3_86dgc"]
+[ext_resource type="PackedScene" uid="uid://cloipdvxl62uf" path="res://Scenes/HookableObjects (Fish)/fishTwo.tscn" id="4_j6054"]
+
+[node name="Level1Spawner" type="Marker2D"]
+position = Vector2(3250, 957)
+script = ExtResource("1_1pmt2")
+possibleSpawns = Array[PackedScene]([ExtResource("2_wt0ch"), ExtResource("3_86dgc"), ExtResource("4_j6054")])

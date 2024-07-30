@@ -19,7 +19,8 @@ func _process(delta):
 
 func startClock(time):
 	scale = Vector2(get_viewport().size.x/10.0/CLOCK_TIMER_WIDTH, get_viewport().size.x/10.0/CLOCK_TIMER_WIDTH) 
-	position = Vector2(get_viewport().size.x - (scale.x * size.x + (scale.x * size.x / 5.0)), get_viewport().size.y - (scale.y * size.y + (scale.y * size.y / 5.0)))
+	position = Vector2(get_viewport().size.x - (scale.x * size.x + (scale.x * size.x / 5.0)), 
+						get_viewport().size.y - (scale.y * size.y + (scale.y * size.y / 5.0)))
 	print(position) 
 	timerRunning = true
 	totalTime = time

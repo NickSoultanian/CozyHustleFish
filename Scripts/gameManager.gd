@@ -13,7 +13,6 @@ func _process(delta):
  
 func _input(event):
 	if event.is_action_pressed("comboStart"):
-		print("nice")
 		set_process_input(false)
 		await $Hook/Camera2D/ComboWindow.startCombo(["up", "down", "left", "right", "up", "down", "left", "right"])
 		set_process_input(true)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwjfqtys6npre"]
+[gd_scene load_steps=5 format=3 uid="uid://dn4vqskbuvrrs"]
 
 [ext_resource type="Texture2D" uid="uid://by37nwypfdc3j" path="res://Art Assets/Finished Art/timer/Timer_bg.png" id="1_2bsbw"]
 [ext_resource type="FontFile" uid="uid://d2brvb388g613" path="res://Art Assets/Fonts/din-condensed/DIN-Bold.ttf" id="2_2d0x8"]

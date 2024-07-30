@@ -32,7 +32,6 @@ func _physics_process(delta):
 		if position.y <= starting_position.y:
 			position.y = starting_position.y
 			returning = false  # Stop moving when close to target
-			print("Reached target position")
 
 func player_movement(delta): 
 	if Input.is_action_pressed("ui_down"):
@@ -54,7 +53,6 @@ func check_collision(delta):
 			
 			$Camera2D/UiForTimeAndScore.game_event(currentCaught.getPointValue())
 			# Stuff that happens once fish hits hook AKA start combo game here
-			print("Fish hit hook")
 			currentCaught.caught()
 
 		
@@ -69,7 +67,6 @@ func check_collision(delta):
 
 			$Camera2D/UiForTimeAndScore.game_event(currentCaught.getPointValue())
 
-			print("Fish hit hook")
 			currentCaught.caught()
 
 		
