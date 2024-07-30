@@ -1,33 +1,37 @@
 extends Marker2D
 
-@export var spawn_scene: PackedScene
+var spawn_scene
 
 
+var rng = RandomNumberGenerator.new()
+
+var MIN_SPAWN_TIME = 8.0
+var MAX_SPAWN_TIME = 3.0
 var passedTime = 0;
+var currSpawnTime
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	
-	pass # Replace with function body.
+@export var possibleSpawns: Array[PackedScene]
+@export var isLeftSide: bool
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
-	if (passedTime > 1):
-		spawn()
+
+	if (passedTime > currSpawnTime):
+		spawn_scene = rng.randi_range(0, 2)
+		spawn(spawn_scene)
 		passedTime = 0
+		currSpawnTime = rng.randf_range(MIN_SPAWN_TIME, MAX_SPAWN_TIME)
 		
 	passedTime += delta
 	pass
 
-func spawn(_spawn_scene := spawn_scene) -> void:
-	var spawn := _spawn_scene.instantiate() as Node2D
+func spawn(spawn_scene) -> void:
+	var spawn := spawn_scene.instantiate() as Node2D
 
 	add_child(spawn)
 
-  # Prevents the Spawner2D transform from affecting the new instance
 	spawn.set_as_top_level(true)
+	
+	if(isLeftSide):
+		spawn_scene.changeDirection()
 
-  # Move the new instance to the Spawner2D position
 	spawn.global_position = global_position
