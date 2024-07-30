@@ -21,11 +21,39 @@ position = Vector2(3250, 957)
 script = ExtResource("1_5fghb")
 possibleSpawns = Array[PackedScene]([ExtResource("2_2ou7c"), ExtResource("3_fe64c"), ExtResource("3_klftk")])
 
+[node name="Level1Spawner2" type="Marker2D" parent="StaticBody2D"]
+position = Vector2(3250, 2249)
+script = ExtResource("1_5fghb")
+possibleSpawns = Array[PackedScene]([ExtResource("2_2ou7c"), ExtResource("3_fe64c"), ExtResource("3_klftk")])
+
+[node name="Level1Spawner3" type="Marker2D" parent="StaticBody2D"]
+position = Vector2(3290, 3581)
+script = ExtResource("1_5fghb")
+possibleSpawns = Array[PackedScene]([ExtResource("2_2ou7c"), ExtResource("3_fe64c"), ExtResource("3_klftk")])
+
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-3250, 11715)
 shape = SubResource("RectangleShape2D_i2r1b")
+
+[node name="Level1Spawner" type="Marker2D" parent="StaticBody2D2"]
+position = Vector2(-3248, 1509)
+script = ExtResource("1_5fghb")
+possibleSpawns = Array[PackedScene]([ExtResource("2_2ou7c"), ExtResource("3_fe64c"), ExtResource("3_klftk")])
+isLeftSide = true
+
+[node name="Level1Spawner2" type="Marker2D" parent="StaticBody2D2"]
+position = Vector2(-3248, 2801)
+script = ExtResource("1_5fghb")
+possibleSpawns = Array[PackedScene]([ExtResource("2_2ou7c"), ExtResource("3_fe64c"), ExtResource("3_klftk")])
+isLeftSide = true
+
+[node name="Level1Spawner3" type="Marker2D" parent="StaticBody2D2"]
+position = Vector2(-3208, 4133)
+script = ExtResource("1_5fghb")
+possibleSpawns = Array[PackedScene]([ExtResource("2_2ou7c"), ExtResource("3_fe64c"), ExtResource("3_klftk")])
+isLeftSide = true
 
 [node name="Line2D" type="Line2D" parent="."]
 position = Vector2(-1285, -1677)

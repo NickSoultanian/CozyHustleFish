@@ -32,6 +32,6 @@ func spawn(spawn_scene) -> void:
 	spawn.set_as_top_level(true)
 	
 	if(isLeftSide):
-		spawn_scene.changeDirection()
+		spawn.changeDirection()
 
 	spawn.global_position = global_position
