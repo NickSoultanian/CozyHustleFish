@@ -38,14 +38,14 @@ func reelUp():
 	# Reel fish back up, disable controls and hitbox temporarily
 	velocity.y = -speed
 	$hookBox.disabled = true
-	if position.y <= starting_position.y-600:
+	if position.y <= starting_position.y-800:
 		$hookBox.disabled = false 
 		returning = false
 		visible = false
 		player.isIdle = false
 		await player.play_animation("cast")
 		visible = true
-		position.y = starting_position.y - 200
+		position.y = starting_position.y - 800
 		can_move = true
 		  # Stop moving when close to target
 
@@ -83,7 +83,7 @@ func check_collision(delta):
 		
 			# we need to find out if the this ddr was succesful or not. Ask dunstan.
 			can_move = false
-			isComboRight = await $Camera2D/ComboWindow.startCombo(currentCaught.getRandomCombo())
+			isComboRight = await $Camera2D/ComboWindow.startCombo(currentCaught.getRandomCombo(), currentCaught)
 			print(isComboRight)
 			if isComboRight:
 				$Camera2D/UiForTimeAndScore.game_event(currentScore)
@@ -102,12 +102,12 @@ func check_collision(delta):
 
 		
 			can_move = false
-			isComboRight = await $Camera2D/ComboWindow.startCombo(currentCaught.getRandomCombo())
-			print(isComboRight)
-			if isComboRight:
-				$Camera2D/UiForTimeAndScore.game_event(currentScore)
-				play_animation(temp)
-				print(temp)
+			#isComboRight = await $Camera2D/ComboWindow.startCombo(currentCaught.getRandomCombo())
+			#print(isComboRight)
+			#if isComboRight:
+				#$Camera2D/UiForTimeAndScore.game_event(currentScore)
+			play_animation(temp)
+			print(temp)
 			returning = true
 			
 		#if the hook gets hit by even worse things AKA shark

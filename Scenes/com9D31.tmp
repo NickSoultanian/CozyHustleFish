@@ -99,17 +99,22 @@ position = Vector2(583, 340)
 scale = Vector2(0.3025, 0.3025)
 texture = ExtResource("7_eee2v")
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="CanvasLayer/ColorRect/ArrowDisplay"]
+[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer/ColorRect/ArrowDisplay"]
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ColorRect/ArrowDisplay/CanvasLayer2"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -4.0
-offset_right = 1.0
-offset_bottom = 4.0
+[node name="Control" type="Control" parent="CanvasLayer/ColorRect/ArrowDisplay/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 1344.0
+offset_bottom = 756.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="FishWinscreen" type="Sprite2D" parent="CanvasLayer/ColorRect/ArrowDisplay/CanvasLayer/Control"]
+visible = false
 texture = ExtResource("8_vixiy")
-expand_mode = 1
