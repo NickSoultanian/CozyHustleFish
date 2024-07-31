@@ -18,106 +18,92 @@ script = ExtResource("1_cxdgc")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+[node name="pause art" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="pause art" type="TextureRect" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = -445.0
-offset_top = -320.0
-offset_right = 1943.0
-offset_bottom = 1348.0
-scale = Vector2(0.38, 0.38)
 texture = ExtResource("1_lk4sm")
-expand_mode = 5
-stretch_mode = 5
+expand_mode = 1
 
-[node name="quit art" type="TextureRect" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = -447.0
-offset_top = -320.0
-offset_right = 1941.0
-offset_bottom = 1348.0
-scale = Vector2(0.38, 0.38)
+[node name="quit art" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("5_o5pf1")
-expand_mode = 5
-stretch_mode = 3
+expand_mode = 1
 
-[node name="options art" type="TextureRect" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = -447.0
-offset_top = -322.0
-offset_right = 1941.0
-offset_bottom = 1346.0
-scale = Vector2(0.38, 0.38)
+[node name="options art" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("3_mfhsx")
-expand_mode = 5
-stretch_mode = 3
+expand_mode = 1
 
-[node name="mainmenu art" type="TextureRect" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = -449.0
-offset_top = -324.0
-offset_right = 1939.0
-offset_bottom = 1344.0
-scale = Vector2(0.38, 0.38)
+[node name="mainmenu art" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_pl0r3")
-stretch_mode = 5
+expand_mode = 1
 
 [node name="Control2" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="option" type="Button" parent="CanvasLayer/Control2"]
 visibility_layer = 0
-layout_mode = 0
-offset_left = 118.0
-offset_top = -269.0
-offset_right = 368.0
-offset_bottom = -169.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.622
+anchor_top = 0.062
+anchor_right = 0.977
+anchor_bottom = 0.244
+offset_left = -0.544067
+offset_top = -0.176003
+offset_right = -0.504028
+offset_bottom = -0.112015
 
 [node name="mainmenu" type="Button" parent="CanvasLayer/Control2"]
 visibility_layer = 0
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
+anchors_preset = -1
+anchor_left = 0.729
+anchor_top = 0.313
+anchor_right = 0.945
 anchor_bottom = 0.5
-offset_left = 223.0
-offset_top = -147.0
-offset_right = 398.0
-offset_bottom = -47.0
+offset_left = 0.191956
+offset_top = -2.82402
+offset_right = 0.359985
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="quit" type="Button" parent="CanvasLayer/Control2"]
 visibility_layer = 0
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 186.0
-offset_top = 66.0
-offset_right = 386.0
-offset_bottom = 166.0
+anchors_preset = -1
+anchor_left = 0.704
+anchor_top = 0.622
+anchor_right = 0.984
+anchor_bottom = 0.836
+offset_left = -0.00805664
+offset_top = -0.0560303
+offset_right = -0.567993
+offset_bottom = 0.271973
 grow_horizontal = 2
 grow_vertical = 2
 
