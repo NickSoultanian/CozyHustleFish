@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://7l73wb48e8tf"]
+[gd_scene load_steps=11 format=3 uid="uid://7l73wb48e8tf"]
 
 [ext_resource type="Script" path="res://Scripts/UI/pausemenu.gd" id="1_cxdgc"]
 [ext_resource type="Texture2D" uid="uid://b2ny5jo17mgeb" path="res://Art Assets/Finished Art/pause menu/Pausemenubg.png" id="1_lk4sm"]
@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://u03j3amsgify" path="res://Art Assets/Finished Art/pause menu/Pausemainmenubutton.png" id="4_pl0r3"]
 [ext_resource type="Texture2D" uid="uid://ndvdlsos40k2" path="res://Art Assets/Finished Art/pause menu/Quit pause button.png" id="5_o5pf1"]
 [ext_resource type="Texture2D" uid="uid://dgdrr13oo3xxg" path="res://Art Assets/Finished Art/main menu/MainmenuBG.png" id="6_rukeo"]
-[ext_resource type="Texture2D" uid="uid://dqncxfm1ginik" path="res://Art Assets/Finished Art/main menu/menu bucket background.png" id="7_4arki"]
+[ext_resource type="Texture2D" uid="uid://ch5r7o8yh4ti6" path="res://Art Assets/Finished Art/main menu/menubucket.png" id="7_v24ys"]
 [ext_resource type="PackedScene" uid="uid://begr35bad812j" path="res://Scenes/UI/option buttons/Volume.tscn" id="8_65gjq"]
 [ext_resource type="PackedScene" uid="uid://b0hom2sbnav7i" path="res://Scenes/UI/option buttons/Resolution.tscn" id="9_why87"]
+[ext_resource type="Texture2D" uid="uid://dhpiksj3r81h0" path="res://Art Assets/Finished Art/main menu/Back button.png" id="10_4sycy"]
 
 [node name="Pausemenu" type="Control"]
 layout_mode = 3
@@ -142,11 +143,10 @@ offset_bottom = 104.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MenuBucketBackground" type="Sprite2D" parent="options/Control"]
-position = Vector2(-330, -390)
-scale = Vector2(0.52, 0.512)
-texture = ExtResource("7_4arki")
-centered = false
+[node name="Menubucket" type="Sprite2D" parent="options/Control"]
+position = Vector2(-27, -58)
+scale = Vector2(0.52, 0.52)
+texture = ExtResource("7_v24ys")
 
 [node name="Volume" parent="options/Control" instance=ExtResource("8_65gjq")]
 light_mask = 3
@@ -173,19 +173,25 @@ offset_right = 115.0
 offset_bottom = -21.0
 
 [node name="back" type="Button" parent="options/Control"]
+visibility_layer = 0
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -35.0
+offset_left = -60.0
 offset_top = 81.0
-offset_right = 10.0
+offset_right = 61.0
 offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Back"
+
+[node name="BackButton" type="Sprite2D" parent="options/Control"]
+position = Vector2(13, 136)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("10_4sycy")
 
 [connection signal="pressed" from="CanvasLayer/Control2/option" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control2/mainmenu" to="." method="_on_mainmenu_pressed"]
