@@ -4,16 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://budutvu4ohsem" path="res://Art Assets/Finished Art/fish/shark.png" id="2_frxsf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skwvg"]
-size = Vector2(1248, 531)
+size = Vector2(1948, 723)
 
 [node name="shark" type="CharacterBody2D"]
 collision_mask = 2
 script = ExtResource("1_ir222")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(20, 45.5)
+position = Vector2(8, 93.5)
 shape = SubResource("RectangleShape2D_skwvg")
 
 [node name="Fish" type="Sprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
+scale = Vector2(1.25, 1.25)
 texture = ExtResource("2_frxsf")

@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
 # adjust player spped 
-const speed = 5000
+var speed = 0
+var max_speed = 15000.0
+var accel = 5.0
 const reelbackspeed = 15000
 const isHook = true 
 var returning = false
@@ -26,7 +28,7 @@ func _physics_process(delta):
 	check_collision(delta)
 	# print(hook.position.y," : ", starting_position.y)
 	
-	if position.y <= starting_position.y-800:
+	if position.y <= starting_position.y-795:
 		play_animation("idle")
 	
 	if returning:
@@ -36,31 +38,35 @@ func _physics_process(delta):
 			
 func reelUp():
 	# Reel fish back up, disable controls and hitbox temporarily
-	Music.play_reeling()
-	velocity.y = -speed
+	velocity.y = -5000
 	$hookBox.disabled = true
 	if position.y <= starting_position.y-800:
 		$hookBox.disabled = false 
 		returning = false
 		visible = false
 		player.isIdle = false
+		Music.stop_reeling()
 		await player.play_animation("cast")
 		visible = true
+		speed = 0
+		velocity.y = 0
 		position.y = starting_position.y - 800
 		can_move = true
-		Music.stop_reeling()
 		  # Stop moving when close to target
 
 func player_movement(delta): 
 	if Input.is_action_pressed("ui_down"):
-		velocity.x = 0 
+		speed = velocity.y + (max_speed - velocity.y) * (accel * delta)
 		velocity.y = speed
 	elif Input.is_action_pressed("ui_up"):
-		velocity.x = 0 
-		velocity.y = -speed
+		speed = velocity.y + (-max_speed - velocity.y) * (accel * delta)
+		velocity.y = speed
 	else: 
-		velocity.x = 0 
-		velocity.y = 0 
+		if (velocity.y != 0):
+			speed = velocity.y + (0 - velocity.y) * (accel * delta)
+			velocity.y = speed
+		else:
+			velocity.y = 0
 		
 func play_animation(animation_name):
 	hook_animation.stop()
@@ -78,69 +84,48 @@ func check_collision(delta):
 		if currentCaught.get("isFish") == true:
 			
 			currentScore = currentCaught.getPointValue()
-			# Stuff that happens once fish hits hook AKA start combo game here
 			temp = currentCaught.getAnimationValue()
 			currentCaught.caught()
 
-		
-			# we need to find out if the this ddr was succesful or not. Ask dunstan.
 			Music.play_fishcaught()
 			can_move = false
 			isComboRight = await $Camera2D/ComboWindow.startCombo(currentCaught.getRandomCombo(), currentCaught)
 			print(isComboRight)
 			if isComboRight:
 				$Camera2D/UiForTimeAndScore.game_event(currentScore)
-				Music.play_combosuccess()
 				play_animation(temp)
 				print(temp)
-			elif !isComboRight:
-				Music.play_wrongcombo()
+				
 			returning = true
+			Music.play_reeling()
 			
 		#if the hook gets hit by bad things.
 		elif collision_info.get_collider().get("isBoot") == true:
 
 			currentScore = currentCaught.getPointValue()
-			# Stuff that happens once fish hits hook AKA start combo game here
 			temp = currentCaught.getAnimationValue()
-			
 			currentCaught.caught()
-
-			Music.play_fishcaught()
 			can_move = false
-
-			isComboRight = await $Camera2D/ComboWindow.startCombo(currentCaught.getRandomCombo())
-			print(isComboRight)
-			if isComboRight:
-				$Camera2D/UiForTimeAndScore.game_event(currentScore)
-				Music.play_combosuccess()
-				play_animation(temp)
-				print(temp)
-			elif !isComboRight:
-				Music.play_wrongcombo()
-
+			play_animation(temp)
+			print(temp)
 			returning = true
+			Music.play_reeling()
 			
-		#if the hook gets hit by even worse things AKA shark
 		elif collision_info.get_collider().get("isShark") == true:
-			# Stuff that happens once fish hits hook AKA start combo game here
+
+			currentScore = currentCaught.getPointValue()
 			print("Shark hit hook")
 			temp = currentCaught.getAnimationValue()
-			#collision_info.get_collider().queue_free()
-			# we need to find out if the this ddr was succesfull or not. Ask dunstan.
-			#can_move = false
-			#await $Camera2D/ComboWindow.startCombo(["up", "down", "left", "right", "up", "down", "left", "right"])
-			#can_move = true
+
 			can_move = false
 			play_animation(temp)
 			Music.play_sharkcaughtbite()
 			returning = true
+			$Camera2D/UiForTimeAndScore.game_event(currentScore)
 			$Camera2D/getSharked/CanvasLayer/GotSharkedStupid.set_visible(true)
 			await get_tree().create_timer(1.5).timeout
 			$Camera2D/getSharked/CanvasLayer/GotSharkedStupid.set_visible(false)
 			
-		
-		#now here's the squid code
 		elif collision_info.get_collider().get("isSquid") == true:
 			$Camera2D/Inkblot.sprayInk()
 			currentCaught.caught()

@@ -1,10 +1,10 @@
 extends AudioStreamPlayer
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -41,6 +41,10 @@ func play_wrongcombo():
 	
 func play_gamemusic():
 	set_stream(load("res://Music/audio/fishgame.wav"))
+	
+func playArrowSound(sound):
+	$arrowSucc.set_stream(sound)
+	$arrowSucc.play()
 
 # individual arrow sounds! 
 func play_arrowsucc1():
@@ -59,3 +63,5 @@ func play_arrowsucc7():
 	$arrow/arrowsucc7.play()
 func play_arrowsucc8():
 	$arrow/arrowsucc8.play()			
+	
+	

@@ -4,7 +4,7 @@ const isFish = true
 
 #constructor
 func _init():
-	velo = Vector2(-100,0)
+	velo = Vector2(-1100,0)
 	possibleCombos = [
 		["right", "right", "right", "up", "left", "left", "up"],
 		["up", "up", "up", "up", "down", "right", "up"],

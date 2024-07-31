@@ -196,7 +196,7 @@ position = Vector2(0, 20750)
 shape = SubResource("RectangleShape2D_wkuh5")
 
 [node name="shark" parent="." instance=ExtResource("9_537jm")]
-position = Vector2(643, 4278)
+position = Vector2(2165, 4306)
 
 [node name="loaffish" parent="." instance=ExtResource("10_m8a2h")]
 position = Vector2(-1233, 5668)

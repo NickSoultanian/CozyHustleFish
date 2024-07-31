@@ -4,7 +4,7 @@ const isBoot = true
 
 #constructor
 func _init():
-	velo = Vector2(-500,0)
+	velo = Vector2(-1100,0)
 	possibleCombos = [
 		["up", "down"],
 		["right", "up"],

@@ -13,14 +13,18 @@ var arrowDisplay
 var opacityLayer
 var winBool = false
 
-var arrowsounds: Dictionary = {"1": Callable(Music, "play_arrowsucc1()"),
-								"2": Callable(Music, "play_arrowsucc2()"),
-								"3": Callable(Music, "play_arrowsucc3()"),
-								"4": Callable(Music, "play_arrowsucc4()"),
-								"5": Callable(Music, "play_arrowsucc5()"),
-								"6": Callable(Music, "play_arrowsucc6()"),
-								"7": Callable(Music, "play_arrowsucc7()"),
-								"8": Callable(Music, "play_arrowsucc8()")}
+var arrowSounds = [
+	sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8
+]
+
+var sound1 = preload("res://Music/audio/SFX/arrow success/arrowsucc1.mp3")
+var sound2 = preload("res://Music/audio/SFX/arrow success/arrowsucc2.mp3")
+var sound3 = preload("res://Music/audio/SFX/arrow success/arrowsucc3.mp3")
+var sound4 = preload("res://Music/audio/SFX/arrow success/arrowsucc4.mp3")
+var sound5 = preload("res://Music/audio/SFX/arrow success/arrowsucc5.mp3")
+var sound6 = preload("res://Music/audio/SFX/arrow success/arrowsucc6.mp3")
+var sound7 = preload("res://Music/audio/SFX/arrow success/arrowsucc7.mp3")
+var sound8 = preload("res://Music/audio/SFX/arrow success/arrowsucc8.mp3")
 								
 
 var caughtScreen
@@ -48,6 +52,7 @@ func startCombo(inputArray, caught):
 	showOpacityLayer()
 	arrowDisplay.spawnArrows(inputArray)
 	currArrowArray = inputArray
+	arrowSounds = [sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8]
 	caughtScreen = caught.winScreen
 	inputAllowed = true
 	Clock.startClock(TIME_LIMIT)
@@ -68,7 +73,10 @@ func waitForTimer():
 	
 func endCombo(winBool):
 	inputAllowed = false
+	Clock.endClock()
+	Clock.set_visible(false)
 	if (!winBool):
+		Music.play_wrongcombo()
 		$CanvasLayer/ColorRect/ArrowDisplay/RedX.set_visible(true)
 		await get_tree().create_timer(1.0).timeout
 		$CanvasLayer/ColorRect/ArrowDisplay/RedX.set_visible(false)
@@ -84,6 +92,7 @@ func endCombo(winBool):
 				#await printCatchScreen($CanvasLayer/ColorRect/ArrowDisplay/FishThreeWinscreen)
 			#4:
 				#await printCatchScreen($CanvasLayer/ColorRect/ArrowDisplay/FishFourWinscreen)
+		Music.play_combosuccess()
 		$CanvasLayer/ColorRect/ArrowDisplay/CanvasLayer2/TextureRect.set_texture(caughtScreen)
 		#$CanvasLayer/ColorRect/ArrowDisplay/CanvasLayer/Control/FishWinscreen.scale = Vector2(get_viewport().size.x/1150.0, get_viewport().size.y/652.0)
 		$CanvasLayer/ColorRect/ArrowDisplay/CanvasLayer2/TextureRect.set_visible(true)
@@ -91,8 +100,6 @@ func endCombo(winBool):
 		$CanvasLayer/ColorRect/ArrowDisplay/CanvasLayer2/TextureRect.set_visible(false)
 	hideOpacityLayer()
 	timer.stop()
-	Clock.endClock()
-	Clock.set_visible(false)
 	arrowDisplay.destroyArrows()
 	get_tree().paused = false
 	
@@ -103,15 +110,14 @@ func printCatchScreen(winScreen):
 	
 
 func _input(event):
-	#var i = 0
 	if isArrowInput(event) && inputAllowed:
-		#i += 1
-		#arrowsounds[str(i)].call()
 		currArrowEvent = event
 		var currArrow = currArrowArray.pop_front()
+		var arrowSound = arrowSounds.pop_front()
 		if (currArrowEvent.is_action_pressed(currArrow)):
 			#correct key was pressed
 			arrowDisplay.changeNextArrow()
+			Music.playArrowSound(arrowSound)
 			if (currArrowArray.is_empty()):
 				winBool = true # won
 				gameEnd.emit()

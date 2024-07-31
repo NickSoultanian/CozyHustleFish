@@ -13,8 +13,11 @@ func _process(delta):
 		pause_menu()
 		print("Esc key is pressed")
 		pass
+	if $Hook/Camera2D/UiForTimeAndScore.isTimerStopped():
+		print("endgame")
 		
- 
+
+
 func _input(event):
 	if event.is_action_pressed("comboStart"):
 		set_process_input(false)

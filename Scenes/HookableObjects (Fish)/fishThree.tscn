@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bmwri7hqhbrmr" path="res://Art Assets/Finished Art/fish/spiny.png" id="2_cymai"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y78ml"]
-size = Vector2(710, 304)
+size = Vector2(1456, 505)
 
 [node name="fishThree" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
@@ -13,10 +13,10 @@ script = ExtResource("1_rrqv5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(-15, -13)
+position = Vector2(50, -113.5)
 shape = SubResource("RectangleShape2D_y78ml")
 
 [node name="Fish" type="Sprite2D" parent="."]
 position = Vector2(-56, -38)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_cymai")

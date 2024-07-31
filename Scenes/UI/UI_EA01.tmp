@@ -33,8 +33,6 @@ text = "1:30"
 script = ExtResource("3_y0fh6")
 
 [node name="Timer" type="Timer" parent="CanvasLayer/timer"]
-wait_time = 90.0
-one_shot = true
 
 [node name="TimerBg" type="Sprite2D" parent="CanvasLayer/timer"]
 z_index = -1

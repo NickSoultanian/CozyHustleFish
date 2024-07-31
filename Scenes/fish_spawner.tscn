@@ -16,7 +16,7 @@
 size = Vector2(976, 22884)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3ju1"]
-size = Vector2(355, 2507)
+size = Vector2(355, 1874)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80q08"]
 size = Vector2(355, 3972)
@@ -213,7 +213,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LEVEL1SPAWNRIGHT"]
-position = Vector2(3025, 3598.5)
+position = Vector2(3025, 3915)
 shape = SubResource("RectangleShape2D_i3ju1")
 script = ExtResource("1_5fghb")
 possibleSpawns = Array[PackedScene]([ExtResource("2_2ou7c"), ExtResource("3_fe64c"), ExtResource("3_klftk")])
@@ -223,7 +223,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LEVEL1SPAWNLEFT"]
-position = Vector2(-3025, 3598.5)
+position = Vector2(-3025, 3915)
 shape = SubResource("RectangleShape2D_i3ju1")
 script = ExtResource("1_5fghb")
 possibleSpawns = Array[PackedScene]([ExtResource("2_2ou7c"), ExtResource("3_fe64c"), ExtResource("3_klftk")])

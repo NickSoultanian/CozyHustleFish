@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bgrpq14obd8pa" path="res://Art Assets/Finished Art/boot/Boot.png" id="2_o6mv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y78ml"]
-size = Vector2(315, 136.75)
+size = Vector2(614, 459)
 
 [node name="boot" type="CharacterBody2D"]
 collision_mask = 2
@@ -12,9 +12,8 @@ script = ExtResource("1_fbssj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(-71.5, 33)
+position = Vector2(-143, 71.5)
 shape = SubResource("RectangleShape2D_y78ml")
 
 [node name="Fish" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_o6mv2")

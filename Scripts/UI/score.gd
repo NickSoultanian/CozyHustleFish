@@ -20,3 +20,6 @@ func increase_score(amount):
 func game_event(amount):
 	increase_score(amount)
 	# increase_money(amount)
+	
+func isTimerStopped():
+	return $CanvasLayer/timer.isTimerStopped()

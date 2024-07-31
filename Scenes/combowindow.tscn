@@ -86,12 +86,21 @@ allow_search = false
 auto_height = true
 text_overrun_behavior = 0
 
-[node name="RedX" type="Sprite2D" parent="CanvasLayer/ColorRect/ArrowDisplay"]
+[node name="RedX" type="TextureRect" parent="CanvasLayer/ColorRect/ArrowDisplay"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.815686)
-position = Vector2(583, 340)
-scale = Vector2(0.3025, 0.3025)
+anchors_preset = -1
+anchor_left = 0.345
+anchor_top = 0.261
+anchor_right = 0.68
+anchor_bottom = 0.784
+offset_left = 0.559967
+offset_top = -0.128006
+offset_right = -0.359985
+offset_bottom = -0.0320129
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("6_00pg2")
+expand_mode = 1
 
 [node name="GreenCheck" type="Sprite2D" parent="CanvasLayer/ColorRect/ArrowDisplay"]
 visible = false
