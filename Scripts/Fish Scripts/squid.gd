@@ -4,4 +4,4 @@ const isSquid = true
 
 #constructor
 func _init():
-	velo = Vector2(-400,0)
+	velo = Vector2(-800,0)

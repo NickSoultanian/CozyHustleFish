@@ -42,6 +42,9 @@ stream = ExtResource("6_gfina")
 bus = &"SoundEffects"
 
 [node name="reeling" type="AudioStreamPlayer" parent="."]
+process_thread_group = 1
+process_thread_group_order = 0
+process_thread_messages = 0
 stream = ExtResource("7_ixlj2")
 bus = &"SoundEffects"
 
@@ -56,6 +59,11 @@ bus = &"SoundEffects"
 [node name="wrongcombo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_7ym2f")
 bus = &"SoundEffects"
+
+[node name="gamemusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_fxkrc")
+
+[node name="arrowSucc" type="AudioStreamPlayer" parent="."]
 
 [node name="arrow" type="Node" parent="."]
 

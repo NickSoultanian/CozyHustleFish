@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b7qn8jfbb7xk6" path="res://Art Assets/Finished Art/fish/dayfish_salmon.png" id="2_53aod"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y78ml"]
-size = Vector2(710, 304)
+size = Vector2(1023, 406)
 
 [node name="fishOne" type="CharacterBody2D"]
 collision_mask = 2
@@ -12,9 +12,8 @@ script = ExtResource("1_fbc8k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(-15, -13)
+position = Vector2(17.5, -64)
 shape = SubResource("RectangleShape2D_y78ml")
 
 [node name="Fish" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_53aod")

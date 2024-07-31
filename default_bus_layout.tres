@@ -1,10 +1,10 @@
 [gd_resource type="AudioBusLayout" format=3 uid="uid://doviqdkh85g8v"]
 
 [resource]
-bus/0/volume_db = -0.328256
+bus/0/volume_db = -5.04538
 bus/1/name = &"SoundEffects"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = 0.0
+bus/1/volume_db = 2.05151
 bus/1/send = &"Master"

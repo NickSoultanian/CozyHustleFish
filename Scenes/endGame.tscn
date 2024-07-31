@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgxer8bfl5bnf"]
+
+[ext_resource type="Script" path="res://Scripts/endGame.gd" id="1_1po8p"]
+[ext_resource type="Texture2D" uid="uid://cx6vpgujv8snj" path="res://Art Assets/Finished Art/GameWinScreen.png" id="1_6efr4"]
+[ext_resource type="FontFile" uid="uid://bgi8b1c5kqfg6" path="res://Art Assets/Fonts/njal-bold-font/NjalBold-gx4E5.otf" id="3_0mwdo"]
+[ext_resource type="Texture2D" uid="uid://bfu5kccyym3l7" path="res://Art Assets/Finished Art/timer/Fishcoin.png" id="4_1w2ra"]
+[ext_resource type="Texture2D" uid="uid://dhpiksj3r81h0" path="res://Art Assets/Finished Art/main menu/Back button.png" id="5_i0pdt"]
+
+[node name="EndGame" type="Node2D"]
+script = ExtResource("1_1po8p")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6efr4")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.407
+anchor_top = 0.463
+anchor_right = 0.5
+anchor_bottom = 0.566
+offset_left = 0.135986
+offset_top = -1.02402
+offset_right = 15.0
+offset_bottom = 0.231964
+theme_override_fonts/font = ExtResource("3_0mwdo")
+theme_override_font_sizes/font_size = 50
+text = "1000
+"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.337
+anchor_top = 0.457
+anchor_right = 0.4
+anchor_bottom = 0.566
+offset_left = -0.223999
+offset_top = -0.136017
+offset_right = 0.199982
+offset_bottom = 0.231964
+texture = ExtResource("4_1w2ra")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_top = 0.995
+anchor_bottom = 0.995
+offset_left = 24.0
+offset_top = -77.7601
+offset_right = 124.0
+offset_bottom = -8.76007
+texture_normal = ExtResource("5_i0pdt")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_pressed"]
