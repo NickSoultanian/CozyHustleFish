@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://cloipdvxl62uf" path="res://Scenes/HookableObjects (Fish)/fishTwo.tscn" id="11_ldd8n"]
 [ext_resource type="Texture2D" uid="uid://b8pndagntlrlh" path="res://Art Assets/Finished Art/background/dock assets/dock.png" id="15_1kphf"]
 [ext_resource type="Texture2D" uid="uid://b7efk633lyxhq" path="res://Art Assets/Finished Art/background/foreground right/fgR1.png" id="15_i03bx"]
-[ext_resource type="PackedScene" uid="uid://bjdmkb8nf75gi" path="res://Scenes/HookableObjects (Fish)/squid.tscn" id="15_n46ex"]
 [ext_resource type="Texture2D" uid="uid://y0nd0eudvndi" path="res://Art Assets/Finished Art/background/foreground right/fgR2.png" id="16_ooln0"]
 [ext_resource type="Texture2D" uid="uid://cusmih6elqvwa" path="res://Art Assets/Finished Art/background/foreground left/fgL1.png" id="16_w22v8"]
 [ext_resource type="Texture2D" uid="uid://dn0waqlodirkc" path="res://Art Assets/Finished Art/background/foreground left/fgL2.png" id="17_g5f80"]
@@ -43,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://dakjtiegjfyjy" path="res://Art Assets/Finished Art/background/water animation/bg-daytime-12.png" id="35_1r2g5"]
 [ext_resource type="Texture2D" uid="uid://brpijxueqd0q" path="res://Art Assets/Finished Art/background/water animation/bg-daytime-13.png" id="36_cseja"]
 [ext_resource type="Texture2D" uid="uid://bjs2cdf7fq7kq" path="res://Art Assets/Finished Art/background/water animation/bg-daytime-14.png" id="37_ttbuv"]
+[ext_resource type="Texture2D" uid="uid://cbodedf26s51j" path="res://Art Assets/Finished Art/background/bottomless_abyss.png" id="43_fqbc7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wkuh5"]
 size = Vector2(5522, 107)
@@ -210,9 +210,6 @@ position = Vector2(1253, 10407)
 [node name="fish3" parent="." instance=ExtResource("4_jepng")]
 position = Vector2(-1055, 9580)
 
-[node name="squid" parent="." instance=ExtResource("15_n46ex")]
-position = Vector2(-1103, 1088)
-
 [node name="Dock" type="Sprite2D" parent="."]
 position = Vector2(2161, 1044)
 scale = Vector2(4, 4)
@@ -254,3 +251,9 @@ position = Vector2(0, 880)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_q027h")
 script = ExtResource("20_5kjb0")
+
+[node name="BottomlessAbyss" type="Sprite2D" parent="."]
+z_index = 6
+position = Vector2(0, 18184.5)
+scale = Vector2(4.242, 3.92144)
+texture = ExtResource("43_fqbc7")
