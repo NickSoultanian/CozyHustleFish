@@ -8,6 +8,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if playing == false:
+		play()
 	pass
 
 func play_buttonclick():
@@ -33,6 +35,9 @@ func play_squidinked():
 	
 func play_wrongcombo():
 	$wrongcombo.play()
+	
+func play_gamemusic():
+	set_stream(load("res://Music/audio/fishgame.wav"))
 
 # individual arrow sounds! 
 func play_arrowsucc1():

@@ -57,6 +57,9 @@ bus = &"SoundEffects"
 stream = ExtResource("10_7ym2f")
 bus = &"SoundEffects"
 
+[node name="gamemusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_fxkrc")
+
 [node name="arrow" type="Node" parent="."]
 
 [node name="arrowsucc1" type="AudioStreamPlayer" parent="arrow"]

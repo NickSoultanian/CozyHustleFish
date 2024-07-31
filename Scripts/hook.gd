@@ -26,7 +26,7 @@ func _physics_process(delta):
 	check_collision(delta)
 	# print(hook.position.y," : ", starting_position.y)
 	
-	if position.y <= starting_position.y:
+	if position.y <= starting_position.y-800:
 		play_animation("idle")
 	
 	if returning:
@@ -125,7 +125,7 @@ func check_collision(delta):
 			Music.play_sharkcaughtbite()
 			returning = true
 			$Camera2D/getSharked/CanvasLayer/GotSharkedStupid.set_visible(true)
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(1.5).timeout
 			$Camera2D/getSharked/CanvasLayer/GotSharkedStupid.set_visible(false)
 			
 		

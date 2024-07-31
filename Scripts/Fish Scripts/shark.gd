@@ -6,4 +6,5 @@ const isShark = true
 func _init():
 	velo = Vector2(-300,0)
 	winScreen = preload("res://Art Assets/Finished Art/catch popups/GotSharkedStupid.png")
+	pointValue = -200
 	animation = "shark"
