@@ -119,8 +119,12 @@ func check_collision(delta):
 			#can_move = false
 			#await $Camera2D/ComboWindow.startCombo(["up", "down", "left", "right", "up", "down", "left", "right"])
 			#can_move = true
+			can_move = false
+			returning = true
+			$Camera2D/getSharked/CanvasLayer/GotSharkedStupid.set_visible(true)
+			await get_tree().create_timer(1.5).timeout
+			$Camera2D/getSharked/CanvasLayer/GotSharkedStupid.set_visible(false)
 			
-			#returning = true
 		
 		#now here's the squid code
 		elif collision_info.get_collider().get("isSquid") == true:

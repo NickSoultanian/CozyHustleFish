@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://j7bdgfk5pc15"]
+
+[ext_resource type="Texture2D" uid="uid://urwqoqt0ybr8" path="res://Art Assets/Finished Art/catch popups/GotSharkedStupid.png" id="1_vb08r"]
+
+[node name="getSharked" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GotSharkedStupid" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vb08r")
+expand_mode = 1
