@@ -14,7 +14,7 @@ var catching = false
 var starting_position = Vector2()
 
 func _ready():
-	starting_position = position # Vector2(0, -625)
+	starting_position = position
 	# print("from hook", starting_position.y)
 	
 func _physics_process(delta):
@@ -24,7 +24,7 @@ func _physics_process(delta):
 	check_collision(delta)
 	# print(hook.position.y," : ", starting_position.y)
 	
-	if position.y < 480:
+	if position.y <= starting_position.y:
 		play_animation("idle")
 	
 	if returning:

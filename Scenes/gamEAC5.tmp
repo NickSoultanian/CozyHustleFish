@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://ccwpwsgilcnaj" path="res://Art Assets/Finished Art/background/foreground left/fgL3.png" id="18_t4jap"]
 [ext_resource type="Texture2D" uid="uid://ebo3qmpy7m5l" path="res://Art Assets/Finished Art/background/foreground right/fgR4.png" id="18_xwbp4"]
 [ext_resource type="Texture2D" uid="uid://dtyfyymfdfymf" path="res://Art Assets/Finished Art/background/foreground left/fgL4.png" id="19_sh6n5"]
-[ext_resource type="Script" path="res://Scripts/playAnimations.gd" id="20_5kjb0"]
+[ext_resource type="Script" path="res://Scenes/playAnimations.gd" id="20_5kjb0"]
 [ext_resource type="Texture2D" uid="uid://cirvtn2g1ggv0" path="res://Art Assets/Finished Art/background/dock assets/coolerFront.png" id="21_814l5"]
 [ext_resource type="Texture2D" uid="uid://b0qhh87vvijgb" path="res://Art Assets/Finished Art/background/dock assets/coolerBack.png" id="22_wdm1w"]
 [ext_resource type="Texture2D" uid="uid://e2t0p8pqhksa" path="res://Art Assets/Finished Art/background/dock assets/dockFrontRightPost.png" id="23_itkwl"]
@@ -149,13 +149,13 @@ position = Vector2(239, 942)
 scale = Vector2(4, 4)
 
 [node name="Hook" parent="." instance=ExtResource("3_vc8wl")]
-position = Vector2(0, 2000)
+position = Vector2(0, 475)
 collision_layer = 2
 collision_mask = 5
 
 [node name="Camera2D" type="Camera2D" parent="Hook"]
 process_mode = 3
-position = Vector2(0, -500)
+position = Vector2(0, -1237)
 zoom = Vector2(0.25, 0.25)
 script = ExtResource("5_75cdm")
 
@@ -176,7 +176,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(0, 2000)
+position = Vector2(0, 450)
 shape = SubResource("RectangleShape2D_wkuh5")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
@@ -184,7 +184,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2(0, 20750)
+position = Vector2(0, 23100)
 shape = SubResource("RectangleShape2D_wkuh5")
 
 [node name="shark" parent="." instance=ExtResource("9_537jm")]
@@ -222,7 +222,6 @@ z_index = 2
 position = Vector2(-1803, 10270)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_oy4k6")
-script = ExtResource("20_5kjb0")
 
 [node name="CoolerFront" type="Sprite2D" parent="."]
 z_index = 1
@@ -245,4 +244,3 @@ texture = ExtResource("23_itkwl")
 position = Vector2(0, 880)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_q027h")
-script = ExtResource("20_5kjb0")

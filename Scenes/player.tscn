@@ -33,7 +33,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"cast",
-"speed": 3.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -74,5 +74,4 @@ shape = SubResource("RectangleShape2D_kq6ne")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_poffa")
-animation = &"idle"
-frame_progress = 0.80988
+animation = &"cast"

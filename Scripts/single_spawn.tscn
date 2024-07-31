@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwbs7qs14hyrp"]
+[gd_scene load_steps=5 format=3 uid="uid://cvaypwx5nxb6v"]
 
 [ext_resource type="Script" path="res://Scripts/fishSpawner.gd" id="1_1pmt2"]
 [ext_resource type="PackedScene" uid="uid://cpbuolcuxxv7g" path="res://Scenes/HookableObjects (Fish)/fishOne.tscn" id="2_wt0ch"]
