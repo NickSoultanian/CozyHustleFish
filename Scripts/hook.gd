@@ -38,14 +38,14 @@ func reelUp():
 	# Reel fish back up, disable controls and hitbox temporarily
 	velocity.y = -speed
 	$hookBox.disabled = true
-	if position.y <= starting_position.y-600:
+	if position.y <= starting_position.y-800:
 		$hookBox.disabled = false 
 		returning = false
 		visible = false
 		player.isIdle = false
 		await player.play_animation("cast")
 		visible = true
-		position.y = starting_position.y - 200
+		position.y = starting_position.y - 800
 		can_move = true
 		  # Stop moving when close to target
 
