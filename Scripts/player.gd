@@ -13,6 +13,7 @@ func play_animation(animation_name):
 		player_animation.stop()
 		player_animation.play("cast")
 		await get_tree().create_timer(2.0).timeout
+		Music.play_hookcastandsplash()
 		isIdle = true
 	elif animation_name == "idle":
 		player_animation.play("idle")
