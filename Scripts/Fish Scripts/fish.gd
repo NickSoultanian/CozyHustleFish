@@ -6,6 +6,8 @@ var velo
 var possibleCombos
 var rng = RandomNumberGenerator.new()
 var pointValue
+var species
+var winScreen
 var animation = ""
 
 func _physics_process(delta):
@@ -21,6 +23,9 @@ func caught():
 	
 func destroy():
 	queue_free()
+	
+func getSpecies():
+	return species
 		
 func getRandomCombo():
 	return possibleCombos[rng.randi_range(0, 3)]
