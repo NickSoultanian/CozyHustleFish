@@ -122,6 +122,7 @@ func check_collision(delta):
 			#can_move = true
 			can_move = false
 			play_animation(temp)
+			Music.play_sharkcaughtbite()
 			returning = true
 			$Camera2D/getSharked/CanvasLayer/GotSharkedStupid.set_visible(true)
 			await get_tree().create_timer(1.0).timeout
