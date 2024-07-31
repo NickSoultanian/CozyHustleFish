@@ -11,19 +11,17 @@ var timer
 
 func _ready():
 	timer = $Timer
-	
-	timer.start(5.0)
+	timer.start(90.0)
 	print("timer started")
 
 func _process(delta):
 	minutes = int(timer.get_time_left()) / 60
-	print(timer.time_left)
 	seconds = int(timer.get_time_left()) % 60
 	
 	text = "%2d:%02d" % [minutes, seconds]
 	
 func isTimerStopped():
-	return timer.timeout
+	return timer.is_stopped()
 	
 	#game_time += (delta)
 	#var minutes = int(game_time) / 60

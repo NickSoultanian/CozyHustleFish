@@ -6,9 +6,11 @@ var timer
 var hook
 var player
 var timeCheck = true
+var text
 func _ready():
 	speed = 0
 	hook = get_parent()
+	text = $TextDisplay
 	player = get_tree().get_root().get_node("Game/Player")
 	hook.visibility_layer = 0
 	hook.can_move = false
@@ -33,6 +35,7 @@ func _process(delta):
 	if timer.time_left < 3 && timeCheck == true:
 		timeCheck = false
 		await player.play_animation("cast")
+		
 		hook.visibility_layer = 1
 		
 	
@@ -41,3 +44,4 @@ func _on_Timer_timeout():
 	global_position = hook.global_position + Vector2(0, 1200)
 	direction = Vector2(0,0)
 	hook.can_move = true
+	text.queue_free()

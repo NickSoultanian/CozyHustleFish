@@ -11,6 +11,7 @@ var can_move = true
 var isComboRight = false
 var catching = false
 var player
+var scoreToAdd = 0;
 
 @onready var hook_animation = $AnimatedSprite2D
 

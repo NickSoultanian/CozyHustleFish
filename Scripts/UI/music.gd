@@ -42,6 +42,9 @@ func play_wrongcombo():
 func play_gamemusic():
 	set_stream(load("res://Music/audio/fishgame.wav"))
 	
+func play_menumusic():
+	set_stream(load("res://Music/audio/FISH MAIN MENU.wav"))
+	
 func playArrowSound(sound):
 	$arrowSucc.set_stream(sound)
 	$arrowSucc.play()

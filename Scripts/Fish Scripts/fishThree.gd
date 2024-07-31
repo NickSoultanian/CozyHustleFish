@@ -11,7 +11,7 @@ func _init():
 		["down", "up", "left", "right", "down"],
 		["up", "down", "left", "up", "right"]
 	]
-	pointValue = 300
+	pointValue = 80
 	animation = "fishThree"
 	species = 3
 	winScreen = preload("res://Art Assets/Finished Art/catch popups/FishThreeWinscreen.png")

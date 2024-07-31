@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cq4qckqpgonbt"]
+[gd_scene load_steps=49 format=3 uid="uid://cq4qckqpgonbt"]
 
 [ext_resource type="Script" path="res://Scripts/gameManager.gd" id="1_x7opw"]
 [ext_resource type="PackedScene" uid="uid://c4x421uqlucuk" path="res://Scenes/player.tscn" id="2_5d77e"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://besj2pcam101o" path="res://Scenes/HookableObjects (Fish)/shark.tscn" id="9_537jm"]
 [ext_resource type="PackedScene" uid="uid://c65dqfuccbahl" path="res://Scenes/HookableObjects (Fish)/fishFour.tscn" id="10_m8a2h"]
 [ext_resource type="PackedScene" uid="uid://cvywtwolyj827" path="res://Scenes/get_sharked.tscn" id="10_r2ryi"]
+[ext_resource type="FontFile" uid="uid://bgi8b1c5kqfg6" path="res://Art Assets/Fonts/njal-bold-font/NjalBold-gx4E5.otf" id="11_iyrxv"]
 [ext_resource type="PackedScene" uid="uid://cloipdvxl62uf" path="res://Scenes/HookableObjects (Fish)/fishTwo.tscn" id="11_ldd8n"]
 [ext_resource type="Texture2D" uid="uid://b8pndagntlrlh" path="res://Art Assets/Finished Art/background/dock assets/dock.png" id="15_1kphf"]
 [ext_resource type="Texture2D" uid="uid://b7efk633lyxhq" path="res://Art Assets/Finished Art/background/foreground right/fgR1.png" id="15_i03bx"]
@@ -139,6 +140,7 @@ animations = [{
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_x7opw")
+scoreNeeded = 50
 
 [node name="Bg-daytime" type="Sprite2D" parent="."]
 position = Vector2(0, 10532)
@@ -167,14 +169,45 @@ position = Vector2(-1604, 2235)
 [node name="UiForTimeAndScore" parent="Hook/Camera2D" instance=ExtResource("6_l840t")]
 
 [node name="Inkblot" parent="Hook/Camera2D" instance=ExtResource("7_mdra0")]
+visible = false
 offset_right = 0.0
 offset_bottom = 0.0
-
-[node name="Pausemenu" parent="Hook/Camera2D" instance=ExtResource("9_0ktv2")]
 
 [node name="getSharked" parent="Hook/Camera2D" instance=ExtResource("10_r2ryi")]
 visible = false
 position = Vector2(219.698, -1526.05)
+
+[node name="TextDisplay" type="Control" parent="Hook/Camera2D"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Hook/Camera2D/TextDisplay"]
+
+[node name="Label" type="Label" parent="Hook/Camera2D/TextDisplay/CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -87.5
+offset_right = 275.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("11_iyrxv")
+theme_override_font_sizes/font_size = 150
+text = "DAY 1
+EARN 500 COINS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pausemenu" parent="Hook/Camera2D" instance=ExtResource("9_0ktv2")]
 
 [node name="FishSpawner" parent="." instance=ExtResource("4_cu2is")]
 z_index = 1
