@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cq4qckqpgonbt"]
+[gd_scene load_steps=47 format=3 uid="uid://cq4qckqpgonbt"]
 
 [ext_resource type="Script" path="res://Scripts/gameManager.gd" id="1_x7opw"]
 [ext_resource type="PackedScene" uid="uid://c4x421uqlucuk" path="res://Scenes/player.tscn" id="2_5d77e"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/camera.gd" id="5_75cdm"]
 [ext_resource type="PackedScene" uid="uid://dn4vqskbuvrrs" path="res://Scenes/UI/UI_for_time_and_Score.tscn" id="6_l840t"]
 [ext_resource type="PackedScene" uid="uid://07rhfrxsw0ds" path="res://Scenes/inkblot.tscn" id="7_mdra0"]
+[ext_resource type="PackedScene" uid="uid://7l73wb48e8tf" path="res://Scenes/UI/pausemenu.tscn" id="9_0ktv2"]
 [ext_resource type="PackedScene" uid="uid://besj2pcam101o" path="res://Scenes/HookableObjects (Fish)/shark.tscn" id="9_537jm"]
 [ext_resource type="PackedScene" uid="uid://c65dqfuccbahl" path="res://Scenes/HookableObjects (Fish)/fishFour.tscn" id="10_m8a2h"]
 [ext_resource type="PackedScene" uid="uid://cloipdvxl62uf" path="res://Scenes/HookableObjects (Fish)/fishTwo.tscn" id="11_ldd8n"]
@@ -167,6 +168,8 @@ position = Vector2(-1604, 2235)
 [node name="Inkblot" parent="Hook/Camera2D" instance=ExtResource("7_mdra0")]
 offset_right = 0.0
 offset_bottom = 0.0
+
+[node name="Pausemenu" parent="Hook/Camera2D" instance=ExtResource("9_0ktv2")]
 
 [node name="FishSpawner" parent="." instance=ExtResource("4_cu2is")]
 z_index = 1

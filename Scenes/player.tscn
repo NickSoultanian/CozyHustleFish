@@ -1,18 +1,18 @@
 [gd_scene load_steps=16 format=3 uid="uid://c4x421uqlucuk"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_cctab"]
-[ext_resource type="Texture2D" uid="uid://oxdl0a80g4q6" path="res://Art Assets/Finished Art/dea sprites/dea_idle1.png" id="1_xog8n"]
-[ext_resource type="Texture2D" uid="uid://ba6kepslxtosh" path="res://Art Assets/Finished Art/dea sprites/dea_cast1.png" id="2_0bb2q"]
-[ext_resource type="Texture2D" uid="uid://716mv2vy11kn" path="res://Art Assets/Finished Art/dea sprites/dea_idle2.png" id="2_3v6nw"]
-[ext_resource type="Texture2D" uid="uid://dvcueq5aux0cb" path="res://Art Assets/Finished Art/dea sprites/dea_idle3.png" id="3_ookjd"]
-[ext_resource type="Texture2D" uid="uid://cvn4yglksv2ek" path="res://Art Assets/Finished Art/dea sprites/dea_cast2.png" id="3_ryf5f"]
-[ext_resource type="Texture2D" uid="uid://bq5ts6b6fg2uk" path="res://Art Assets/Finished Art/dea sprites/dea_idle4.png" id="4_3lsqt"]
-[ext_resource type="Texture2D" uid="uid://c3vkjcuedeth" path="res://Art Assets/Finished Art/dea sprites/dea_cast3.png" id="4_w1yhj"]
-[ext_resource type="Texture2D" uid="uid://5fevvjk8n2ca" path="res://Art Assets/Finished Art/dea sprites/dea_idle5.png" id="5_dbhi5"]
-[ext_resource type="Texture2D" uid="uid://cjsgw4pl0hwcb" path="res://Art Assets/Finished Art/dea sprites/dea_cast4 ATTACH USABLE HOOK.png" id="5_m37k5"]
-[ext_resource type="Texture2D" uid="uid://dt1b5t8acaqt4" path="res://Art Assets/Finished Art/dea sprites/dea_idle6.png" id="6_nrx31"]
-[ext_resource type="Texture2D" uid="uid://bbc0yytoqk1pt" path="res://Art Assets/Finished Art/dea sprites/dea_idle7.png" id="7_o2ohw"]
-[ext_resource type="Texture2D" uid="uid://cmjnorso3y7i" path="res://Art Assets/Finished Art/dea sprites/dea_idle8.png" id="8_swn06"]
+[ext_resource type="Texture2D" uid="uid://vxj0fv6g4ag4" path="res://Art Assets/Finished Art/dea sprites/dea hook/deaHook1.png" id="2_me4rk"]
+[ext_resource type="Texture2D" uid="uid://cqe22yvcnlisk" path="res://Art Assets/Finished Art/dea sprites/dea hook/deaHook2.png" id="3_jj2ua"]
+[ext_resource type="Texture2D" uid="uid://f7akdh7gljbm" path="res://Art Assets/Finished Art/dea sprites/dea hook/deaHook3.png" id="4_83pnn"]
+[ext_resource type="Texture2D" uid="uid://cux74fryjh0xr" path="res://Art Assets/Finished Art/dea sprites/dea hook/deaHook4.png" id="5_unjal"]
+[ext_resource type="Texture2D" uid="uid://bi157xg58non8" path="res://Art Assets/Finished Art/dea sprites/dea idle no line/deaNoLine1.png" id="6_exwsk"]
+[ext_resource type="Texture2D" uid="uid://dubn6lo2qsu0a" path="res://Art Assets/Finished Art/dea sprites/dea idle no line/deaNoLine2.png" id="7_38v3c"]
+[ext_resource type="Texture2D" uid="uid://db3ub3vyrhwjd" path="res://Art Assets/Finished Art/dea sprites/dea idle no line/deaNoLine3.png" id="8_0phf6"]
+[ext_resource type="Texture2D" uid="uid://bhekv85xpi8mo" path="res://Art Assets/Finished Art/dea sprites/dea idle no line/deaNoLine4.png" id="9_fdub1"]
+[ext_resource type="Texture2D" uid="uid://bpwgfbj0ovowa" path="res://Art Assets/Finished Art/dea sprites/dea idle no line/deaNoLine5.png" id="10_inwg5"]
+[ext_resource type="Texture2D" uid="uid://dnfaynrr4ayqo" path="res://Art Assets/Finished Art/dea sprites/dea idle no line/deaNoLine6.png" id="11_6oxak"]
+[ext_resource type="Texture2D" uid="uid://n1a4iur4djk2" path="res://Art Assets/Finished Art/dea sprites/dea idle no line/deaNoLine7.png" id="12_n2hqj"]
+[ext_resource type="Texture2D" uid="uid://cdacq4bvdrbho" path="res://Art Assets/Finished Art/dea sprites/dea idle no line/deaNoLine8.png" id="13_hh50y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kq6ne"]
 
@@ -20,16 +20,16 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_0bb2q")
+"texture": ExtResource("2_me4rk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ryf5f")
+"texture": ExtResource("3_jj2ua")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_w1yhj")
+"texture": ExtResource("4_83pnn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_m37k5")
+"texture": ExtResource("5_unjal")
 }],
 "loop": true,
 "name": &"cast",
@@ -37,28 +37,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_xog8n")
+"texture": ExtResource("6_exwsk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_3v6nw")
+"texture": ExtResource("7_38v3c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ookjd")
+"texture": ExtResource("8_0phf6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_3lsqt")
+"texture": ExtResource("9_fdub1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_dbhi5")
+"texture": ExtResource("10_inwg5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_nrx31")
+"texture": ExtResource("11_6oxak")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_o2ohw")
+"texture": ExtResource("12_n2hqj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_swn06")
+"texture": ExtResource("13_hh50y")
 }],
 "loop": true,
 "name": &"idle",
