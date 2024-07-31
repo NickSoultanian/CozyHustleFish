@@ -12,6 +12,7 @@ var inputAllowed = false;
 var arrowDisplay
 var opacityLayer
 var winBool = false
+
 var arrowsounds: Dictionary = {"1": Callable(Music, "play_arrowsucc1()"),
 								"2": Callable(Music, "play_arrowsucc2()"),
 								"3": Callable(Music, "play_arrowsucc3()"),
@@ -21,6 +22,9 @@ var arrowsounds: Dictionary = {"1": Callable(Music, "play_arrowsucc1()"),
 								"7": Callable(Music, "play_arrowsucc7()"),
 								"8": Callable(Music, "play_arrowsucc8()")}
 								
+
+var caughtScreen
+
 signal gameEnd
 
 # Called when the node enters the scene tree for the first time.
@@ -37,13 +41,14 @@ func _ready():
 func _process(delta): 
 	pass
 	
-func startCombo(inputArray):
+func startCombo(inputArray, caught):
 	get_tree().paused = true
 	timerEnded = false
 	Clock.set_visible(true)
 	showOpacityLayer()
 	arrowDisplay.spawnArrows(inputArray)
 	currArrowArray = inputArray
+	caughtScreen = caught.winScreen
 	inputAllowed = true
 	Clock.startClock(TIME_LIMIT)
 	timer.start(TIME_LIMIT)
@@ -68,15 +73,33 @@ func endCombo(winBool):
 		await get_tree().create_timer(1.0).timeout
 		$CanvasLayer/ColorRect/ArrowDisplay/RedX.set_visible(false)
 	else:
-		$CanvasLayer/ColorRect/ArrowDisplay/GreenCheck.set_visible(true)
-		await get_tree().create_timer(1.0).timeout
-		$CanvasLayer/ColorRect/ArrowDisplay/GreenCheck.set_visible(false)
+		#$CanvasLayer/ColorRect/ArrowDisplay/GreenCheck.set_visible(true)
+		#$CanvasLayer/ColorRect/ArrowDisplay/GreenCheck.set_visible(false)
+		#match caughtFish:
+			#1:
+				#await printCatchScreen($CanvasLayer/ColorRect/ArrowDisplay/FishOneWinscreen)
+			#2:
+				#await printCatchScreen($CanvasLayer/ColorRect/ArrowDisplay/FishTwoWinscreen)
+			#3:
+				#await printCatchScreen($CanvasLayer/ColorRect/ArrowDisplay/FishThreeWinscreen)
+			#4:
+				#await printCatchScreen($CanvasLayer/ColorRect/ArrowDisplay/FishFourWinscreen)
+		$CanvasLayer/ColorRect/ArrowDisplay/CanvasLayer2/TextureRect.set_texture(caughtScreen)
+		#$CanvasLayer/ColorRect/ArrowDisplay/CanvasLayer/Control/FishWinscreen.scale = Vector2(get_viewport().size.x/1150.0, get_viewport().size.y/652.0)
+		$CanvasLayer/ColorRect/ArrowDisplay/CanvasLayer2/TextureRect.set_visible(true)
+		await get_tree().create_timer(1.5).timeout
+		$CanvasLayer/ColorRect/ArrowDisplay/CanvasLayer2/TextureRect.set_visible(false)
 	hideOpacityLayer()
 	timer.stop()
 	Clock.endClock()
 	Clock.set_visible(false)
 	arrowDisplay.destroyArrows()
 	get_tree().paused = false
+	
+func printCatchScreen(winScreen):
+	winScreen.set_visible(true)
+	await get_tree().create_timer(1.5).timeout
+	winScreen.set_visible(false)
 	
 
 func _input(event):

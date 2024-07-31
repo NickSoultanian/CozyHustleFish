@@ -13,3 +13,5 @@ func _init():
 	]
 	pointValue = 750
 	animation = "fishFive"
+	species = 5
+	winScreen = preload("res://Art Assets/Finished Art/catch popups/FishFiveWinscreen.png")

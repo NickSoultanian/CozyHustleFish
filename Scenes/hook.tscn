@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://bcfu27cslcm3x"]
+[gd_scene load_steps=65 format=3 uid="uid://bcfu27cslcm3x"]
 
 [ext_resource type="Script" path="res://Scripts/hook.gd" id="1_sjihf"]
 [ext_resource type="Texture2D" uid="uid://bhhs6go540h18" path="res://Art Assets/Finished Art/hook/hook fishOne/hook_fishOne1.png" id="2_ccwqh"]
@@ -55,6 +55,13 @@
 [ext_resource type="Texture2D" uid="uid://dru4wxjrcgdiw" path="res://Art Assets/Finished Art/hook/hook_fishTwo/hook_ratfish5.png" id="48_mdj70"]
 [ext_resource type="Texture2D" uid="uid://djr5r80pfqg0o" path="res://Art Assets/Finished Art/hook/hook_fishTwo/hook_ratfish6.png" id="49_mjqhb"]
 [ext_resource type="Texture2D" uid="uid://beoo725dc43bf" path="res://Art Assets/Finished Art/hook/hook_fishTwo/hook_ratfish7.png" id="50_cryu0"]
+[ext_resource type="Texture2D" uid="uid://dt52lr8rd0idv" path="res://Art Assets/Finished Art/hook/hook shark/hookShark1.png" id="56_ep2vb"]
+[ext_resource type="Texture2D" uid="uid://dcyqg7fpd0w42" path="res://Art Assets/Finished Art/hook/hook shark/hookShark2.png" id="57_0sjy4"]
+[ext_resource type="Texture2D" uid="uid://d1kbmh6ibqvrh" path="res://Art Assets/Finished Art/hook/hook shark/hookShark3.png" id="58_h7fbx"]
+[ext_resource type="Texture2D" uid="uid://dmqnl0v452mj3" path="res://Art Assets/Finished Art/hook/hook shark/hookShark4.png" id="59_ki4pa"]
+[ext_resource type="Texture2D" uid="uid://dhiuxrbtyrk17" path="res://Art Assets/Finished Art/hook/hook shark/hookShark5.png" id="60_wxk4x"]
+[ext_resource type="Texture2D" uid="uid://dmnlj2m0rw0dl" path="res://Art Assets/Finished Art/hook/hook shark/hookShark6.png" id="61_vyatf"]
+[ext_resource type="Texture2D" uid="uid://b42kipxb1btp7" path="res://Art Assets/Finished Art/hook/hook shark/hookShark7.png" id="62_m8t4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ea65q"]
 size = Vector2(12.8, 19.4)
@@ -262,6 +269,32 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_ep2vb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_0sjy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_h7fbx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_ki4pa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_wxk4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_vyatf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_m8t4k")
+}],
+"loop": true,
+"name": &"shark",
+"speed": 5.0
 }]
 
 [node name="hook" type="CharacterBody2D"]
@@ -273,6 +306,9 @@ scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_ea65q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 550)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_if7jv")
-animation = &"fishSix"
+
+animation = &"shark"
+
