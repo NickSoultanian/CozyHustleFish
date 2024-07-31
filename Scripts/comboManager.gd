@@ -80,10 +80,10 @@ func endCombo(winBool):
 	
 
 func _input(event):
-	var i = 0
+	#var i = 0
 	if isArrowInput(event) && inputAllowed:
-		i += 1
-		arrowsounds[str(i)].call()
+		#i += 1
+		#arrowsounds[str(i)].call()
 		currArrowEvent = event
 		var currArrow = currArrowArray.pop_front()
 		if (currArrowEvent.is_action_pressed(currArrow)):
@@ -97,8 +97,8 @@ func _input(event):
 			winBool = false
 			gameEnd.emit()
 	
-	if i >= 8:
-		i = 0
+	#if i >= 8:
+		#i = 0
 	pass
 
 
