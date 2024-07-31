@@ -49,6 +49,7 @@ centered = false
 light_mask = 3
 visibility_layer = 31
 z_index = 1
+layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
