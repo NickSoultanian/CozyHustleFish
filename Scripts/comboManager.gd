@@ -12,7 +12,19 @@ var inputAllowed = false;
 var arrowDisplay
 var opacityLayer
 var winBool = false
+
+var arrowsounds: Dictionary = {"1": Callable(Music, "play_arrowsucc1()"),
+								"2": Callable(Music, "play_arrowsucc2()"),
+								"3": Callable(Music, "play_arrowsucc3()"),
+								"4": Callable(Music, "play_arrowsucc4()"),
+								"5": Callable(Music, "play_arrowsucc5()"),
+								"6": Callable(Music, "play_arrowsucc6()"),
+								"7": Callable(Music, "play_arrowsucc7()"),
+								"8": Callable(Music, "play_arrowsucc8()")}
+								
+
 var caughtScreen
+
 signal gameEnd
 
 # Called when the node enters the scene tree for the first time.
@@ -91,7 +103,10 @@ func printCatchScreen(winScreen):
 	
 
 func _input(event):
+	#var i = 0
 	if isArrowInput(event) && inputAllowed:
+		#i += 1
+		#arrowsounds[str(i)].call()
 		currArrowEvent = event
 		var currArrow = currArrowArray.pop_front()
 		if (currArrowEvent.is_action_pressed(currArrow)):
@@ -104,7 +119,10 @@ func _input(event):
 			#incorrect key was pressed
 			winBool = false
 			gameEnd.emit()
-		pass
+	
+	#if i >= 8:
+		#i = 0
+	pass
 
 
 ## Helpers

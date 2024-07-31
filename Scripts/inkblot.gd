@@ -17,6 +17,7 @@ func _ready():
 func sprayInk():
 	inkBlot.set_visible(true)
 	inkBlot.scale = Vector2(get_viewport().size.x * 0.00036, get_viewport().size.y * 0.00062)
+	Music.play_squidinked()
 	timer.start(TIME_LIMIT)
 	animationPlayer.play("fade_out")
 	await timer.timeout

@@ -301,7 +301,7 @@ animations = [{
 script = ExtResource("1_sjihf")
 
 [node name="hookBox" type="CollisionShape2D" parent="."]
-position = Vector2(-9, 1486)
+position = Vector2(-16, 947)
 scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_ea65q")
 
@@ -309,4 +309,6 @@ shape = SubResource("RectangleShape2D_ea65q")
 position = Vector2(0, 550)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_if7jv")
-animation = &"idle"
+
+animation = &"shark"
+

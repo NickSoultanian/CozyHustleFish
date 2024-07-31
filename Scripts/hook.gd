@@ -36,6 +36,7 @@ func _physics_process(delta):
 			
 func reelUp():
 	# Reel fish back up, disable controls and hitbox temporarily
+	Music.play_reeling()
 	velocity.y = -speed
 	$hookBox.disabled = true
 	if position.y <= starting_position.y-800:
@@ -47,6 +48,7 @@ func reelUp():
 		visible = true
 		position.y = starting_position.y - 800
 		can_move = true
+		Music.stop_reeling()
 		  # Stop moving when close to target
 
 func player_movement(delta): 
@@ -82,13 +84,17 @@ func check_collision(delta):
 
 		
 			# we need to find out if the this ddr was succesful or not. Ask dunstan.
+			Music.play_fishcaught()
 			can_move = false
 			isComboRight = await $Camera2D/ComboWindow.startCombo(currentCaught.getRandomCombo(), currentCaught)
 			print(isComboRight)
 			if isComboRight:
 				$Camera2D/UiForTimeAndScore.game_event(currentScore)
+				Music.play_combosuccess()
 				play_animation(temp)
 				print(temp)
+			elif !isComboRight:
+				Music.play_wrongcombo()
 			returning = true
 			
 		#if the hook gets hit by bad things.
@@ -100,14 +106,19 @@ func check_collision(delta):
 			
 			currentCaught.caught()
 
-		
+			Music.play_fishcaught()
 			can_move = false
-			#isComboRight = await $Camera2D/ComboWindow.startCombo(currentCaught.getRandomCombo())
-			#print(isComboRight)
-			#if isComboRight:
-				#$Camera2D/UiForTimeAndScore.game_event(currentScore)
-			play_animation(temp)
-			print(temp)
+
+			isComboRight = await $Camera2D/ComboWindow.startCombo(currentCaught.getRandomCombo())
+			print(isComboRight)
+			if isComboRight:
+				$Camera2D/UiForTimeAndScore.game_event(currentScore)
+				Music.play_combosuccess()
+				play_animation(temp)
+				print(temp)
+			elif !isComboRight:
+				Music.play_wrongcombo()
+
 			returning = true
 			
 		#if the hook gets hit by even worse things AKA shark
