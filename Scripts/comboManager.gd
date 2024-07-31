@@ -72,11 +72,11 @@ func endCombo(winBool):
 				#await printCatchScreen($CanvasLayer/ColorRect/ArrowDisplay/FishThreeWinscreen)
 			#4:
 				#await printCatchScreen($CanvasLayer/ColorRect/ArrowDisplay/FishFourWinscreen)
-		$CanvasLayer/ColorRect/ArrowDisplay/Control/FishWinscreen.set_texture(caughtScreen)
-		$CanvasLayer/ColorRect/ArrowDisplay/Control/FishWinscreen.scale = Vector2(get_viewport().size.x * 0.00036, get_viewport().size.y * 0.00062)
-		$CanvasLayer/ColorRect/ArrowDisplay/Control/FishWinscreen.set_visible(true)
+		$CanvasLayer/ColorRect/ArrowDisplay/CanvasLayer2/TextureRect.set_texture(caughtScreen)
+		#$CanvasLayer/ColorRect/ArrowDisplay/CanvasLayer/Control/FishWinscreen.scale = Vector2(get_viewport().size.x/1150.0, get_viewport().size.y/652.0)
+		$CanvasLayer/ColorRect/ArrowDisplay/CanvasLayer2/TextureRect.set_visible(true)
 		await get_tree().create_timer(1.5).timeout
-		$CanvasLayer/ColorRect/ArrowDisplay/Control/FishWinscreen.set_visible(false)
+		$CanvasLayer/ColorRect/ArrowDisplay/CanvasLayer2/TextureRect.set_visible(false)
 	hideOpacityLayer()
 	timer.stop()
 	Clock.endClock()
