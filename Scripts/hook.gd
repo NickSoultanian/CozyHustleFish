@@ -114,13 +114,20 @@ func check_collision(delta):
 		elif collision_info.get_collider().get("isShark") == true:
 			# Stuff that happens once fish hits hook AKA start combo game here
 			print("Shark hit hook")
+			temp = currentCaught.getAnimationValue()
 			#collision_info.get_collider().queue_free()
 			# we need to find out if the this ddr was succesfull or not. Ask dunstan.
 			#can_move = false
 			#await $Camera2D/ComboWindow.startCombo(["up", "down", "left", "right", "up", "down", "left", "right"])
 			#can_move = true
+			can_move = false
+			play_animation(temp)
+			Music.play_sharkcaughtbite()
+			returning = true
+			$Camera2D/getSharked/CanvasLayer/GotSharkedStupid.set_visible(true)
+			await get_tree().create_timer(1.0).timeout
+			$Camera2D/getSharked/CanvasLayer/GotSharkedStupid.set_visible(false)
 			
-			#returning = true
 		
 		#now here's the squid code
 		elif collision_info.get_collider().get("isSquid") == true:
