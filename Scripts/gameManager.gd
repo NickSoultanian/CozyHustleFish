@@ -1,15 +1,18 @@
 extends Node2D
-
-
+@onready var pausemenu = $Hook/Camera2D/Pausemenu/CanvasLayer
+var paused = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
+	pausemenu.hide()
+	pass
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass 
-	
+	if Input.is_action_just_pressed("pause"):
+		pause_menu()
+		print("Esc key is pressed")
+		pass
+		
  
 func _input(event):
 	if event.is_action_pressed("comboStart"):
@@ -22,3 +25,13 @@ func pause():
 
 func resume():
 	get_tree().paused = false
+
+func pause_menu():
+	if paused:
+		pausemenu.hide()
+		Engine.time_scale = 1
+	else:
+		pausemenu.show()
+		Engine.time_scale = 0
+	
+	paused = !paused

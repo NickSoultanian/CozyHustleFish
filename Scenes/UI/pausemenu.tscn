@@ -1,5 +1,192 @@
-[gd_scene format=3 uid="uid://bcg3l1pwsw7eh"]
+[gd_scene load_steps=10 format=3 uid="uid://bcg3l1pwsw7eh"]
+
+[ext_resource type="Script" path="res://Scripts/UI/pausemenu.gd" id="1_cxdgc"]
+[ext_resource type="Texture2D" uid="uid://b2ny5jo17mgeb" path="res://Art Assets/Finished Art/pause menu/Pausemenubg.png" id="1_lk4sm"]
+[ext_resource type="Texture2D" uid="uid://5vmcsp7i7uvc" path="res://Art Assets/Finished Art/pause menu/Pause options.png" id="3_mfhsx"]
+[ext_resource type="Texture2D" uid="uid://u03j3amsgify" path="res://Art Assets/Finished Art/pause menu/Pausemainmenubutton.png" id="4_pl0r3"]
+[ext_resource type="Texture2D" uid="uid://ndvdlsos40k2" path="res://Art Assets/Finished Art/pause menu/Quit pause button.png" id="5_o5pf1"]
+[ext_resource type="Texture2D" uid="uid://dgdrr13oo3xxg" path="res://Art Assets/Finished Art/main menu/MainmenuBG.png" id="6_rukeo"]
+[ext_resource type="Texture2D" uid="uid://dqncxfm1ginik" path="res://Art Assets/Finished Art/main menu/menu bucket background.png" id="7_4arki"]
+[ext_resource type="PackedScene" uid="uid://begr35bad812j" path="res://Scenes/UI/option buttons/Volume.tscn" id="8_65gjq"]
+[ext_resource type="PackedScene" uid="uid://b0hom2sbnav7i" path="res://Scenes/UI/option buttons/Resolution.tscn" id="9_why87"]
 
 [node name="Pausemenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_cxdgc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pause art" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = -445.0
+offset_top = -320.0
+offset_right = 1943.0
+offset_bottom = 1348.0
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("1_lk4sm")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="quit art" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = -447.0
+offset_top = -320.0
+offset_right = 1941.0
+offset_bottom = 1348.0
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("5_o5pf1")
+expand_mode = 5
+stretch_mode = 3
+
+[node name="options art" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = -447.0
+offset_top = -322.0
+offset_right = 1941.0
+offset_bottom = 1346.0
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("3_mfhsx")
+expand_mode = 5
+stretch_mode = 3
+
+[node name="mainmenu art" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = -449.0
+offset_top = -324.0
+offset_right = 1939.0
+offset_bottom = 1344.0
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("4_pl0r3")
+stretch_mode = 5
+
+[node name="Control2" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="option" type="Button" parent="CanvasLayer/Control2"]
+visibility_layer = 0
+layout_mode = 0
+offset_left = 118.0
+offset_top = -269.0
+offset_right = 368.0
+offset_bottom = -169.0
+
+[node name="mainmenu" type="Button" parent="CanvasLayer/Control2"]
+visibility_layer = 0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 223.0
+offset_top = -147.0
+offset_right = 398.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="quit" type="Button" parent="CanvasLayer/Control2"]
+visibility_layer = 0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 186.0
+offset_top = 66.0
+offset_right = 386.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="options" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="options"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_rukeo")
+
+[node name="Control" type="Control" parent="options"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 31.0
+offset_top = 64.0
+offset_right = 71.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBucketBackground" type="Sprite2D" parent="options/Control"]
+position = Vector2(-330, -390)
+scale = Vector2(0.52, 0.512)
+texture = ExtResource("7_4arki")
+centered = false
+
+[node name="Volume" parent="options/Control" instance=ExtResource("8_65gjq")]
+light_mask = 3
+visibility_layer = 31
+z_index = 1
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -82.0
+offset_top = -139.0
+offset_right = 168.0
+offset_bottom = -119.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Resolution" parent="options/Control" instance=ExtResource("9_why87")]
+layout_mode = 1
+offset_left = -85.0
+offset_top = -41.0
+offset_right = 115.0
+offset_bottom = -21.0
+
+[node name="back" type="Button" parent="options/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = 81.0
+offset_right = 10.0
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+
+[connection signal="pressed" from="CanvasLayer/Control2/option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control2/mainmenu" to="." method="_on_mainmenu_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control2/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="options/Control/back" to="." method="_on_back_pressed"]
