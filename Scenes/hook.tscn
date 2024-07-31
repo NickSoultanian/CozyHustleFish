@@ -57,7 +57,7 @@
 [ext_resource type="Texture2D" uid="uid://beoo725dc43bf" path="res://Art Assets/Finished Art/hook/hook_fishTwo/hook_ratfish7.png" id="50_cryu0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ea65q"]
-size = Vector2(5.3, 13.4)
+size = Vector2(12.8, 19.4)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_if7jv"]
 animations = [{
@@ -268,11 +268,11 @@ animations = [{
 script = ExtResource("1_sjihf")
 
 [node name="hookBox" type="CollisionShape2D" parent="."]
-position = Vector2(-6.5, 385)
+position = Vector2(-16, 947)
 scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_ea65q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_if7jv")
-animation = &"fishThree"
+animation = &"idle"

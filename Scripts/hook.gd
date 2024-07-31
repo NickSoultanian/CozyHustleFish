@@ -8,13 +8,15 @@ var returning = false
 var can_move = true
 var isComboRight = false
 var catching = false
+var player
 
 @onready var hook_animation = $AnimatedSprite2D
 
 var starting_position = Vector2()
 
 func _ready():
-	starting_position = position # Vector2(0, -625)
+	starting_position = position
+	player = get_tree().get_root().get_node("Game/Player")
 	# print("from hook", starting_position.y)
 	
 func _physics_process(delta):
@@ -24,7 +26,7 @@ func _physics_process(delta):
 	check_collision(delta)
 	# print(hook.position.y," : ", starting_position.y)
 	
-	if position.y < 480:
+	if position.y <= starting_position.y:
 		play_animation("idle")
 	
 	if returning:
@@ -36,10 +38,16 @@ func reelUp():
 	# Reel fish back up, disable controls and hitbox temporarily
 	velocity.y = -speed
 	$hookBox.disabled = true
-	if position.y <= starting_position.y:
-		$hookBox.disabled = false
+	if position.y <= starting_position.y-600:
+		$hookBox.disabled = false 
+		returning = false
+		visible = false
+		player.isIdle = false
+		await player.play_animation("cast")
+		visible = true
+		position.y = starting_position.y - 200
 		can_move = true
-		returning = false  # Stop moving when close to target
+		  # Stop moving when close to target
 
 func player_movement(delta): 
 	if Input.is_action_pressed("ui_down"):

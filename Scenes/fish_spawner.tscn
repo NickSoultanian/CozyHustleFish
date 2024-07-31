@@ -197,7 +197,7 @@ collision_layer = 4
 script = ExtResource("1_v25g6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(3250, 11703)
+position = Vector2(3750, 11703)
 shape = SubResource("RectangleShape2D_i2r1b")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
@@ -205,7 +205,7 @@ collision_layer = 4
 script = ExtResource("1_v25g6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-3250, 11715)
+position = Vector2(-3750, 11715)
 shape = SubResource("RectangleShape2D_i2r1b")
 
 [node name="LEVEL1SPAWNRIGHT" type="StaticBody2D" parent="."]
@@ -213,7 +213,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LEVEL1SPAWNRIGHT"]
-position = Vector2(2525, 2548.8)
+position = Vector2(3025, 2548.8)
 shape = SubResource("RectangleShape2D_i3ju1")
 script = ExtResource("1_5fghb")
 possibleSpawns = Array[PackedScene]([ExtResource("2_2ou7c"), ExtResource("3_fe64c"), ExtResource("3_klftk")])
@@ -223,7 +223,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LEVEL1SPAWNLEFT"]
-position = Vector2(-2525, 2548.8)
+position = Vector2(-3025, 2548.8)
 shape = SubResource("RectangleShape2D_i3ju1")
 script = ExtResource("1_5fghb")
 possibleSpawns = Array[PackedScene]([ExtResource("2_2ou7c"), ExtResource("3_fe64c"), ExtResource("3_klftk")])
@@ -234,7 +234,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LEVEL2SPAWNRIGHT"]
-position = Vector2(2525, 6798)
+position = Vector2(3025, 6798)
 shape = SubResource("RectangleShape2D_80q08")
 script = SubResource("GDScript_3btw6")
 possibleSpawns = Array[PackedScene]([ExtResource("3_klftk"), ExtResource("3_fe64c"), ExtResource("6_3ys17")])
@@ -244,7 +244,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LEVEL2SPAWNLEFT"]
-position = Vector2(-2525, 6798)
+position = Vector2(-3025, 6798)
 shape = SubResource("RectangleShape2D_adr34")
 script = SubResource("GDScript_aj3vk")
 possibleSpawns = Array[PackedScene]([ExtResource("3_klftk"), ExtResource("3_fe64c"), ExtResource("6_3ys17")])
@@ -255,7 +255,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LEVEL3SPAWNRIGHT"]
-position = Vector2(2525, 11479.2)
+position = Vector2(3025, 11479.2)
 shape = SubResource("RectangleShape2D_1wmld")
 script = SubResource("GDScript_4kkfo")
 possibleSpawns = Array[PackedScene]([ExtResource("6_3ys17"), ExtResource("7_ajic4"), ExtResource("8_7u7tg")])
@@ -265,7 +265,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LEVEL3SPAWNLEFT"]
-position = Vector2(-2525, 11479.2)
+position = Vector2(-3025, 11479.2)
 shape = SubResource("RectangleShape2D_g5phi")
 script = SubResource("GDScript_4scwh")
 possibleSpawns = Array[PackedScene]([ExtResource("6_3ys17"), ExtResource("7_ajic4"), ExtResource("8_7u7tg")])
@@ -276,7 +276,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LEVEL4SPAWNRIGHT"]
-position = Vector2(2525, 16160.4)
+position = Vector2(3025, 16160.4)
 shape = SubResource("RectangleShape2D_1wmld")
 script = SubResource("GDScript_4kkfo")
 possibleSpawns = Array[PackedScene]([ExtResource("6_3ys17"), ExtResource("7_ajic4"), ExtResource("8_7u7tg")])
@@ -286,7 +286,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LEVEL4SPAWNLEFT"]
-position = Vector2(-2525, 16160.4)
+position = Vector2(-3025, 16160.4)
 shape = SubResource("RectangleShape2D_g5phi")
 script = SubResource("GDScript_4scwh")
 possibleSpawns = Array[PackedScene]([ExtResource("7_ajic4"), ExtResource("9_kiady"), ExtResource("10_xf7kw")])
@@ -297,7 +297,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LEVEL5SPAWNRIGHT"]
-position = Vector2(2525, 20841.6)
+position = Vector2(3025, 20841.6)
 shape = SubResource("RectangleShape2D_1wmld")
 script = SubResource("GDScript_4kkfo")
 possibleSpawns = Array[PackedScene]([ExtResource("10_xf7kw"), ExtResource("11_1btsb"), ExtResource("9_kiady")])
@@ -307,34 +307,8 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LEVEL5SPAWNLEFT"]
-position = Vector2(-2525, 20841.6)
+position = Vector2(-3025, 20841.6)
 shape = SubResource("RectangleShape2D_g5phi")
 script = SubResource("GDScript_4scwh")
 possibleSpawns = Array[PackedScene]([ExtResource("10_xf7kw"), ExtResource("11_1btsb"), ExtResource("9_kiady")])
 isLeftSide = true
-
-[node name="Line2D" type="Line2D" parent="."]
-position = Vector2(-1285, -1677)
-points = PackedVector2Array(-5941, 6116, 8033, 6083)
-width = 20.0
-
-[node name="Line2D2" type="Line2D" parent="."]
-position = Vector2(-1441, 3113)
-points = PackedVector2Array(-5941, 6116, 8088, 6130)
-width = 20.0
-
-[node name="Line2D3" type="Line2D" parent="."]
-position = Vector2(-1094, 7720)
-points = PackedVector2Array(-5941, 6116, 7577, 6119, -6897, 6119)
-width = 20.0
-
-[node name="Line2D4" type="Line2D" parent="."]
-position = Vector2(-1457, 12411)
-points = PackedVector2Array(-5941, 6116, 2668.14, 6145.32, 7273, 6161)
-width = 20.0
-
-[node name="Line2D5" type="Line2D" parent="."]
-position = Vector2(-1831, 17070)
-points = PackedVector2Array(-5941, 6116, 9608, 6129)
-closed = true
-width = 30.0

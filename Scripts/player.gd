@@ -12,7 +12,7 @@ func play_animation(animation_name):
 	if animation_name == "cast":
 		player_animation.stop()
 		player_animation.play("cast")
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(2.0).timeout
 		isIdle = true
 	elif animation_name == "idle":
 		player_animation.play("idle")
