@@ -11,6 +11,7 @@ func _on_start_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/game.tscn")
 
 func _on_options_button_pressed():
+	SceneGlobal.previous_scene = get_tree().current_scene.scene_file_path
 	Music.play_buttonclick()
 	get_tree().change_scene_to_file("res://Scenes/UI/options.tscn")
 	
