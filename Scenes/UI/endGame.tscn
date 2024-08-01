@@ -31,6 +31,7 @@ offset_left = 0.135986
 offset_top = -1.02402
 offset_right = 15.0
 offset_bottom = 0.231964
+theme_override_colors/font_color = Color(0.972549, 0.831373, 0.380392, 1)
 theme_override_fonts/font = ExtResource("3_qmewl")
 theme_override_font_sizes/font_size = 50
 text = "1000
