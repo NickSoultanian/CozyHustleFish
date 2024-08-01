@@ -11,7 +11,7 @@ var timer
 var inputAllowed = false;
 var arrowDisplay
 var opacityLayer
-var winBool
+var winBool = false
 
 var arrowSounds = [
 	sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8
@@ -71,7 +71,7 @@ func waitForTimer():
 	winBool = false
 	gameEnd.emit()
 
-
+@warning_ignore("shadowed_variable")
 func endCombo(winBool):
 	inputAllowed = false
 	Clock.endClock()
