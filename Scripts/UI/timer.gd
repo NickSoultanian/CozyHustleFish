@@ -1,5 +1,6 @@
 extends Label
 
+
 var game_time = 0
 var temp_var = 0
 var fakeseconds = 0
@@ -14,7 +15,9 @@ func _ready():
 	timer.start(90.0)
 	print("timer started")
 
-func _process(delta):
+func _process(_delta):
+	@warning_ignore("integer_division")
+	
 	minutes = int(timer.get_time_left()) / 60
 	seconds = int(timer.get_time_left()) % 60
 	

@@ -24,6 +24,7 @@ func _process(delta):
 	passedTime += delta
 	pass
 
+@warning_ignore("shadowed_variable")
 func spawn(spawn_scene, yPos):
 	var spawn := spawn_scene.instantiate() as Node2D
 

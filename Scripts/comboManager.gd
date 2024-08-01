@@ -11,7 +11,7 @@ var timer
 var inputAllowed = false;
 var arrowDisplay
 var opacityLayer
-var winBool = false
+var winBool
 
 var arrowSounds = [
 	sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8
@@ -42,7 +42,7 @@ func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the  previous frame.
-func _process(delta): 
+func _process(_delta): 
 	pass
 	
 func startCombo(inputArray, caught):
@@ -70,7 +70,8 @@ func waitForTimer():
 	await timer.timeout
 	winBool = false
 	gameEnd.emit()
-	
+
+
 func endCombo(winBool):
 	inputAllowed = false
 	Clock.endClock()

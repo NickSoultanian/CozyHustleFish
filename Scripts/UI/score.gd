@@ -5,7 +5,7 @@ var score = 0
 
 var scorelabel
 
-func _process(delta):
+func _process(_delta):
 	$CanvasLayer/score.text = str(int(score))
 func _ready():
 	pass

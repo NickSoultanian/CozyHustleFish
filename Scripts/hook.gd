@@ -74,9 +74,9 @@ func play_animation(animation_name):
 	hook_animation.play(animation_name)
 	#await get_tree().create_timer(1.0).timeout
 	
+@warning_ignore("shadowed_variable")
 func check_collision(delta):	
 	var collision_info = move_and_collide(velocity * delta, false, 0.08, true)
-	var success = false
 	var temp =  ""
 	var currentScore
 	

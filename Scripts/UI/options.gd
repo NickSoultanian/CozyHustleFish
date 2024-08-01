@@ -9,4 +9,4 @@ func _on_hidden():
 
 func _on_back_pressed():
 	Music.play_buttonclick()
-	get_tree().change_scene_to_file(SceneGlobal.previous_scene)
+	get_tree().change_scene_to_file("res://Scenes/UI/mainmenu.tscn")

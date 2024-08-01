@@ -4,7 +4,7 @@ extends CharacterBody2D
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var isCasting = false
 var isIdle = true
-func _physics_process(delta):
+func _physics_process(_delta):
 	if isIdle:
 		play_animation("idle")
 
