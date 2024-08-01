@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-# adjust player spped 
 var speed = 0
 var max_speed = 15000.0
 var accel = 5.0
@@ -20,23 +19,19 @@ var starting_position = Vector2()
 func _ready():
 	starting_position = position
 	player = get_tree().get_root().get_node("Game/Player")
-	# print("from hook", starting_position.y)
-	
+
 func _physics_process(delta):
 	if can_move:
 		player_movement(delta)
 		
 	check_collision(delta)
-	# print(hook.position.y," : ", starting_position.y)
 	
 	if position.y <= starting_position.y-795:
 		play_animation("idle")
 	
 	if returning:
-		#var direction = (starting_position - position).normalized()
-		#position += direction * 0.001
 		reelUp()
-			
+
 func reelUp():
 	# Reel fish back up, disable controls and hitbox temporarily
 	velocity.y = -5000
@@ -68,12 +63,11 @@ func player_movement(delta):
 			velocity.y = speed
 		else:
 			velocity.y = 0
-		
+
 func play_animation(animation_name):
 	hook_animation.stop()
 	hook_animation.play(animation_name)
-	#await get_tree().create_timer(1.0).timeout
-	
+
 @warning_ignore("shadowed_variable")
 func check_collision(delta):	
 	var collision_info = move_and_collide(velocity * delta, false, 0.08, true)
@@ -91,11 +85,10 @@ func check_collision(delta):
 			Music.play_fishcaught()
 			can_move = false
 			isComboRight = await $Camera2D/ComboWindow.startCombo(currentCaught.getRandomCombo(), currentCaught)
-			print(isComboRight)
+			
 			if isComboRight:
 				$Camera2D/UiForTimeAndScore.game_event(currentScore)
 				play_animation(temp)
-				print(temp)
 				
 			returning = true
 			Music.play_reeling()
@@ -108,14 +101,12 @@ func check_collision(delta):
 			currentCaught.caught()
 			can_move = false
 			play_animation(temp)
-			print(temp)
 			returning = true
 			Music.play_reeling()
 			
 		elif collision_info.get_collider().get("isShark") == true:
 
 			currentScore = currentCaught.getPointValue()
-			print("Shark hit hook")
 			temp = currentCaught.getAnimationValue()
 
 			can_move = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cq4qckqpgonbt"]
+[gd_scene load_steps=48 format=3 uid="uid://cq4qckqpgonbt"]
 
 [ext_resource type="Script" path="res://Scripts/gameManager.gd" id="1_x7opw"]
 [ext_resource type="PackedScene" uid="uid://c4x421uqlucuk" path="res://Scenes/player.tscn" id="2_5d77e"]
@@ -25,7 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://ccwpwsgilcnaj" path="res://Art Assets/Finished Art/background/foreground left/fgL3.png" id="18_t4jap"]
 [ext_resource type="Texture2D" uid="uid://ebo3qmpy7m5l" path="res://Art Assets/Finished Art/background/foreground right/fgR4.png" id="18_xwbp4"]
 [ext_resource type="Texture2D" uid="uid://dtyfyymfdfymf" path="res://Art Assets/Finished Art/background/foreground left/fgL4.png" id="19_sh6n5"]
-[ext_resource type="Script" path="res://Scripts/playAnimations.gd" id="20_5kjb0"]
 [ext_resource type="Texture2D" uid="uid://cirvtn2g1ggv0" path="res://Art Assets/Finished Art/background/dock assets/coolerFront.png" id="21_814l5"]
 [ext_resource type="Texture2D" uid="uid://b0qhh87vvijgb" path="res://Art Assets/Finished Art/background/dock assets/coolerBack.png" id="22_wdm1w"]
 [ext_resource type="Texture2D" uid="uid://e2t0p8pqhksa" path="res://Art Assets/Finished Art/background/dock assets/dockFrontRightPost.png" id="23_itkwl"]
@@ -65,7 +64,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oy4k6"]
@@ -85,7 +84,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q027h"]
@@ -135,7 +134,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [node name="Game" type="Node2D"]
@@ -253,14 +252,13 @@ z_index = 2
 position = Vector2(1932, 10236)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_lf56k")
-script = ExtResource("20_5kjb0")
 
 [node name="leftsideWall" type="AnimatedSprite2D" parent="."]
 z_index = 2
 position = Vector2(-1803, 10270)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_oy4k6")
-script = ExtResource("20_5kjb0")
+frame_progress = 0.497773
 
 [node name="CoolerFront" type="Sprite2D" parent="."]
 z_index = 1
@@ -283,7 +281,8 @@ texture = ExtResource("23_itkwl")
 position = Vector2(0, 880)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_q027h")
-script = ExtResource("20_5kjb0")
+frame = 7
+frame_progress = 0.887738
 
 [node name="BottomlessAbyss" type="Sprite2D" parent="."]
 z_index = 6

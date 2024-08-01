@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var player_animation = $AnimatedSprite2D
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var isCasting = false
 var isIdle = true

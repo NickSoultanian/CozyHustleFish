@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://4tx0l7k2o5bj"
-path="res://.godot/imported/FISH MAIN MENU.wav-531a0964568db0ff683990cfac7817f5.sample"
+path="res://.godot/imported/FISH MAIN MENU.wav-3e47f94d993d44bdcbad11d95081af75.sample"
 
 [deps]
 
-source_file="res://Music/audio/FISH MAIN MENU.wav"
-dest_files=["res://.godot/imported/FISH MAIN MENU.wav-531a0964568db0ff683990cfac7817f5.sample"]
+source_file="res://Music/audio/Main Music/FISH MAIN MENU.wav"
+dest_files=["res://.godot/imported/FISH MAIN MENU.wav-3e47f94d993d44bdcbad11d95081af75.sample"]
 
 [params]
 

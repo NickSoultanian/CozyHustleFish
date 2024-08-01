@@ -6,8 +6,6 @@ var inkBlot
 var timer
 var animationPlayer
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	inkBlot = $CanvasLayer/Control/InkOnUrEye
 	inkBlot.set_visible(false)

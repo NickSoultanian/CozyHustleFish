@@ -1,11 +1,10 @@
 extends Control
 
-
 func _ready():
 	$CanvasLayer/Control/back.grab_focus()
 
 func _on_hidden():
-	pass # Replace with function body.
+	pass
 
 func _on_back_pressed():
 	Music.play_buttonclick()

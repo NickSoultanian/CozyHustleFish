@@ -7,6 +7,7 @@ var hook
 var player
 var timeCheck = true
 var text
+
 func _ready():
 	speed = 0
 	hook = get_parent()
@@ -21,7 +22,6 @@ func _ready():
 	add_child(timer)
 	timer.start()
 	player.isIdle = false
-	
 
 func _process(delta):
 	if !timer.is_stopped():
@@ -37,8 +37,7 @@ func _process(delta):
 		await player.play_animation("cast")
 		
 		hook.visibility_layer = 1
-		
-	
+
 func _on_Timer_timeout():
 	speed = 0  # Stop the camera
 	global_position = hook.global_position + Vector2(0, 1200)

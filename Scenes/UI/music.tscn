@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://blw66x1lm841y"]
+[gd_scene load_steps=20 format=3 uid="uid://blw66x1lm841y"]
 
-[ext_resource type="AudioStream" uid="uid://4tx0l7k2o5bj" path="res://Music/audio/FISH MAIN MENU.wav" id="1_fxkrc"]
+[ext_resource type="AudioStream" uid="uid://4tx0l7k2o5bj" path="res://Music/audio/Main Music/FISH MAIN MENU.wav" id="1_fxkrc"]
 [ext_resource type="AudioStream" uid="uid://b4lhsuafrnq4x" path="res://Music/audio/SFX/buttonclick.mp3" id="2_5lrd7"]
 [ext_resource type="Script" path="res://Scripts/UI/music.gd" id="2_osw14"]
 [ext_resource type="AudioStream" uid="uid://bt5qv6ks04u5i" path="res://Music/audio/SFX/combosuccess.mp3" id="3_f0ahe"]
+[ext_resource type="AudioStream" uid="uid://pr80e0wrarbr" path="res://Music/audio/Main Music/fishgame.wav" id="3_kv23n"]
 [ext_resource type="AudioStream" uid="uid://m07fsyieb8eb" path="res://Music/audio/SFX/fishcaught.mp3" id="5_d7swp"]
 [ext_resource type="AudioStream" uid="uid://4buaa0gy71pm" path="res://Music/audio/SFX/hookcastandsplash.mp3" id="6_gfina"]
 [ext_resource type="AudioStream" uid="uid://b3wlygoxrhjfe" path="res://Music/audio/SFX/REELING.mp3" id="7_ixlj2"]
@@ -22,8 +23,10 @@
 [node name="Music" type="AudioStreamPlayer"]
 process_mode = 3
 stream = ExtResource("1_fxkrc")
-autoplay = true
 script = ExtResource("2_osw14")
+
+[node name="MainGame" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kv23n")
 
 [node name="buttonclick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_5lrd7")

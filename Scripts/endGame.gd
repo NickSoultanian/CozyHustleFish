@@ -1,18 +1,18 @@
 extends Node2D
 
 var finalScoreText
-# Called when the node enters the scene tree for the first time.
+var score = 0
+
 func _ready():
 	Music.stop_reeling()
 	finalScoreText = $CanvasLayer/TextureRect/Label
-	finalScoreText.text = str(SceneGlobal.score)
-	pass # Replace with function body.
+	finalScoreText.text = str(GlobalScore.SCORE)
+	
+func _send_score(data):
+	score = data
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
-
 
 func _on_texture_button_pressed():
 	Music.play_menumusic()

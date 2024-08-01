@@ -17,3 +17,11 @@ grow_vertical = 2
 max_value = 1.0
 step = 0.001
 script = ExtResource("1_7h1xb")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -29.0
+offset_right = 63.0
+offset_bottom = -6.0
+text = "Volume"

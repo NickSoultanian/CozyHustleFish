@@ -13,20 +13,15 @@ var arrowDisplayStack = []
 var arrowList
 var currArrowIndex = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	arrowList = $ItemList
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
 
 func spawnArrows(arrowArray):
 	arrowList.max_columns = arrowArray.size()
 	arrowList.icon_scale = min(get_viewport().size.y/3.0/561.0, get_viewport().size.x/arrowArray.size()/561.0)
-	print(arrowList.icon_scale)
 	arrowList.size = Vector2(arrowArray.size() * (561 * arrowList.icon_scale + 8), get_viewport().size.y/3.0)
 	
 	var horiListSize = 0;
@@ -51,7 +46,7 @@ func spawnArrows(arrowArray):
 
 func changeNextArrow():
 	var arrow = arrowList.get_item_icon(currArrowIndex)
-	print(arrow)
+	
 	if (arrow == up):
 		arrowList.set_item_icon(currArrowIndex, upFilled)
 	if (arrow == down):

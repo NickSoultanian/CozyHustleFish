@@ -15,10 +15,14 @@ run/main_scene="res://Scenes/UI/mainmenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://Music/default_bus_layout.tres"
+
 [autoload]
 
 Music="*res://Scenes/UI/music.tscn"
-SceneGlobal="*res://Scripts/UI/specific option scripts/sceneglobal.gd"
+GlobalScore="*res://Scripts/UI/specific option scripts/GlobalScore.gd"
 
 [dotnet]
 
