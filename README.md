@@ -1,27 +1,19 @@
 # CozyHustleFish
-Simple fishing game made by Bean Incorp  
+Simple fishing game made by Beans
 created: 2024-07-15 
 
 ### Team
 
 - **Creative director:** Ash
-- **Creative input**: 
-	- Joycie 
-	- Bickle 
-	- Cait 
-
 - **Art**: 
 	- Nunu
 	- Joy
-	- Joycie 
 - **Coding:** 
-	- Nick (lead) 
+	- Nick
 	- Jason 
-	- Rayen 
-	- Dun 
-	- Tom
-- **Music:**
-	- Dun 
+	- Dunstan
+- **Sound + Music**
+	- Dunstan
 	- Nunu
 	- Tom
 
